@@ -1,0 +1,745 @@
+# Translation of Plugins - WP Crontrol - Stable (latest release) in Korean
+# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-10-08 14:37:27+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.1.0\n"
+"Language: ko_KR\n"
+"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
+
+#: src/bootstrap.php:2549
+msgid "Secondary menu"
+msgstr "보조 메뉴"
+
+#: src/event-list-table.php:313
+msgid "WooCommerce events"
+msgstr "WooCommerce 이벤트"
+
+#. Description of the plugin
+#: wp-crontrol.php
+msgid "Take control of the cron events on your WordPress website or WooCommerce store."
+msgstr "워드프레스 웹사이트나 우커머스 스토어의 크론 이벤트를 직접 관리해 보세요."
+
+#: src/bootstrap.php:2107 src/event-list-table.php:698
+msgid "This event has invalid arguments and will not run correctly."
+msgstr "이 이벤트는 잘못된 인수를 가지고 있어 정상적으로 실행되지 않을 것입니다."
+
+#: src/event-list-table.php:727
+msgid "PHP cron events are disabled"
+msgstr "PHP cron 이벤트가 비활성화되었습니다"
+
+#. translators: %s: The PHP type of the invalid value
+#: src/bootstrap.php:2110
+msgid "Arguments should be an array but %s was provided. The event will likely fail with a PHP error when it attempts to run."
+msgstr "인수는 배열이어야 하지만 %s이(가) 제공되었습니다. 이벤트 실행 시 PHP 오류로 인해 실패할 가능성이 높습니다."
+
+#. translators: State of a cron event, adjective
+#: src/event-list-table.php:673
+msgid "Disabled"
+msgstr "비활성"
+
+#: src/event-list-table.php:705 src/Pro/Table.php:364
+msgid "View arguments"
+msgstr "인수 보기"
+
+#: src/event-list-table.php:319
+msgid "Duplicated events"
+msgstr "중복된 이벤트"
+
+#: src/bootstrap.php:2010 src/bootstrap.php:2062
+msgid "Display Name (optional)"
+msgstr "표시 이름(선택 사항)"
+
+#. translators: %s: The name of the cron schedule.
+#: src/bootstrap.php:1384
+msgid "A schedule with the name %s already exists."
+msgstr "이름이 %s인 일정이 이미 존재합니다."
+
+#. translators: %s: Message text.
+#: src/bootstrap.php:3252 src/bootstrap.php:3358
+msgid "WP Crontrol: %s"
+msgstr "WP Crontrol: %s"
+
+#. translators: %s: The internal name of the schedule.
+#: src/schedule.php:28
+msgid "A schedule with the name \"%s\" already exists."
+msgstr "\"%s\"(이)라는 이름의 일정이 이미 존재합니다."
+
+#. translators: %s: Schedule name
+#: src/Event/Event.php:270
+msgid "Unknown schedule (%s)"
+msgstr "알 수 없는 일정 (%s)"
+
+#: src/bootstrap.php:760
+msgid "You are not allowed to delete URL cron events."
+msgstr "URL cron 이벤트는 삭제할 수 없습니다."
+
+#: src/bootstrap.php:360
+msgid "You are not allowed to edit URL cron events."
+msgstr "URL cron 이벤트는 편집할 수 없습니다."
+
+#: src/bootstrap.php:166 src/bootstrap.php:222
+msgid "You are not allowed to add new URL cron events."
+msgstr "새 URL cron 이벤트를 추가할 수 없습니다."
+
+#. translators: %s: The URL that failed validation.
+#: src/event.php:700
+msgid "The URL \"%s\" is not allowed"
+msgstr "URL \"%s\"은(는) 허용되지 않습니다"
+
+#. translators: %s: The error message.
+#: src/event.php:188
+msgid "The cron event was saved but contains an error: %s."
+msgstr "크론 이벤트가 저장되었지만 오류: %s가 포함되어 있습니다."
+
+#. translators: %s: Time period, for example "8 minutes"
+#: src/event-list-table.php:818
+msgid "In %s"
+msgstr "%s 이내"
+
+#: src/event-list-table.php:784
+msgid "Immediately"
+msgstr "즉시"
+
+#. translators: %s: Time
+#: src/bootstrap.php:2898
+msgid "Today at %s"
+msgstr "오늘 %s"
+
+#. translators: %s: Time
+#: src/bootstrap.php:2904
+msgid "Tomorrow at %s"
+msgstr "내일 %s"
+
+#. translators: %s: Time
+#: src/bootstrap.php:2910
+msgid "Yesterday at %s"
+msgstr "어제 %s"
+
+#. translators: A Closure is a type of PHP function. 1: File name, 2: Line
+#. number
+#: src/bootstrap.php:2696
+msgid "Closure in %1$s at line %2$d"
+msgstr "%2$d 줄에서 %1$s에서 닫힘"
+
+#. translators: 1: The time since the event was scheduled, 2: The URL to search
+#. for the event.
+#: src/bootstrap.php:1792
+msgid "The event probably ran %1$s ago. <a href=\"%2$s\">Click here to see if it was rescheduled</a>."
+msgstr "이벤트가 %1$s 전에 실행되었을 수 있습니다. <a href=\"%2$s\">일정이 변경되었는지 확인하려면 여기를 클릭하세요</a>."
+
+#. translators: 1: Hook name, 2: Date and time
+#. translators: 1: Date, 2: Time
+#: src/alerts.php:385 src/bootstrap.php:2916
+msgid "%1$s at %2$s"
+msgstr "%1$s %2$s"
+
+#: src/bootstrap.php:3002
+msgid "Are you sure you want to delete all events with this hook?"
+msgstr "정말로 이 훅으로 모든 이벤트를 삭제하시겠습니까?"
+
+#: src/bootstrap.php:3001
+msgid "Are you sure you want to delete this event?"
+msgstr "정말로 이 이벤트를 삭제하시겠습니까?"
+
+#: src/event-list-table.php:740
+msgid "URL cron events are disabled"
+msgstr "URL cron 이벤트가 비활성화됩니다."
+
+#: src/bootstrap.php:1967
+msgid "URL"
+msgstr "URL"
+
+#: src/bootstrap.php:268 src/bootstrap.php:451
+msgid "URL Cron"
+msgstr "URL Cron"
+
+#: src/event-list-table.php:317
+msgid "URL events"
+msgstr "URL 이벤트"
+
+#: src/bootstrap.php:1994
+msgid "HTTP Method"
+msgstr "HTTP 메서드"
+
+#: src/bootstrap.php:1976
+msgid "The URL in this event needs to be checked for integrity. This event will not run until you re-save it."
+msgstr "이 이벤트의 URL이 무결한지 확인해야 합니다. 이 이벤트는 다시 저장할 때까지 실행되지 않습니다."
+
+#. translators: %s: Name of the URL cron event
+#. translators: %s: Details about the URL cron event.
+#: src/abilities.php:493 src/Event/URLCronEvent.php:65
+#: src/Event/URLCronEvent.php:75
+msgid "URL cron event (%s)"
+msgstr "URL cron 이벤트 (%s)"
+
+#. translators: %s: Name of the PHP cron event
+#. translators: %s: Details about the PHP cron event.
+#: src/abilities.php:489 src/Event/PHPCronEvent.php:73
+#: src/Event/PHPCronEvent.php:91
+msgid "PHP cron event (%s)"
+msgstr "PHP cron 이벤트 (%s)"
+
+#: src/bootstrap.php:2308
+msgid "PHP cron event saved."
+msgstr "PHP cron 이벤트를 저장했습니다."
+
+#: src/bootstrap.php:2304
+msgid "URL cron event saved."
+msgstr "URL cron 이벤트를 저장했습니다."
+
+#: src/bootstrap.php:2210 src/event-list-table.php:245
+msgctxt "noun"
+msgid "Schedule"
+msgstr "일정"
+
+#. translators: %s: Name of the URL cron event
+#: src/abilities.php:493 src/bootstrap.php:1944 src/Event/URLCronEvent.php:78
+#: src/Pro/Table.php:754
+msgid "URL cron event"
+msgstr "URL cron 이벤트"
+
+#: src/bootstrap.php:1424
+msgid "Adding a new schedule allows you to schedule recurring events at the given interval."
+msgstr "새 일정을 추가하면 지정된 주기로 반복하는 이벤트를 예약할 수 있습니다."
+
+#. Plugin URI of the plugin
+#: wp-crontrol.php
+msgid "https://wp-crontrol.com"
+msgstr "https://wp-crontrol.com"
+
+#. translators: %s: An input field for specifying a date and time
+#: src/bootstrap.php:2179
+msgid "At this time: %s"
+msgstr "현재: %s"
+
+#: src/event-list-table.php:498
+msgid "Check and edit"
+msgstr "확인 및 편집"
+
+#: src/event-list-table.php:678
+msgid "Needs checking"
+msgstr "확인 필요"
+
+#: src/event-list-table.php:316
+msgid "PHP events"
+msgstr "PHP 이벤트"
+
+#: src/bootstrap.php:1978 src/bootstrap.php:2037 src/event-list-table.php:108
+msgid "Read what to do"
+msgstr "수행 방법 읽기"
+
+#: src/bootstrap.php:2035
+msgid "The PHP code in this event needs to be checked for integrity. This event will not run until you re-save it."
+msgstr "이 이벤트의 PHP 코드의 무결성을 확인해야 합니다. 이 이벤트는 다시 저장할 때까지 실행되지 않습니다."
+
+#: src/event-list-table.php:106
+msgid "One or more of your cron events needs to be checked for integrity. These events will not run until you check and re-save them."
+msgstr "하나 이상의 cron 이벤트의 무결성을 확인해야 합니다. 이러한 이벤트는 확인하고 다시 저장할 때까지 실행되지 않습니다."
+
+#. translators: %s: Name of the PHP cron event
+#: src/abilities.php:489 src/bootstrap.php:1952 src/Event/PHPCronEvent.php:96
+#: src/Pro/Table.php:755
+msgid "PHP cron event"
+msgstr "PHP cron 이벤트"
+
+#: src/bootstrap.php:1937
+msgid "Standard cron event"
+msgstr "표준 cron 이벤트"
+
+#. translators: Resume is a verb
+#: src/event-list-table.php:534
+msgid "Resume this hook"
+msgstr "이 훅 재개"
+
+#. translators: %s: The number of events with this hook
+#: src/event-list-table.php:581
+msgid "Delete all events with this hook (%s)"
+msgstr "이 후크가 포함된 모든 이벤트 삭제 (%s)"
+
+#. translators: Pause is a verb
+#: src/event-list-table.php:545
+msgid "Pause this hook"
+msgstr "이 훅 일시 중지"
+
+#. translators: 1: Date and time, 2: Timezone
+#: src/bootstrap.php:2226 src/bootstrap.php:2384
+msgid "Site time when page loaded: %1$s, %2$s"
+msgstr "페이지가 로드된 사이트 시간: %1$s, %2$s"
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2295
+msgid "Paused the %s hook."
+msgstr "%s 훅를 일시 중지했습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2300
+msgid "Resumed the %s hook."
+msgstr "%s 훅를 재개했습니다."
+
+#: src/event-list-table.php:318
+msgid "Paused events"
+msgstr "일시 중지된 이벤트"
+
+#. translators: State of a cron event, adjective
+#: src/event-list-table.php:691
+msgid "Paused"
+msgstr "일시 중지됨"
+
+#. translators: %s: The name of the cron event.
+#: src/event.php:240
+msgid "Failed to pause the cron event %s."
+msgstr "크론 이벤트 %s을(를) 일시 중지하지 못했습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/event.php:271
+msgid "Failed to resume the cron event %s."
+msgstr "크론 이벤트 %s을(를) 재개하지 못했습니다."
+
+#: src/bootstrap.php:844 src/bootstrap.php:850 src/bootstrap.php:891
+#: src/bootstrap.php:897
+msgid "You are not allowed to pause or resume cron events."
+msgstr "크론 이벤트를 일시 중지하거나 재개할 수 없습니다."
+
+#. translators: %s: Function name
+#: src/bootstrap.php:2719
+msgid "Function %s does not exist"
+msgstr "함수 %s이(가) 존재하지 않습니다."
+
+#: src/event-list-table.php:383
+msgid "Export"
+msgstr "내보내기"
+
+#: src/bootstrap.php:2312
+msgid "An unknown error occurred."
+msgstr "알 수없는 오류가 발생했습니다."
+
+#: src/bootstrap.php:960
+msgid "Could not save CSV file."
+msgstr "CSV 파일을 저장할 수 없습니다."
+
+#. translators: %s: URL to the documentation
+#: src/bootstrap.php:1276
+msgid "<a href=\"%s\">Read the WordPress.org documentation on WP-Cron</a> for more technical details about the WP-Cron system for developers."
+msgstr "개발자를 위한 WP-Cron 시스템에 대한 자세한 기술 정보는 <a href=\"%s\">WP-Cron에 대한 WordPress.org 문서</a>를 참조하세요."
+
+#: src/event-list-table.php:311
+msgid "All events"
+msgstr "모든 이벤트"
+
+#: src/event.php:136
+msgid "Invalid timestamp provided."
+msgstr "잘못된 타임스탬프가 제공되었습니다."
+
+#: src/bootstrap.php:1290 src/bootstrap.php:1322 src/bootstrap.php:1340
+#: src/event-list-table.php:723 src/event-list-table.php:736
+#: src/event-list-table.php:765 src/event-list-table.php:803
+#: src/Pro/Table.php:377
+msgid "Help"
+msgstr "도움말"
+
+#. translators: %s: URL to the documentation
+#: src/bootstrap.php:1262
+msgid "<a href=\"%s\">Read the Frequently Asked Questions (FAQ)</a> which cover many common questions and answers."
+msgstr "<a href=\"%s\">자주 묻는 질문(FAQ)</a>을 읽어보세요. 여기에는 많은 일반적인 질문과 답변이 포함되어 있습니다."
+
+#. translators: 1: URL to the documentation, 2: WP Crontrol
+#: src/bootstrap.php:1247
+msgid "<a href=\"%1$s\">Read the %2$s website</a> which contains information about events that have missed their schedule, problems with spawning a call to the WP-Cron system, and much more."
+msgstr "일정을 놓친 이벤트, WP-Cron 시스템에 대한 호출 생성 문제 등에 대한 정보가 포함된 <a href=\"%1$s\">%2$s 웹 사이트를 읽어 보세요</a>."
+
+#: src/bootstrap.php:1241
+msgid "There are several places to get help with issues relating to WP-Cron:"
+msgstr "WP-Cron과 관련된 문제에 대한 도움을 받을 수 있는 여러 곳이 있습니다:"
+
+#: src/Event/CoreCronEvent.php:38
+msgid "This is a WordPress core event and cannot be deleted"
+msgstr "이것은 워드프레스 코어 이벤트이며 삭제할 수 없습니다"
+
+#: src/event-list-table.php:315
+msgid "Custom events"
+msgstr "사용자 정의 이벤트"
+
+#: src/event-list-table.php:314
+msgid "WordPress core events"
+msgstr "워드프레스 코어 이벤트"
+
+#: src/event-list-table.php:312
+msgid "Events with no action"
+msgstr "동작 없는 이벤트"
+
+#. translators: %s: The name of the cron event.
+#: src/event.php:107
+msgid "Failed to schedule the cron event %s."
+msgstr "크론 이벤트 %s을(를) 예약하지 못했습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/event.php:64 src/event.php:371
+msgid "The cron event %s could not be found."
+msgstr "크론 이벤트 %s을(를) 찾을 수 없습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2251
+msgid "Scheduled the cron event %s to run now. The original event will not be affected."
+msgstr "크론 이벤트 %s이(가) 지금 실행되도록 예약했습니다. 원래 이벤트는 영향을 받지 않습니다."
+
+#: src/bootstrap.php:1927 src/bootstrap.php:1932
+msgid "Event Type"
+msgstr "이벤트 유형"
+
+#: src/bootstrap.php:1595 src/bootstrap.php:1625
+msgid "More information"
+msgstr "추가 정보"
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:1786
+msgid "The %s event you are trying to edit does not exist."
+msgstr "편집하려는 %s 이벤트가 존재하지 않습니다."
+
+#: src/event-list-table.php:872
+msgid "No matching cron events."
+msgstr "일치하는 cron 이벤트가 없습니다."
+
+#: src/bootstrap.php:1593
+msgid "PHP default timezone is not set to UTC. This may cause issues with cron event timings."
+msgstr "PHP 기본 시간대가 UTC로 설정되어 있지 않습니다. 이로 인해 cron 이벤트 타이밍에 문제가 발생할 수 있습니다."
+
+#. translators: 1: The name of the configuration constant, 2: The value of the
+#. configuration constant
+#: src/event-list-table.php:852 src/schedule-list-table.php:171
+msgid "This interval is less than the %1$s constant which is set to %2$s seconds. Events that use it may not run on time."
+msgstr "이 간격은 %2$s초로 설정된 %1$s 상수보다 작습니다. 이를 사용하는 이벤트는 제 시간에 실행되지 않을 수 있습니다."
+
+#. translators: %s: Time period, for example "8 minutes"
+#: src/event-list-table.php:797 src/Pro/bootstrap.php:1069
+#: src/Pro/Table.php:338
+msgid "%s ago"
+msgstr "%s 전"
+
+#. translators: 1: Line number, 2: Error message text
+#: src/Event/PHPCronEvent.php:109
+msgid "Line %1$s: %2$s"
+msgstr "라인 %1$s: %2$s"
+
+#: src/bootstrap.php:1843
+msgid "Update Event"
+msgstr "업데이트 이벤트"
+
+#: src/event-list-table.php:631
+msgid "Select this row"
+msgstr "이 행 선택"
+
+#: src/bootstrap.php:1851
+msgid "Add Event"
+msgstr "이벤트 추가"
+
+#: src/schedule-list-table.php:197
+msgid "There are no schedules."
+msgstr "일정이 없습니다."
+
+#: src/event-list-table.php:243 src/Pro/Table.php:325 src/Pro/Table.php:501
+msgid "Hook"
+msgstr "훅"
+
+#: src/bootstrap.php:2371
+msgid "Search Hook Names"
+msgstr "훅 이름 검색"
+
+#. translators: %s: The name of the plugin that controls the running of cron
+#. events.
+#: src/bootstrap.php:1512
+msgid "WP-Cron spawning is being managed by the %s plugin."
+msgstr "WP-Cron 생성은 %s 플러그인에서 관리하고 있습니다."
+
+#: src/event-list-table.php:870
+msgid "There are currently no scheduled cron events."
+msgstr "현재 예정된 cron 이벤트가 없습니다."
+
+#: src/Schedule/ThirdPartySchedule.php:27
+msgid "This schedule is added by another plugin and cannot be deleted"
+msgstr "이 일정은 다른 플러그인에 의해 추가되었으며 삭제할 수 없습니다"
+
+#: src/Schedule/CoreSchedule.php:27
+msgid "This is a WordPress core schedule and cannot be deleted"
+msgstr "이것은 워드프레스 코어 일정이며 삭제할 수 없습니다"
+
+#: src/bootstrap.php:2285
+msgid "Deleted the selected cron events."
+msgstr "선택한 cron 이벤트를 삭제했습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2261
+msgid "There are no %s cron events to delete."
+msgstr "삭제할 %s cron 이벤트가 없습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2256
+msgid "Deleted all %s cron events."
+msgstr "모든 %s cron 이벤트를 삭제했습니다."
+
+#: src/bootstrap.php:1881 src/bootstrap.php:2593
+msgid "Edit Cron Event"
+msgstr "Cron 이벤트 편집"
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2266
+msgid "Saved the cron event %s."
+msgstr "크론 이벤트 %s을(를) 저장했습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2271
+msgid "Deleted the cron event %s."
+msgstr "크론 이벤트 %s을(를) 삭제했습니다."
+
+#. translators: %s: The name of the cron schedule.
+#: src/bootstrap.php:1379
+msgid "Added the cron schedule %s."
+msgstr "크론 일정 %s을(를) 추가했습니다."
+
+#. translators: %s: The name of the cron schedule.
+#: src/bootstrap.php:1374
+msgid "Deleted the cron schedule %s."
+msgstr "크론 일정 %s을(를) 삭제했습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2290
+msgid "Failed to save the cron event %s."
+msgstr "크론 이벤트 %s을(를) 저장하지 못했습니다."
+
+#: src/bootstrap.php:2170
+msgid "Tomorrow"
+msgstr "내일"
+
+#: src/bootstrap.php:2164 src/event-list-table.php:814
+#: src/Pro/bootstrap.php:538
+msgid "Now"
+msgstr "지금"
+
+#: src/bootstrap.php:712 src/bootstrap.php:757
+msgid "You are not allowed to delete PHP cron events."
+msgstr "PHP cron 이벤트를 삭제할 수 없습니다."
+
+#: src/bootstrap.php:356 src/bootstrap.php:519
+msgid "You are not allowed to edit PHP cron events."
+msgstr "PHP cron 이벤트를 편집할 수 없습니다."
+
+#. translators: The PHP tag name
+#: src/bootstrap.php:2050
+msgid "The opening %s tag must not be included."
+msgstr "여는 %s 태그는 포함되지 않아야 합니다."
+
+#. translators: 1, 2, and 3: Example values for an input field.
+#: src/bootstrap.php:2127
+msgid "Use a JSON encoded array, e.g. %1$s, %2$s, or %3$s"
+msgstr "JSON으로 인코딩된 배열을 사용하세요. %1$s, %2$s 또는 %3$s"
+
+#: src/Schedule/CrontrolSchedule.php:27
+msgid "This custom schedule is in use and cannot be deleted"
+msgstr "이 사용자 정의 일정은 사용 중이며 삭제할 수 없습니다"
+
+#. translators: %s Timezone name.
+#: src/bootstrap.php:2200
+msgid "Timezone: %s"
+msgstr "시간대: %s"
+
+#: src/event-list-table.php:246 src/Pro/Table.php:326 src/Pro/Table.php:518
+#: src/Pro/Table.php:520
+msgid "Action"
+msgstr "동작"
+
+#: src/bootstrap.php:2235
+msgid "You cannot add, edit, or delete PHP cron events because your user account does not have the ability to edit files."
+msgstr "사용자 계정에 파일을 편집할 수 있는 권한이 없기 때문에 PHP cron 이벤트를 추가, 편집 또는 삭제할 수 없습니다."
+
+#: src/bootstrap.php:2098
+msgid "Arguments (optional)"
+msgstr "인수 (옵션)"
+
+#. translators: %s: The name of the PHP constant that is set.
+#: src/bootstrap.php:1529
+msgid "The %s constant is set to true."
+msgstr "%s 상수가 true로 설정되었습니다."
+
+#. translators: %s: The name of the PHP constant that is set.
+#: src/bootstrap.php:1521
+msgid "The %s constant is set to true. WP-Cron spawning is disabled."
+msgstr "%s 상수가 true로 설정되었습니다. WP-Cron 생성이 비활성화되었습니다."
+
+#. translators: %s: The HTTP response code.
+#: src/bootstrap.php:1561
+msgid "Unexpected HTTP response code: %s"
+msgstr "예기치 않은 HTTP 응답 코드: %s"
+
+#: src/bootstrap.php:1423 src/bootstrap.php:1445
+msgid "Add Cron Schedule"
+msgstr "Cron 일정 추가"
+
+#: src/bootstrap.php:1039 src/bootstrap.php:1040 src/bootstrap.php:1081
+#: src/bootstrap.php:1307 src/bootstrap.php:2361 src/bootstrap.php:2521
+msgid "Cron Events"
+msgstr "Cron 이벤트"
+
+#: src/bootstrap.php:163 src/bootstrap.php:285
+msgid "You are not allowed to add new PHP cron events."
+msgstr "새 PHP cron 이벤트를 추가할 수 없습니다."
+
+#: src/event-list-table.php:500
+msgid "Edit"
+msgstr "편집"
+
+#: src/event-list-table.php:769 src/Pro/Table.php:381 src/Pro/Table.php:510
+#: src/Pro/Table.php:520 src/Pro/Table.php:568 src/Pro/Table.php:574
+msgid "None"
+msgstr "없음"
+
+#: src/schedule-list-table.php:75
+msgid "Interval"
+msgstr "간격"
+
+#: src/bootstrap.php:1440 src/schedule-list-table.php:74
+msgid "Internal Name"
+msgstr "내부 이름"
+
+#: src/bootstrap.php:2142 src/bootstrap.php:2159 src/event-list-table.php:244
+msgid "Next Run"
+msgstr "다음 실행"
+
+#: src/event-list-table.php:294 src/event-list-table.php:482
+#: src/event-list-table.php:561 src/schedule-list-table.php:123
+msgid "Delete"
+msgstr "삭제"
+
+#: src/Pro/Table.php:506 src/Pro/Table.php:508 src/Pro/Table.php:510
+msgid "Arguments"
+msgstr "인수"
+
+#: src/bootstrap.php:2817
+msgid "now"
+msgstr "지금"
+
+#: src/event-list-table.php:521
+msgid "Run now"
+msgstr "지금 실행"
+
+#: src/bootstrap.php:2078 src/bootstrap.php:2081
+msgid "Hook Name"
+msgstr "훅 이름"
+
+#: src/bootstrap.php:2026 src/Event/PHPCronEvent.php:118
+msgid "PHP Code"
+msgstr "PHP 코드"
+
+#. translators: %s: The number of years in an interval of time.
+#: src/bootstrap.php:2801
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] "%s년"
+
+#. translators: %s: The number of days in an interval of time.
+#: src/bootstrap.php:2807
+msgid "%s day"
+msgid_plural "%s days"
+msgstr[0] "%s일"
+
+#. translators: %s: The number of weeks in an interval of time.
+#: src/bootstrap.php:2805
+msgid "%s week"
+msgid_plural "%s weeks"
+msgstr[0] "%s주"
+
+#. translators: %s: The number of hours in an interval of time.
+#: src/bootstrap.php:2809
+msgid "%s hour"
+msgid_plural "%s hours"
+msgstr[0] "%s시간"
+
+#. translators: %s: The number of months in an interval of time.
+#: src/bootstrap.php:2803
+msgid "%s month"
+msgid_plural "%s months"
+msgstr[0] "%s개월"
+
+#. translators: %s: The number of minutes in an interval of time.
+#: src/bootstrap.php:2811 src/bootstrap.php:2824
+msgid "%s minute"
+msgid_plural "%s minutes"
+msgstr[0] "%s분"
+
+#. translators: %s: The number of seconds in an interval of time.
+#: src/bootstrap.php:2813
+msgid "%s second"
+msgid_plural "%s seconds"
+msgstr[0] "%s초"
+
+#. Plugin Name of the plugin
+#: wp-crontrol.php src/bootstrap.php:1121
+msgid "WP Crontrol"
+msgstr "WP Crontrol"
+
+#: src/bootstrap.php:331 src/bootstrap.php:533
+msgid "PHP Cron"
+msgstr "PHP cron"
+
+#: src/bootstrap.php:1883 src/bootstrap.php:2363 src/bootstrap.php:2588
+msgid "Add Cron Event"
+msgstr "Cron 이벤트 추가"
+
+#. translators: %s: Error message text.
+#: src/bootstrap.php:1621
+msgid "There was a problem spawning a call to the WP-Cron system on your site. This means WP-Cron events on your site may not work. The problem was: %s"
+msgstr "사이트에서 WP-Cron 시스템에 대한 호출을 생성하는 중에 문제가 발생했습니다. 즉, 사이트의 WP-Cron 이벤트가 작동하지 않을 수 있습니다. 문제: %s"
+
+#: src/bootstrap.php:1428
+msgid "Interval (seconds)"
+msgstr "간격 (초)"
+
+#: src/bootstrap.php:1434 src/schedule-list-table.php:76
+msgid "Display Name"
+msgstr "표시 이름"
+
+#: src/bootstrap.php:1032 src/bootstrap.php:1033 src/bootstrap.php:1086
+#: src/bootstrap.php:1312 src/bootstrap.php:1415 src/bootstrap.php:2539
+msgid "Cron Schedules"
+msgstr "Cron 일정"
+
+#: src/bootstrap.php:601
+msgid "You are not allowed to add new cron schedules."
+msgstr "새 cron 일정을 추가할 수 없습니다."
+
+#: src/bootstrap.php:156
+msgid "You are not allowed to add new cron events."
+msgstr "새 cron 이벤트를 추가할 수 없습니다."
+
+#: src/Event/Event.php:258 src/schedule.php:110
+msgid "Non-repeating"
+msgstr "반복 없음"
+
+#: src/bootstrap.php:800 src/bootstrap.php:808 src/bootstrap.php:812
+msgid "You are not allowed to run cron events."
+msgstr "크론 이벤트를 실행할 수 없습니다."
+
+#: src/bootstrap.php:348 src/bootstrap.php:436
+msgid "You are not allowed to edit cron events."
+msgstr "크론 이벤트를 편집할 수 없습니다."
+
+#: src/bootstrap.php:648 src/bootstrap.php:703 src/bootstrap.php:749
+msgid "You are not allowed to delete cron events."
+msgstr "크론 이벤트를 삭제할 수 없습니다."
+
+#: src/bootstrap.php:633
+msgid "You are not allowed to delete cron schedules."
+msgstr "크론 일정을 삭제할 수 없습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2276
+msgid "Failed to the delete the cron event %s."
+msgstr "크론 이벤트 %s을(를) 삭제하지 못했습니다."
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2281
+msgid "Failed to the execute the cron event %s."
+msgstr "크론 이벤트 %s을(를) 실행하지 못했습니다."

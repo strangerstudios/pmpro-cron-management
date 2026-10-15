@@ -1,0 +1,1851 @@
+# Copyright (C) 2026 Paid Memberships Pro
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: PMPro Crontrol 2.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/strangerstudios/pmpro-crontrol/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-15T22:36:15+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wp-crontrol\n"
+
+#. Plugin Name of the plugin
+#: pmpro-crontrol.php
+msgid "PMPro Crontrol"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: pmpro-crontrol.php
+msgid "https://github.com/strangerstudios/pmpro-crontrol"
+msgstr ""
+
+#. Description of the plugin
+#: pmpro-crontrol.php
+msgid "Take control of the cron events on your WordPress website or Paid Memberships Pro site. A fork of WP Crontrol without the third-party plugin promotions."
+msgstr ""
+
+#. Author of the plugin
+#: pmpro-crontrol.php
+msgid "Paid Memberships Pro"
+msgstr ""
+
+#. Author URI of the plugin
+#: pmpro-crontrol.php
+msgid "https://www.paidmembershipspro.com"
+msgstr ""
+
+#: src/abilities.php:62
+msgid "Logging is on, but the cron event logs are being upgraded. Try again in a few minutes."
+msgstr ""
+
+#: src/abilities.php:65
+msgid "Logging is off. Turn it on for the cron events you want to watch."
+msgstr ""
+
+#: src/abilities.php:79
+#: src/bootstrap.php:1122
+msgid "Cron"
+msgstr ""
+
+#: src/abilities.php:80
+msgid "View, run, and pause cron events, and read their logs, with WP Crontrol."
+msgstr ""
+
+#: src/abilities.php:101
+msgid "The hook name of the cron event."
+msgstr ""
+
+#: src/abilities.php:106
+msgid "The signature of the cron event, from the list of events."
+msgstr ""
+
+#: src/abilities.php:113
+msgid "List cron events"
+msgstr ""
+
+#: src/abilities.php:114
+msgid "Lists scheduled cron events with their next run time, schedule, actions, and whether they are paused, late, logged, or have no action. Filter by hook name or type."
+msgstr ""
+
+#: src/abilities.php:120
+msgid "Only events whose hook name contains this text."
+msgstr ""
+
+#: src/abilities.php:126
+msgid "Which events to list."
+msgstr ""
+
+#: src/abilities.php:148
+msgid "Get a cron event"
+msgstr ""
+
+#: src/abilities.php:149
+msgid "Returns the details of one cron event, including the callbacks attached to its hook."
+msgstr ""
+
+#: src/abilities.php:161
+msgid "List cron schedules"
+msgstr ""
+
+#: src/abilities.php:162
+msgid "Lists the cron schedules (intervals) available on this site."
+msgstr ""
+
+#: src/abilities.php:174
+msgid "Run a cron event now"
+msgstr ""
+
+#: src/abilities.php:175
+msgid "Runs a cron event now, the same way as Run now on the Cron Events screen. It runs in the background through WP-Cron, so check the logs for the outcome. The event keeps its normal schedule."
+msgstr ""
+
+#: src/abilities.php:192
+msgid "Pause a cron event hook"
+msgstr ""
+
+#: src/abilities.php:193
+msgid "Pauses every event with this hook name. Paused events stay scheduled but do nothing when they run, until the hook is resumed."
+msgstr ""
+
+#: src/abilities.php:209
+msgid "Resume a cron event hook"
+msgstr ""
+
+#: src/abilities.php:210
+msgid "Resumes a paused cron event hook, so its events do their work again."
+msgstr ""
+
+#: src/abilities.php:226
+msgid "List cron event logs"
+msgstr ""
+
+#: src/abilities.php:227
+msgid "Lists recent runs of logged cron events, newest first, with their status, duration, and first error. Only events with logging turned on are recorded."
+msgstr ""
+
+#: src/abilities.php:233
+msgid "Only runs of this hook."
+msgstr ""
+
+#: src/abilities.php:244
+msgid "How far back to look, in hours."
+msgstr ""
+
+#: src/abilities.php:249
+msgid "Only runs older than this log ID, for the next page."
+msgstr ""
+
+#: src/abilities.php:266
+msgid "Get a cron event log"
+msgstr ""
+
+#: src/abilities.php:267
+msgid "Returns everything recorded for one run of a logged cron event: errors, log messages, duration, emails, HTTP requests, and database queries."
+msgstr ""
+
+#: src/abilities.php:284
+msgid "Get cron insights"
+msgstr ""
+
+#: src/abilities.php:285
+msgid "Summarises logged cron event runs over the last 7 days: runs, failures, and the slowest hooks."
+msgstr ""
+
+#: src/abilities.php:297
+msgid "Turn logging on or off for a hook"
+msgstr ""
+
+#: src/abilities.php:298
+msgid "Turns cron event logging on or off for one hook. While logging is on, each run of the hook is recorded in the cron logs."
+msgstr ""
+
+#: src/abilities.php:305
+msgid "True to log the hook, false to stop logging it."
+msgstr ""
+
+#: src/abilities.php:428
+#: src/abilities.php:441
+msgid "This hook can’t be paused or resumed."
+msgstr ""
+
+#: src/abilities.php:445
+#: src/abilities.php:985
+msgid "There are no scheduled cron events with this hook name."
+msgstr ""
+
+#. translators: %s: Name of the PHP cron event
+#. translators: %s: Details about the PHP cron event.
+#: src/abilities.php:489
+#: src/Event/PHPCronEvent.php:73
+#: src/Event/PHPCronEvent.php:91
+#, php-format
+msgid "PHP cron event (%s)"
+msgstr ""
+
+#. translators: %s: Name of the PHP cron event
+#: src/abilities.php:489
+#: src/bootstrap.php:1952
+#: src/Event/PHPCronEvent.php:96
+#: src/Pro/Table.php:746
+msgid "PHP cron event"
+msgstr ""
+
+#. translators: %s: Name of the URL cron event
+#. translators: %s: Details about the URL cron event.
+#: src/abilities.php:493
+#: src/Event/URLCronEvent.php:65
+#: src/Event/URLCronEvent.php:75
+#, php-format
+msgid "URL cron event (%s)"
+msgstr ""
+
+#. translators: %s: Name of the URL cron event
+#: src/abilities.php:493
+#: src/bootstrap.php:1944
+#: src/Event/URLCronEvent.php:78
+#: src/Pro/Table.php:745
+msgid "URL cron event"
+msgstr ""
+
+#: src/abilities.php:639
+#: src/abilities.php:671
+msgid "The cron event could not be found. It may have already run."
+msgstr ""
+
+#: src/abilities.php:682
+msgid "This cron event can’t be run. It may be paused, or it may need to be checked and saved again on the Cron Events screen."
+msgstr ""
+
+#: src/abilities.php:695
+msgid "The event was sent to WP-Cron to run now. It runs in the background, so check the cron logs for the outcome."
+msgstr ""
+
+#: src/abilities.php:861
+msgid "The cron event log could not be found."
+msgstr ""
+
+#: src/abilities.php:976
+msgid "Cron event logging isn’t available on this site right now."
+msgstr ""
+
+#: src/abilities.php:980
+msgid "WP Crontrol’s own maintenance events can’t be logged."
+msgstr ""
+
+#: src/ai.php:17
+#: src/bootstrap.php:1060
+#: src/bootstrap.php:1061
+#: src/bootstrap.php:1085
+#: src/bootstrap.php:2534
+msgid "Cron AI"
+msgstr ""
+
+#: src/ai.php:30
+msgid "Let an AI assistant check and manage this site’s cron events for you. WP Crontrol makes its features available through the WordPress Abilities API, so a connected assistant can use them with the same permissions as your account."
+msgstr ""
+
+#. translators: %s: WordPress version number
+#: src/ai.php:39
+#, php-format
+msgid "This site runs WordPress %s. The Abilities API needs WordPress 6.9 or later, so these abilities are not available until WordPress is updated."
+msgstr ""
+
+#. translators: %s: Number of abilities
+#: src/ai.php:51
+#, php-format
+msgid "%s cron ability is available on this site."
+msgid_plural "%s cron abilities are available on this site."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/ai.php:62
+msgid "Things you can ask"
+msgstr ""
+
+#: src/ai.php:64
+msgid "“Which cron events failed this week, and why?”"
+msgstr ""
+
+#: src/ai.php:65
+msgid "“Run the backup event now and tell me if it worked.”"
+msgstr ""
+
+#: src/ai.php:66
+msgid "“Pause the newsletter hook until Monday.”"
+msgstr ""
+
+#: src/ai.php:67
+msgid "“Which events are late, or have nothing attached to them?”"
+msgstr ""
+
+#: src/ai.php:68
+msgid "“Turn on logging for the WooCommerce events and show me the slowest ones.”"
+msgstr ""
+
+#: src/ai.php:72
+msgid "What an assistant can do"
+msgstr ""
+
+#: src/ai.php:80
+msgid "Makes changes"
+msgstr ""
+
+#: src/ai.php:93
+msgid "An assistant can’t create, edit, or delete PHP or URL cron events, and running a PHP cron event also needs permission to edit files. Every action uses your account’s permissions."
+msgstr ""
+
+#: src/ai.php:99
+msgid "Connect an AI assistant"
+msgstr ""
+
+#: src/ai.php:100
+msgid "Connect an AI assistant that supports the WordPress Abilities API, then ask it about your cron events."
+msgstr ""
+
+#: src/ai.php:103
+msgid "These abilities also work with any other MCP client or AI tool that supports the WordPress Abilities API."
+msgstr ""
+
+#. translators: 1: Site name, 2: Number of failed runs
+#: src/alerts.php:367
+#, php-format
+msgid "[%1$s] Cron events failed in the last day (%2$s)"
+msgstr ""
+
+#. translators: 1: Site name, 2: Hook name
+#: src/alerts.php:370
+#, php-format
+msgid "[%1$s] Cron event failed: %2$s"
+msgstr ""
+
+#. translators: 1: Site name, 2: Number of hooks
+#: src/alerts.php:373
+#, php-format
+msgid "[%1$s] %2$s cron events failed"
+msgstr ""
+
+#: src/alerts.php:378
+msgid "These logged cron events failed on your site in the last day:"
+msgstr ""
+
+#: src/alerts.php:379
+msgid "A logged cron event failed on your site:"
+msgstr ""
+
+#. translators: 1: Hook name, 2: Date and time
+#. translators: 1: Date, 2: Time
+#: src/alerts.php:385
+#: src/bootstrap.php:2916
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: src/alerts.php:389
+msgid "Status: fatal error"
+msgstr ""
+
+#: src/alerts.php:389
+msgid "Status: errored"
+msgstr ""
+
+#. translators: %s: Error message
+#: src/alerts.php:393
+#, php-format
+msgid "Error: %s"
+msgstr ""
+
+#. translators: %s: Number of failures
+#: src/alerts.php:409
+#, php-format
+msgid "And %s more."
+msgstr ""
+
+#: src/alerts.php:415
+msgid "You get this daily summary because cron alerts are turned on in WP Crontrol. Change who gets them, or turn them off:"
+msgstr ""
+
+#: src/alerts.php:416
+msgid "You get this email because cron alerts are turned on in WP Crontrol. You get at most one email an hour for each event. Change who gets them, or turn them off:"
+msgstr ""
+
+#: src/alerts.php:459
+msgid "WordPress could not send the email."
+msgstr ""
+
+#: src/alerts.php:499
+msgid "You are not allowed to change cron alerts."
+msgstr ""
+
+#. translators: %s: Site name
+#: src/alerts.php:523
+#, php-format
+msgid "[%s] Test cron alert from WP Crontrol"
+msgstr ""
+
+#: src/alerts.php:524
+msgid "This is a test email from WP Crontrol. If you can read it, cron alerts from this site will reach you."
+msgstr ""
+
+#: src/alerts.php:551
+#: src/bootstrap.php:1053
+#: src/bootstrap.php:1054
+#: src/bootstrap.php:1084
+#: src/bootstrap.php:2529
+msgid "Cron Alerts"
+msgstr ""
+
+#: src/alerts.php:555
+msgid "Alert settings saved."
+msgstr ""
+
+#: src/alerts.php:557
+msgid "Test email sent. Check the inbox, and the spam folder, of each recipient."
+msgstr ""
+
+#: src/alerts.php:565
+msgid "The test email failed to send."
+msgstr ""
+
+#: src/alerts.php:566
+msgid "The last cron alert failed to send."
+msgstr ""
+
+#. translators: %s: Error message
+#: src/alerts.php:569
+#, php-format
+msgid "WordPress reported: %s"
+msgstr ""
+
+#: src/alerts.php:577
+msgid "Get an email when a logged cron event errors or hits a fatal error."
+msgstr ""
+
+#. translators: %s: URL of the Cron Logs screen
+#: src/alerts.php:585
+#, php-format
+msgid "Alerts only cover events that are logged, and logging is off for every event. <a href=\"%s\">Turn on logging</a> for the events you want alerts about."
+msgstr ""
+
+#. translators: %s: Number of logged events
+#: src/alerts.php:596
+#, php-format
+msgid "Alerts cover the %s event hook that has logging turned on."
+msgid_plural "Alerts cover the %s event hooks that have logging turned on."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/alerts.php:608
+msgid "Alerts"
+msgstr ""
+
+#: src/alerts.php:612
+msgid "Email me when a logged cron event fails"
+msgstr ""
+
+#: src/alerts.php:617
+msgid "Send to"
+msgstr ""
+
+#: src/alerts.php:620
+msgid "Email addresses separated by commas, up to ten. Leave empty to use the site’s admin email address."
+msgstr ""
+
+#: src/alerts.php:624
+msgid "How often"
+msgstr ""
+
+#: src/alerts.php:629
+msgid "As they happen, at most one email an hour for each event"
+msgstr ""
+
+#: src/alerts.php:633
+msgid "One summary a day"
+msgstr ""
+
+#: src/alerts.php:639
+msgid "Save Alert Settings"
+msgstr ""
+
+#: src/alerts.php:642
+msgid "Check that alerts reach you"
+msgstr ""
+
+#. translators: %s: Comma-separated email addresses
+#: src/alerts.php:647
+#, php-format
+msgid "Send a test email to %s."
+msgstr ""
+
+#: src/alerts.php:648
+msgid "nobody: add an email address above"
+msgstr ""
+
+#: src/alerts.php:655
+msgid "Send Test Email"
+msgstr ""
+
+#: src/bootstrap.php:156
+msgid "You are not allowed to add new cron events."
+msgstr ""
+
+#: src/bootstrap.php:163
+#: src/bootstrap.php:285
+msgid "You are not allowed to add new PHP cron events."
+msgstr ""
+
+#: src/bootstrap.php:166
+#: src/bootstrap.php:222
+msgid "You are not allowed to add new URL cron events."
+msgstr ""
+
+#: src/bootstrap.php:268
+#: src/bootstrap.php:451
+msgid "URL Cron"
+msgstr ""
+
+#: src/bootstrap.php:331
+#: src/bootstrap.php:533
+msgid "PHP Cron"
+msgstr ""
+
+#: src/bootstrap.php:348
+#: src/bootstrap.php:436
+msgid "You are not allowed to edit cron events."
+msgstr ""
+
+#: src/bootstrap.php:356
+#: src/bootstrap.php:519
+msgid "You are not allowed to edit PHP cron events."
+msgstr ""
+
+#: src/bootstrap.php:360
+msgid "You are not allowed to edit URL cron events."
+msgstr ""
+
+#: src/bootstrap.php:601
+msgid "You are not allowed to add new cron schedules."
+msgstr ""
+
+#: src/bootstrap.php:633
+msgid "You are not allowed to delete cron schedules."
+msgstr ""
+
+#: src/bootstrap.php:648
+#: src/bootstrap.php:703
+#: src/bootstrap.php:749
+msgid "You are not allowed to delete cron events."
+msgstr ""
+
+#: src/bootstrap.php:712
+#: src/bootstrap.php:757
+msgid "You are not allowed to delete PHP cron events."
+msgstr ""
+
+#: src/bootstrap.php:760
+msgid "You are not allowed to delete URL cron events."
+msgstr ""
+
+#: src/bootstrap.php:800
+#: src/bootstrap.php:808
+#: src/bootstrap.php:812
+msgid "You are not allowed to run cron events."
+msgstr ""
+
+#: src/bootstrap.php:844
+#: src/bootstrap.php:850
+#: src/bootstrap.php:891
+#: src/bootstrap.php:897
+msgid "You are not allowed to pause or resume cron events."
+msgstr ""
+
+#: src/bootstrap.php:938
+msgid "You are not allowed to export cron events."
+msgstr ""
+
+#: src/bootstrap.php:960
+msgid "Could not save CSV file."
+msgstr ""
+
+#: src/bootstrap.php:1032
+#: src/bootstrap.php:1033
+#: src/bootstrap.php:1086
+#: src/bootstrap.php:1312
+#: src/bootstrap.php:1415
+#: src/bootstrap.php:2539
+msgid "Cron Schedules"
+msgstr ""
+
+#: src/bootstrap.php:1039
+#: src/bootstrap.php:1040
+#: src/bootstrap.php:1081
+#: src/bootstrap.php:1307
+#: src/bootstrap.php:2361
+#: src/bootstrap.php:2521
+msgid "Cron Events"
+msgstr ""
+
+#: src/bootstrap.php:1046
+#: src/bootstrap.php:1047
+#: src/bootstrap.php:1082
+#: src/bootstrap.php:1317
+#: src/bootstrap.php:2525
+#: src/Pro/bootstrap.php:593
+#: src/Pro/bootstrap.php:615
+msgid "Cron Logs"
+msgstr ""
+
+#: src/bootstrap.php:1083
+#: src/Pro/bootstrap.php:69
+#: src/Pro/bootstrap.php:335
+#: src/Pro/bootstrap.php:336
+#: src/Pro/bootstrap.php:783
+#: src/Pro/bootstrap.php:807
+msgid "Cron Insights"
+msgstr ""
+
+#: src/bootstrap.php:1121
+msgid "WP Crontrol"
+msgstr ""
+
+#: src/bootstrap.php:1241
+msgid "There are several places to get help with issues relating to WP-Cron:"
+msgstr ""
+
+#. translators: 1: URL to the documentation, 2: WP Crontrol
+#: src/bootstrap.php:1247
+#, php-format
+msgid "<a href=\"%1$s\">Read the %2$s website</a> which contains information about events that have missed their schedule, problems with spawning a call to the WP-Cron system, and much more."
+msgstr ""
+
+#. translators: %s: URL to the documentation
+#: src/bootstrap.php:1262
+#, php-format
+msgid "<a href=\"%s\">Read the Frequently Asked Questions (FAQ)</a> which cover many common questions and answers."
+msgstr ""
+
+#. translators: %s: URL to the documentation
+#: src/bootstrap.php:1276
+#, php-format
+msgid "<a href=\"%s\">Read the WordPress.org documentation on WP-Cron</a> for more technical details about the WP-Cron system for developers."
+msgstr ""
+
+#: src/bootstrap.php:1290
+#: src/bootstrap.php:1322
+#: src/bootstrap.php:1340
+#: src/event-list-table.php:723
+#: src/event-list-table.php:736
+#: src/event-list-table.php:765
+#: src/event-list-table.php:803
+#: src/Pro/Table.php:377
+msgid "Help"
+msgstr ""
+
+#. translators: %s: The name of the cron schedule.
+#: src/bootstrap.php:1374
+#, php-format
+msgid "Deleted the cron schedule %s."
+msgstr ""
+
+#. translators: %s: The name of the cron schedule.
+#: src/bootstrap.php:1379
+#, php-format
+msgid "Added the cron schedule %s."
+msgstr ""
+
+#. translators: %s: The name of the cron schedule.
+#: src/bootstrap.php:1384
+#, php-format
+msgid "A schedule with the name %s already exists."
+msgstr ""
+
+#: src/bootstrap.php:1423
+#: src/bootstrap.php:1445
+msgid "Add Cron Schedule"
+msgstr ""
+
+#: src/bootstrap.php:1424
+msgid "Adding a new schedule allows you to schedule recurring events at the given interval."
+msgstr ""
+
+#: src/bootstrap.php:1428
+msgid "Interval (seconds)"
+msgstr ""
+
+#: src/bootstrap.php:1434
+#: src/schedule-list-table.php:76
+msgid "Display Name"
+msgstr ""
+
+#: src/bootstrap.php:1440
+#: src/schedule-list-table.php:74
+msgid "Internal Name"
+msgstr ""
+
+#. translators: %s: The name of the plugin that controls the running of cron events.
+#: src/bootstrap.php:1512
+#, php-format
+msgid "WP-Cron spawning is being managed by the %s plugin."
+msgstr ""
+
+#. translators: %s: The name of the PHP constant that is set.
+#: src/bootstrap.php:1521
+#, php-format
+msgid "The %s constant is set to true. WP-Cron spawning is disabled."
+msgstr ""
+
+#. translators: %s: The name of the PHP constant that is set.
+#: src/bootstrap.php:1529
+#, php-format
+msgid "The %s constant is set to true."
+msgstr ""
+
+#. translators: %s: The HTTP response code.
+#: src/bootstrap.php:1561
+#, php-format
+msgid "Unexpected HTTP response code: %s"
+msgstr ""
+
+#: src/bootstrap.php:1593
+msgid "PHP default timezone is not set to UTC. This may cause issues with cron event timings."
+msgstr ""
+
+#: src/bootstrap.php:1595
+#: src/bootstrap.php:1625
+msgid "More information"
+msgstr ""
+
+#. translators: %s: Error message text.
+#: src/bootstrap.php:1621
+#, php-format
+msgid "There was a problem spawning a call to the WP-Cron system on your site. This means WP-Cron events on your site may not work. The problem was: %s"
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:1786
+#, php-format
+msgid "The %s event you are trying to edit does not exist."
+msgstr ""
+
+#. translators: 1: The time since the event was scheduled, 2: The URL to search for the event.
+#: src/bootstrap.php:1792
+#, php-format
+msgid "The event probably ran %1$s ago. <a href=\"%2$s\">Click here to see if it was rescheduled</a>."
+msgstr ""
+
+#: src/bootstrap.php:1843
+msgid "Update Event"
+msgstr ""
+
+#: src/bootstrap.php:1851
+msgid "Add Event"
+msgstr ""
+
+#: src/bootstrap.php:1881
+#: src/bootstrap.php:2593
+msgid "Edit Cron Event"
+msgstr ""
+
+#: src/bootstrap.php:1883
+#: src/bootstrap.php:2363
+#: src/bootstrap.php:2588
+msgid "Add Cron Event"
+msgstr ""
+
+#: src/bootstrap.php:1927
+#: src/bootstrap.php:1932
+msgid "Event Type"
+msgstr ""
+
+#: src/bootstrap.php:1937
+msgid "Standard cron event"
+msgstr ""
+
+#: src/bootstrap.php:1967
+msgid "URL"
+msgstr ""
+
+#: src/bootstrap.php:1976
+msgid "The URL in this event needs to be checked for integrity. This event will not run until you re-save it."
+msgstr ""
+
+#: src/bootstrap.php:1978
+#: src/bootstrap.php:2037
+#: src/event-list-table.php:108
+msgid "Read what to do"
+msgstr ""
+
+#: src/bootstrap.php:1994
+msgid "HTTP Method"
+msgstr ""
+
+#: src/bootstrap.php:2010
+#: src/bootstrap.php:2062
+msgid "Display Name (optional)"
+msgstr ""
+
+#: src/bootstrap.php:2026
+#: src/Event/PHPCronEvent.php:118
+msgid "PHP Code"
+msgstr ""
+
+#: src/bootstrap.php:2035
+msgid "The PHP code in this event needs to be checked for integrity. This event will not run until you re-save it."
+msgstr ""
+
+#. translators: The PHP tag name
+#: src/bootstrap.php:2050
+#, php-format
+msgid "The opening %s tag must not be included."
+msgstr ""
+
+#: src/bootstrap.php:2078
+#: src/bootstrap.php:2081
+msgid "Hook Name"
+msgstr ""
+
+#: src/bootstrap.php:2098
+msgid "Arguments (optional)"
+msgstr ""
+
+#: src/bootstrap.php:2107
+#: src/event-list-table.php:698
+msgid "This event has invalid arguments and will not run correctly."
+msgstr ""
+
+#. translators: %s: The PHP type of the invalid value
+#: src/bootstrap.php:2110
+#, php-format
+msgid "Arguments should be an array but %s was provided. The event will likely fail with a PHP error when it attempts to run."
+msgstr ""
+
+#. translators: 1, 2, and 3: Example values for an input field.
+#: src/bootstrap.php:2127
+#, php-format
+msgid "Use a JSON encoded array, e.g. %1$s, %2$s, or %3$s"
+msgstr ""
+
+#: src/bootstrap.php:2142
+#: src/bootstrap.php:2159
+#: src/event-list-table.php:244
+msgid "Next Run"
+msgstr ""
+
+#: src/bootstrap.php:2164
+#: src/event-list-table.php:814
+#: src/Pro/bootstrap.php:538
+msgid "Now"
+msgstr ""
+
+#: src/bootstrap.php:2170
+msgid "Tomorrow"
+msgstr ""
+
+#. translators: %s: An input field for specifying a date and time
+#: src/bootstrap.php:2179
+#, php-format
+msgid "At this time: %s"
+msgstr ""
+
+#. translators: %s Timezone name.
+#: src/bootstrap.php:2200
+#, php-format
+msgid "Timezone: %s"
+msgstr ""
+
+#: src/bootstrap.php:2210
+#: src/event-list-table.php:245
+msgctxt "noun"
+msgid "Schedule"
+msgstr ""
+
+#. translators: 1: Date and time, 2: Timezone
+#: src/bootstrap.php:2226
+#: src/bootstrap.php:2384
+#, php-format
+msgid "Site time when page loaded: %1$s, %2$s"
+msgstr ""
+
+#: src/bootstrap.php:2235
+msgid "You cannot add, edit, or delete PHP cron events because your user account does not have the ability to edit files."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2251
+#, php-format
+msgid "Scheduled the cron event %s to run now. The original event will not be affected."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2256
+#, php-format
+msgid "Deleted all %s cron events."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2261
+#, php-format
+msgid "There are no %s cron events to delete."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2266
+#, php-format
+msgid "Saved the cron event %s."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2271
+#, php-format
+msgid "Deleted the cron event %s."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2276
+#, php-format
+msgid "Failed to the delete the cron event %s."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2281
+#, php-format
+msgid "Failed to the execute the cron event %s."
+msgstr ""
+
+#: src/bootstrap.php:2285
+msgid "Deleted the selected cron events."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2290
+#, php-format
+msgid "Failed to save the cron event %s."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2295
+#, php-format
+msgid "Paused the %s hook."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2300
+#, php-format
+msgid "Resumed the %s hook."
+msgstr ""
+
+#: src/bootstrap.php:2304
+msgid "URL cron event saved."
+msgstr ""
+
+#: src/bootstrap.php:2308
+msgid "PHP cron event saved."
+msgstr ""
+
+#: src/bootstrap.php:2312
+msgid "An unknown error occurred."
+msgstr ""
+
+#: src/bootstrap.php:2371
+msgid "Search Hook Names"
+msgstr ""
+
+#: src/bootstrap.php:2549
+msgid "Secondary menu"
+msgstr ""
+
+#: src/bootstrap.php:2566
+msgid "New"
+msgstr ""
+
+#. translators: A Closure is a type of PHP function. 1: File name, 2: Line number
+#: src/bootstrap.php:2696
+#, php-format
+msgid "Closure in %1$s at line %2$d"
+msgstr ""
+
+#. translators: %s: Function name
+#: src/bootstrap.php:2719
+#, php-format
+msgid "Function %s does not exist"
+msgstr ""
+
+#. translators: %s: The number of years in an interval of time.
+#: src/bootstrap.php:2801
+#, php-format
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: The number of months in an interval of time.
+#: src/bootstrap.php:2803
+#, php-format
+msgid "%s month"
+msgid_plural "%s months"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: The number of weeks in an interval of time.
+#: src/bootstrap.php:2805
+#, php-format
+msgid "%s week"
+msgid_plural "%s weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: The number of days in an interval of time.
+#: src/bootstrap.php:2807
+#, php-format
+msgid "%s day"
+msgid_plural "%s days"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: The number of hours in an interval of time.
+#: src/bootstrap.php:2809
+#, php-format
+msgid "%s hour"
+msgid_plural "%s hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: The number of minutes in an interval of time.
+#: src/bootstrap.php:2811
+#: src/bootstrap.php:2824
+#, php-format
+msgid "%s minute"
+msgid_plural "%s minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: The number of seconds in an interval of time.
+#: src/bootstrap.php:2813
+#, php-format
+msgid "%s second"
+msgid_plural "%s seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/bootstrap.php:2817
+msgid "now"
+msgstr ""
+
+#. translators: Time format for cron event times, see https://www.php.net/manual/datetime.format.php
+#: src/bootstrap.php:2879
+msgctxt "cron event time format"
+msgid "g:i a"
+msgstr ""
+
+#. translators: %s: Time
+#: src/bootstrap.php:2898
+#, php-format
+msgid "Today at %s"
+msgstr ""
+
+#. translators: %s: Time
+#: src/bootstrap.php:2904
+#, php-format
+msgid "Tomorrow at %s"
+msgstr ""
+
+#. translators: %s: Time
+#: src/bootstrap.php:2910
+#, php-format
+msgid "Yesterday at %s"
+msgstr ""
+
+#. translators: Date format for cron event dates, see https://www.php.net/manual/datetime.format.php
+#: src/bootstrap.php:2918
+msgctxt "cron event date format"
+msgid "F jS"
+msgstr ""
+
+#: src/bootstrap.php:2973
+msgid "Cron event logs"
+msgstr ""
+
+#: src/bootstrap.php:2975
+msgid "Cron events can now be logged each time they run, for free. Logging is off until you turn it on for an event."
+msgstr ""
+
+#: src/bootstrap.php:2979
+msgid "More information on the Cron Logs tab."
+msgstr ""
+
+#: src/bootstrap.php:3000
+msgid "Are you sure you want to delete this event?"
+msgstr ""
+
+#: src/bootstrap.php:3001
+msgid "Are you sure you want to delete all events with this hook?"
+msgstr ""
+
+#: src/bootstrap.php:3002
+msgid "Could not dismiss this. Try again"
+msgstr ""
+
+#. translators: %s: Message text.
+#: src/bootstrap.php:3251
+#: src/bootstrap.php:3357
+#, php-format
+msgid "WP Crontrol: %s"
+msgstr ""
+
+#: src/coexist.php:39
+msgid "PMPro Crontrol is not running because WP Crontrol is active. Deactivate one of the two plugins; they cannot run together."
+msgstr ""
+
+#: src/event-list-table.php:106
+msgid "One or more of your cron events needs to be checked for integrity. These events will not run until you check and re-save them."
+msgstr ""
+
+#: src/event-list-table.php:243
+#: src/Pro/Table.php:325
+#: src/Pro/Table.php:501
+msgid "Hook"
+msgstr ""
+
+#: src/event-list-table.php:246
+#: src/Pro/Table.php:326
+#: src/Pro/Table.php:518
+#: src/Pro/Table.php:520
+msgid "Action"
+msgstr ""
+
+#: src/event-list-table.php:294
+#: src/event-list-table.php:482
+#: src/event-list-table.php:561
+#: src/schedule-list-table.php:123
+msgid "Delete"
+msgstr ""
+
+#: src/event-list-table.php:311
+msgid "All events"
+msgstr ""
+
+#: src/event-list-table.php:312
+msgid "Events with no action"
+msgstr ""
+
+#: src/event-list-table.php:313
+msgid "WooCommerce events"
+msgstr ""
+
+#: src/event-list-table.php:314
+msgid "WordPress core events"
+msgstr ""
+
+#: src/event-list-table.php:315
+msgid "Custom events"
+msgstr ""
+
+#: src/event-list-table.php:316
+msgid "PHP events"
+msgstr ""
+
+#: src/event-list-table.php:317
+msgid "URL events"
+msgstr ""
+
+#: src/event-list-table.php:318
+msgid "Paused events"
+msgstr ""
+
+#: src/event-list-table.php:319
+msgid "Duplicated events"
+msgstr ""
+
+#: src/event-list-table.php:383
+msgid "Export"
+msgstr ""
+
+#: src/event-list-table.php:498
+msgid "Check and edit"
+msgstr ""
+
+#: src/event-list-table.php:500
+msgid "Edit"
+msgstr ""
+
+#: src/event-list-table.php:521
+msgid "Run now"
+msgstr ""
+
+#. translators: Resume is a verb
+#: src/event-list-table.php:534
+msgid "Resume this hook"
+msgstr ""
+
+#. translators: Pause is a verb
+#: src/event-list-table.php:545
+msgid "Pause this hook"
+msgstr ""
+
+#. translators: %s: The number of events with this hook
+#: src/event-list-table.php:581
+#, php-format
+msgid "Delete all events with this hook (%s)"
+msgstr ""
+
+#: src/event-list-table.php:631
+msgid "Select this row"
+msgstr ""
+
+#. translators: State of a cron event, adjective
+#: src/event-list-table.php:673
+msgid "Disabled"
+msgstr ""
+
+#: src/event-list-table.php:678
+msgid "Needs checking"
+msgstr ""
+
+#. translators: State of a cron event, adjective
+#: src/event-list-table.php:691
+msgid "Paused"
+msgstr ""
+
+#: src/event-list-table.php:705
+#: src/Pro/Table.php:364
+msgid "View arguments"
+msgstr ""
+
+#: src/event-list-table.php:727
+msgid "PHP cron events are disabled"
+msgstr ""
+
+#: src/event-list-table.php:740
+msgid "URL cron events are disabled"
+msgstr ""
+
+#: src/event-list-table.php:769
+#: src/Pro/Table.php:381
+#: src/Pro/Table.php:510
+#: src/Pro/Table.php:520
+#: src/Pro/Table.php:568
+#: src/Pro/Table.php:574
+msgid "None"
+msgstr ""
+
+#: src/event-list-table.php:784
+msgid "Immediately"
+msgstr ""
+
+#. translators: %s: Time period, for example "8 minutes"
+#: src/event-list-table.php:797
+#: src/Pro/bootstrap.php:1069
+#: src/Pro/Table.php:338
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#. translators: %s: Time period, for example "8 minutes"
+#: src/event-list-table.php:818
+#, php-format
+msgid "In %s"
+msgstr ""
+
+#. translators: 1: The name of the configuration constant, 2: The value of the configuration constant
+#: src/event-list-table.php:852
+#: src/schedule-list-table.php:171
+#, php-format
+msgid "This interval is less than the %1$s constant which is set to %2$s seconds. Events that use it may not run on time."
+msgstr ""
+
+#: src/event-list-table.php:870
+msgid "There are currently no scheduled cron events."
+msgstr ""
+
+#: src/event-list-table.php:872
+msgid "No matching cron events."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/event.php:64
+#: src/event.php:371
+#, php-format
+msgid "The cron event %s could not be found."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/event.php:107
+#, php-format
+msgid "Failed to schedule the cron event %s."
+msgstr ""
+
+#: src/event.php:136
+msgid "Invalid timestamp provided."
+msgstr ""
+
+#. translators: %s: The error message.
+#: src/event.php:188
+#, php-format
+msgid "The cron event was saved but contains an error: %s."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/event.php:240
+#, php-format
+msgid "Failed to pause the cron event %s."
+msgstr ""
+
+#. translators: %s: The name of the cron event.
+#: src/event.php:271
+#, php-format
+msgid "Failed to resume the cron event %s."
+msgstr ""
+
+#. translators: %s: The URL that failed validation.
+#: src/event.php:700
+#, php-format
+msgid "The URL \"%s\" is not allowed"
+msgstr ""
+
+#: src/Event/CoreCronEvent.php:38
+msgid "This is a WordPress core event and cannot be deleted"
+msgstr ""
+
+#: src/Event/Event.php:258
+#: src/schedule.php:110
+msgid "Non-repeating"
+msgstr ""
+
+#. translators: %s: Schedule name
+#: src/Event/Event.php:270
+#, php-format
+msgid "Unknown schedule (%s)"
+msgstr ""
+
+#. translators: 1: Line number, 2: Error message text
+#: src/Event/PHPCronEvent.php:109
+#, php-format
+msgid "Line %1$s: %2$s"
+msgstr ""
+
+#: src/Pro/bootstrap.php:358
+#: src/Pro/bootstrap.php:398
+#: src/Pro/bootstrap.php:428
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#. translators: %s: The name of a cron event hook.
+#: src/Pro/bootstrap.php:478
+#, php-format
+msgid "Logging has been enabled for the %s hook."
+msgstr ""
+
+#. translators: %s: The name of a cron event hook.
+#: src/Pro/bootstrap.php:485
+#, php-format
+msgid "Logging has been disabled for the %s hook."
+msgstr ""
+
+#: src/Pro/bootstrap.php:539
+msgid "Total"
+msgstr ""
+
+#: src/Pro/bootstrap.php:540
+msgid "Busiest hour of the week"
+msgstr ""
+
+#: src/Pro/bootstrap.php:541
+msgid "Selected hour"
+msgstr ""
+
+#: src/Pro/bootstrap.php:542
+#: src/Pro/Table.php:566
+msgid "Errors"
+msgstr ""
+
+#: src/Pro/bootstrap.php:543
+msgid "Baseline average"
+msgstr ""
+
+#: src/Pro/bootstrap.php:544
+msgid "Recent average"
+msgstr ""
+
+#: src/Pro/bootstrap.php:545
+msgid "ms"
+msgstr ""
+
+#: src/Pro/bootstrap.php:546
+msgid "No metrics have been recorded yet."
+msgstr ""
+
+#: src/Pro/bootstrap.php:547
+msgid "No hook slowdowns detected in the available history."
+msgstr ""
+
+#: src/Pro/bootstrap.php:575
+msgid "Are you sure you want to clear all logs? This action cannot be undone."
+msgstr ""
+
+#. translators: %s: The name of a cron event hook.
+#: src/Pro/bootstrap.php:577
+#, php-format
+msgid "Are you sure you want to clear all logs for the %s hook? This action cannot be undone."
+msgstr ""
+
+#: src/Pro/bootstrap.php:598
+msgid "Logging is off. Turn it on for the cron events you want to watch, either below or with the \"Enable logging\" link on the Cron Events screen. Each run of a logged event is recorded here, with its duration, errors, HTTP requests, emails sent, and database queries."
+msgstr ""
+
+#: src/Pro/bootstrap.php:628
+#: src/Pro/Table.php:848
+msgid "All logs have been cleared successfully."
+msgstr ""
+
+#. translators: %s: The name of a cron event hook.
+#: src/Pro/bootstrap.php:636
+#, php-format
+msgid "Logs for the %s hook have been cleared successfully."
+msgstr ""
+
+#: src/Pro/bootstrap.php:641
+msgid "Failed to clear logs. Please try again."
+msgstr ""
+
+#: src/Pro/bootstrap.php:645
+msgid "Logging settings saved successfully."
+msgstr ""
+
+#: src/Pro/bootstrap.php:690
+msgid "Log Settings"
+msgstr ""
+
+#: src/Pro/bootstrap.php:691
+msgid "Select which cron event hooks should have their execution logged."
+msgstr ""
+
+#: src/Pro/bootstrap.php:698
+msgid "No cron event hooks were found."
+msgstr ""
+
+#: src/Pro/bootstrap.php:703
+msgid "Select all"
+msgstr ""
+
+#: src/Pro/bootstrap.php:707
+msgid "Hooks to log"
+msgstr ""
+
+#: src/Pro/bootstrap.php:724
+msgid "Save Logging Settings"
+msgstr ""
+
+#: src/Pro/bootstrap.php:725
+msgid "Log All Plugin Hooks"
+msgstr ""
+
+#: src/Pro/bootstrap.php:727
+msgid "Logging is off by default. \"Log All Plugin Hooks\" turns it on for the scheduled events added by plugins and themes, leaving out WordPress core events and events that run every minute."
+msgstr ""
+
+#: src/Pro/bootstrap.php:732
+msgid "Log Retention"
+msgstr ""
+
+#. translators: 1: Number of days, 2: Number of log entries
+#: src/Pro/bootstrap.php:737
+#, php-format
+msgid "Log entries are kept for %1$s days, up to %2$s entries per site. A daily cron event removes older entries."
+msgstr ""
+
+#. translators: %s: URL of the Cron Logs screen
+#: src/Pro/bootstrap.php:790
+#, php-format
+msgid "Insights are built from cron event logs. <a href=\"%s\">Turn on logging</a> to start collecting them."
+msgstr ""
+
+#: src/Pro/bootstrap.php:813
+msgid "Upcoming weekly view"
+msgstr ""
+
+#: src/Pro/bootstrap.php:819
+msgid "Minutely View"
+msgstr ""
+
+#: src/Pro/bootstrap.php:824
+msgid "Historical metrics"
+msgstr ""
+
+#. translators: %s: The number of errors.
+#: src/Pro/bootstrap.php:833
+#, php-format
+msgid "%s error in the last 7 days"
+msgid_plural "%s errors in the last 7 days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Pro/bootstrap.php:846
+msgid "View error logs"
+msgstr ""
+
+#: src/Pro/bootstrap.php:853
+msgid "Errors (last 7 days)"
+msgstr ""
+
+#: src/Pro/bootstrap.php:858
+msgid "Slowest hooks vs. baseline"
+msgstr ""
+
+#: src/Pro/bootstrap.php:900
+#: src/Pro/bootstrap.php:1064
+msgid "View logs"
+msgstr ""
+
+#: src/Pro/bootstrap.php:913
+msgid "Logging is not enabled for this hook."
+msgstr ""
+
+#: src/Pro/bootstrap.php:915
+#: src/Pro/bootstrap.php:949
+msgid "Enable logging"
+msgstr ""
+
+#: src/Pro/bootstrap.php:948
+msgid "Disable logging"
+msgstr ""
+
+#: src/Pro/bootstrap.php:976
+msgid "Enable logging of this hook"
+msgstr ""
+
+#: src/Pro/bootstrap.php:1024
+msgid "Last Run"
+msgstr ""
+
+#: src/Pro/bootstrap.php:1052
+msgid "Never"
+msgstr ""
+
+#: src/Pro/Insights.php:158
+#: src/Pro/log.php:1097
+msgid "Non-recurring"
+msgstr ""
+
+#: src/Pro/log.php:306
+msgid "The run ended early because an exception was thrown and caught by the code that fired this hook."
+msgstr ""
+
+#. translators: 1: HTTP method, 2: Request URL, 3: Error message
+#: src/Pro/log.php:409
+#, php-format
+msgid "HTTP %1$s request to %2$s failed: %3$s"
+msgstr ""
+
+#. translators: 1: HTTP method, 2: Request URL, 3: HTTP status code
+#: src/Pro/log.php:421
+#: src/Pro/log.php:438
+#, php-format
+msgid "HTTP %1$s request to %2$s returned status code %3$s"
+msgstr ""
+
+#. translators: 1: Action Scheduler action ID, 2: Hook name
+#: src/Pro/log.php:509
+#, php-format
+msgid "Action Scheduler processed action %1$s (%2$s)"
+msgstr ""
+
+#. translators: %s: Action Scheduler action ID
+#: src/Pro/log.php:520
+#, php-format
+msgid "Action Scheduler processed action %s"
+msgstr ""
+
+#. translators: 1: Action Scheduler action ID, 2: Error message
+#: src/Pro/log.php:545
+#, php-format
+msgid "Action Scheduler action %1$s failed: %2$s"
+msgstr ""
+
+#. translators: %s: Job ID
+#: src/Pro/log.php:781
+#, php-format
+msgid "Cavalcade job ID: %s"
+msgstr ""
+
+#. translators: %s: Number of log messages
+#: src/Pro/log.php:883
+#, php-format
+msgid "%s more messages were not kept."
+msgstr ""
+
+#. translators: 1: Number of emails, 2: Error message
+#: src/Pro/log.php:900
+#, php-format
+msgid "%1$s email failed to send: %2$s"
+msgid_plural "%1$s emails failed to send: %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Pro/log.php:902
+msgid "no error message"
+msgstr ""
+
+#: src/Pro/log.php:940
+msgid "The details of this run could not be saved."
+msgstr ""
+
+#. translators: %s: Number of log entries
+#: src/Pro/log.php:1018
+#, php-format
+msgid "%s more entries were not saved."
+msgstr ""
+
+#. translators: %s: Assertion message
+#: src/Pro/logger.php:176
+#, php-format
+msgid "Assertion passed: %s"
+msgstr ""
+
+#: src/Pro/logger.php:180
+msgid "Assertion passed"
+msgstr ""
+
+#. translators: %s: Assertion message
+#: src/Pro/logger.php:188
+#, php-format
+msgid "Assertion failed: %s"
+msgstr ""
+
+#: src/Pro/logger.php:192
+msgid "Assertion failed"
+msgstr ""
+
+#: src/Pro/Table.php:148
+msgid "All"
+msgstr ""
+
+#: src/Pro/Table.php:153
+#: src/Pro/Table.php:404
+msgid "Completed"
+msgstr ""
+
+#: src/Pro/Table.php:154
+#: src/Pro/Table.php:408
+msgid "Errored"
+msgstr ""
+
+#: src/Pro/Table.php:155
+#: src/Pro/Table.php:412
+msgid "Running"
+msgstr ""
+
+#. translators: %s: Number of items.
+#: src/Pro/Table.php:190
+#, php-format
+msgid "More than %s item"
+msgid_plural "More than %s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: Number of items.
+#: src/Pro/Table.php:196
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: Hidden accessibility text.
+#: src/Pro/Table.php:255
+msgid "First page"
+msgstr ""
+
+#. translators: Hidden accessibility text.
+#: src/Pro/Table.php:274
+msgid "Previous page"
+msgstr ""
+
+#. translators: 1: Current page, 2: Total pages.
+#: src/Pro/Table.php:286
+#, php-format
+msgctxt "paging"
+msgid "%1$s of %2$s"
+msgstr ""
+
+#. translators: Hidden accessibility text.
+#: src/Pro/Table.php:309
+msgid "Next page"
+msgstr ""
+
+#: src/Pro/Table.php:324
+#: src/Pro/Table.php:500
+msgid "Started at"
+msgstr ""
+
+#: src/Pro/Table.php:327
+msgid "Status"
+msgstr ""
+
+#: src/Pro/Table.php:328
+#: src/Pro/Table.php:540
+msgid "Duration"
+msgstr ""
+
+#: src/Pro/Table.php:329
+msgid "View"
+msgstr ""
+
+#: src/Pro/Table.php:409
+msgid "Ask your AI assistant why"
+msgstr ""
+
+#: src/Pro/Table.php:463
+msgid "View Details"
+msgstr ""
+
+#. translators: %s: A date and time in UTC
+#: src/Pro/Table.php:494
+#, php-format
+msgid "%s UTC"
+msgstr ""
+
+#: src/Pro/Table.php:506
+#: src/Pro/Table.php:508
+#: src/Pro/Table.php:510
+msgid "Arguments"
+msgstr ""
+
+#: src/Pro/Table.php:543
+msgid "DB queries"
+msgstr ""
+
+#: src/Pro/Table.php:544
+msgid "HTTP API calls"
+msgstr ""
+
+#: src/Pro/Table.php:545
+msgid "Emails sent"
+msgstr ""
+
+#: src/Pro/Table.php:548
+msgid "Emails failed"
+msgstr ""
+
+#: src/Pro/Table.php:552
+msgid "Peak memory"
+msgstr ""
+
+#: src/Pro/Table.php:572
+msgid "Log messages"
+msgstr ""
+
+#: src/Pro/Table.php:593
+msgid "Run details"
+msgstr ""
+
+#: src/Pro/Table.php:594
+msgid "Close"
+msgstr ""
+
+#: src/Pro/Table.php:610
+msgid "An email from this run failed to send."
+msgid_plural "Emails from this run failed to send."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: URL of the Cron AI screen
+#: src/Pro/Table.php:616
+#, php-format
+msgid "Not sure why this failed? <a href=\"%s\">Ask your AI assistant</a> to read this log and the code behind the event."
+msgstr ""
+
+#: src/Pro/Table.php:740
+msgid "Filter by hook"
+msgstr ""
+
+#: src/Pro/Table.php:757
+msgid "All hooks"
+msgstr ""
+
+#: src/Pro/Table.php:784
+msgid "Filter"
+msgstr ""
+
+#: src/Pro/Table.php:828
+msgid "Clear all logs for this hook"
+msgstr ""
+
+#: src/Pro/Table.php:830
+msgid "Clear All Logs"
+msgstr ""
+
+#. translators: %s: The hook name that was filtered for
+#: src/Pro/Table.php:853
+#, php-format
+msgid "No matching %s cron event logs found."
+msgstr ""
+
+#: src/Pro/Table.php:857
+msgid "No matching cron event logs found."
+msgstr ""
+
+#: src/Pro/Table.php:859
+msgid "No cron event logs found yet."
+msgstr ""
+
+#. translators: %s: URL of the Cron Events screen
+#: src/Pro/Table.php:863
+#, php-format
+msgid "Each run of a logged event appears here. Turn logging on for an event with its Enable logging link on the <a href=\"%s\">Cron Events screen</a>, or in the settings below, then use Run now to see a first entry."
+msgstr ""
+
+#. translators: %s: URL of the Cron AI screen
+#: src/Pro/Table.php:870
+#, php-format
+msgid "An AI assistant can read these logs for you. <a href=\"%s\">See Cron AI</a>."
+msgstr ""
+
+#. translators: %s: Schedule recurrence interval
+#: src/Pro/Table.php:940
+#, php-format
+msgid "This event ran for longer than its recurrence interval of %s. It may have overlapped or delayed the next event."
+msgstr ""
+
+#. translators: %s: Schedule recurrence interval
+#: src/Pro/Table.php:947
+#, php-format
+msgid "This event ran for over 75%% of its recurrence interval of %s. It may risk overlapping or delaying future events."
+msgstr ""
+
+#: src/retire-pro.php:112
+msgid "WP Crontrol Pro’s features are now included in WP Crontrol, so WP Crontrol Pro has been deactivated. You can delete it. Your logs are kept."
+msgstr ""
+
+#: src/retire-pro.php:126
+msgid "WP Crontrol Pro is active across the network, so this site is still using it. Its features are now included in WP Crontrol: network activate WP Crontrol to replace it on every site."
+msgstr ""
+
+#: src/schedule-list-table.php:75
+msgid "Interval"
+msgstr ""
+
+#: src/schedule-list-table.php:197
+msgid "There are no schedules."
+msgstr ""
+
+#. translators: %s: The internal name of the schedule.
+#: src/schedule.php:28
+#, php-format
+msgid "A schedule with the name \"%s\" already exists."
+msgstr ""
+
+#: src/Schedule/CoreSchedule.php:27
+msgid "This is a WordPress core schedule and cannot be deleted"
+msgstr ""
+
+#: src/Schedule/CrontrolSchedule.php:27
+msgid "This custom schedule is in use and cannot be deleted"
+msgstr ""
+
+#: src/Schedule/ThirdPartySchedule.php:27
+msgid "This schedule is added by another plugin and cannot be deleted"
+msgstr ""
