@@ -76,7 +76,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 } );
 
 window.wpCrontrol.pointers?.logs && window.jQuery && jQuery( document ).ready( function($) {
-	$('#crontrol_tab_logs,tr[data-slug="wp-crontrol"] .crontrol-logs')
+	$('#crontrol_tab_logs,tr[data-slug="pmpro-crontrol"] .crontrol-logs')
 		.pointer( {
 			content:
 				'<h3>' + window.wpCrontrol.pointers.logs.title + '<\/h3>' +

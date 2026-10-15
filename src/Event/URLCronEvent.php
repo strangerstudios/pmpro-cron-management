@@ -62,7 +62,7 @@ final class URLCronEvent extends CrontrolEvent {
 	public function get_hook_name_label(): string {
 		if ( ! empty( $this->args[0]['name'] ) ) {
 			/* translators: %s: Details about the URL cron event. */
-			return esc_html( sprintf( __( 'URL cron event (%s)', 'wp-crontrol' ), $this->args[0]['name'] ) );
+			return esc_html( sprintf( __( 'URL cron event (%s)', 'pmpro-crontrol' ), $this->args[0]['name'] ) );
 		}
 
 		if ( ! empty( $this->args[0]['url'] ) ) {
@@ -72,10 +72,10 @@ final class URLCronEvent extends CrontrolEvent {
 			);
 
 			/* translators: %s: Details about the URL cron event. */
-			return sprintf( esc_html__( 'URL cron event (%s)', 'wp-crontrol' ), $url );
+			return sprintf( esc_html__( 'URL cron event (%s)', 'pmpro-crontrol' ), $url );
 		}
 
-		return esc_html__( 'URL cron event', 'wp-crontrol' );
+		return esc_html__( 'URL cron event', 'pmpro-crontrol' );
 	}
 
 	#[\Override]

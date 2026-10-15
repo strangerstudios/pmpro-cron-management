@@ -1,15 +1,18 @@
-# Translation of Plugins - WP Crontrol - Stable (latest release) in Spanish (Venezuela)
-# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+# Translation of PMPro Crontrol 2.0.0 (es_CO).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
+# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-11-10 10:40:55+0000\n"
+"PO-Revision-Date: 2023-08-26 11:47:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.1.0\n"
-"Language: es_VE\n"
-"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
+"X-Domain: pmpro-crontrol\n"
+"Language: es_CO\n"
+"Project-Id-Version: PMPro Crontrol 2.0.0
+"
 
 #. translators: Pause is a verb
 #: src/event-list-table.php:545
@@ -20,11 +23,6 @@ msgstr "Pausar este gancho"
 #: src/event-list-table.php:534
 msgid "Resume this hook"
 msgstr "Reiniciar este gancho"
-
-#. translators: %s: The number of events with this hook
-#: src/event-list-table.php:581
-msgid "Delete all events with this hook (%s)"
-msgstr "Borrar todos los eventos con este gancho (%s)"
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2300
@@ -78,14 +76,14 @@ msgid "An unknown error occurred."
 msgstr "Ha ocurrido un error desconocido."
 
 #. translators: %s: The name of the cron event.
+#: src/event.php:107
+msgid "Failed to schedule the cron event %s."
+msgstr "Error al programar el evento cron %s."
+
+#. translators: %s: The name of the cron event.
 #: src/event.php:64 src/event.php:371
 msgid "The cron event %s could not be found."
 msgstr "No se ha podido encontrar el evento cron %s."
-
-#. translators: %s: The name of the cron event.
-#: src/event.php:107
-msgid "Failed to schedule the cron event %s."
-msgstr "Fallo al programar el evento cron %s."
 
 #: src/event.php:136
 msgid "Invalid timestamp provided."
@@ -336,41 +334,6 @@ msgstr "Eventos cron"
 msgid "You are not allowed to add new PHP cron events."
 msgstr "No tienes permisos para añadir nuevos eventos cron de PHP."
 
-#. translators: %s: The number of weeks in an interval of time.
-#: src/bootstrap.php:2805
-msgid "%s week"
-msgid_plural "%s weeks"
-msgstr[0] "%s semana"
-msgstr[1] "%s semanas"
-
-#. translators: %s: The number of months in an interval of time.
-#: src/bootstrap.php:2803
-msgid "%s month"
-msgid_plural "%s months"
-msgstr[0] "%s mes"
-msgstr[1] "%s meses"
-
-#. translators: %s: The number of years in an interval of time.
-#: src/bootstrap.php:2801
-msgid "%s year"
-msgid_plural "%s years"
-msgstr[0] "%s año"
-msgstr[1] "%s años"
-
-#: src/event-list-table.php:500
-msgid "Edit"
-msgstr "Editar"
-
-#: src/event-list-table.php:294 src/event-list-table.php:482
-#: src/event-list-table.php:561 src/schedule-list-table.php:123
-msgid "Delete"
-msgstr "Borrar"
-
-#: src/event-list-table.php:769 src/Pro/Table.php:381 src/Pro/Table.php:510
-#: src/Pro/Table.php:520 src/Pro/Table.php:568 src/Pro/Table.php:574
-msgid "None"
-msgstr "Ninguno"
-
 #. Plugin Name of the plugin
 #: wp-crontrol.php src/bootstrap.php:1121
 msgid "WP Crontrol"
@@ -408,9 +371,34 @@ msgid_plural "%s days"
 msgstr[0] "%s día"
 msgstr[1] "%s días"
 
+#. translators: %s: The number of weeks in an interval of time.
+#: src/bootstrap.php:2805
+msgid "%s week"
+msgid_plural "%s weeks"
+msgstr[0] "%s semana"
+msgstr[1] "%s semanas"
+
+#. translators: %s: The number of months in an interval of time.
+#: src/bootstrap.php:2803
+msgid "%s month"
+msgid_plural "%s months"
+msgstr[0] "%s mes"
+msgstr[1] "%s meses"
+
+#. translators: %s: The number of years in an interval of time.
+#: src/bootstrap.php:2801
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] "%s año"
+msgstr[1] "%s años"
+
 #: src/event-list-table.php:521
 msgid "Run now"
 msgstr "Ejecutar ahora"
+
+#: src/event-list-table.php:500
+msgid "Edit"
+msgstr "Editar"
 
 #: src/bootstrap.php:2026 src/Event/PHPCronEvent.php:118
 msgid "PHP Code"
@@ -419,6 +407,11 @@ msgstr "Código PHP"
 #: src/bootstrap.php:331 src/bootstrap.php:533
 msgid "PHP Cron"
 msgstr "Cron PHP"
+
+#: src/event-list-table.php:769 src/Pro/Table.php:381 src/Pro/Table.php:510
+#: src/Pro/Table.php:520 src/Pro/Table.php:568 src/Pro/Table.php:574
+msgid "None"
+msgstr "Ninguno"
 
 #: src/bootstrap.php:2142 src/bootstrap.php:2159 src/event-list-table.php:244
 msgid "Next Run"
@@ -444,6 +437,15 @@ msgstr "Hubo un problema al generar una llamada al sistema WP-Cron en tu sitio. 
 #: src/bootstrap.php:1428
 msgid "Interval (seconds)"
 msgstr "Intervalo (segundos)"
+
+#: src/bootstrap.php:1440 src/schedule-list-table.php:74
+msgid "Internal Name"
+msgstr "Nombre interno"
+
+#: src/event-list-table.php:294 src/event-list-table.php:482
+#: src/event-list-table.php:561 src/schedule-list-table.php:123
+msgid "Delete"
+msgstr "Borrar"
 
 #: src/bootstrap.php:1434 src/schedule-list-table.php:76
 msgid "Display Name"
@@ -495,7 +497,3 @@ msgstr "Fallo al borrar el evento cron %s."
 #: src/bootstrap.php:2281
 msgid "Failed to the execute the cron event %s."
 msgstr "Fallo al ejecutar el evento cron %s."
-
-#: src/bootstrap.php:1440 src/schedule-list-table.php:74
-msgid "Internal Name"
-msgstr "Nombre interno"

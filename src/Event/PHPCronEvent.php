@@ -70,7 +70,7 @@ final class PHPCronEvent extends CrontrolEvent {
 			return esc_html(
 				sprintf(
 					/* translators: %s: Details about the PHP cron event. */
-					__( 'PHP cron event (%s)', 'wp-crontrol' ),
+					__( 'PHP cron event (%s)', 'pmpro-crontrol' ),
 					$this->args[0]['name']
 				)
 			);
@@ -88,12 +88,12 @@ final class PHPCronEvent extends CrontrolEvent {
 
 			return sprintf(
 				/* translators: %s: Details about the PHP cron event. */
-				esc_html__( 'PHP cron event (%s)', 'wp-crontrol' ),
+				esc_html__( 'PHP cron event (%s)', 'pmpro-crontrol' ),
 				$php
 			);
 		}
 
-		return esc_html__( 'PHP cron event', 'wp-crontrol' );
+		return esc_html__( 'PHP cron event', 'pmpro-crontrol' );
 	}
 
 	#[\Override]
@@ -106,7 +106,7 @@ final class PHPCronEvent extends CrontrolEvent {
 			'<br><span class="status-crontrol-error"><span class="dashicons dashicons-warning" aria-hidden="true"></span> %s</span>',
 			sprintf(
 				/* translators: 1: Line number, 2: Error message text */
-				esc_html__( 'Line %1$s: %2$s', 'wp-crontrol' ),
+				esc_html__( 'Line %1$s: %2$s', 'pmpro-crontrol' ),
 				esc_html( number_format_i18n( $this->args[0]['syntax_error_line'] ) ),
 				esc_html( $this->args[0]['syntax_error_message'] )
 			)
@@ -115,7 +115,7 @@ final class PHPCronEvent extends CrontrolEvent {
 
 	#[\Override]
 	public function get_args_display(): string {
-		return __( 'PHP Code', 'wp-crontrol' );
+		return __( 'PHP Code', 'pmpro-crontrol' );
 	}
 
 	#[\Override]

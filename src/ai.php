@@ -14,7 +14,7 @@ function admin_ai_page(): void {
 	?>
 	<div class="wrap crontrol-ai">
 		<?php \Crontrol\do_tabs(); ?>
-		<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron AI', 'wp-crontrol' ); ?></h1>
+		<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron AI', 'pmpro-crontrol' ); ?></h1>
 		<hr class="wp-header-end">
 
 		<style>
@@ -27,7 +27,7 @@ function admin_ai_page(): void {
 		</style>
 
 		<p class="crontrol-ai-intro">
-			<?php esc_html_e( 'Let an AI assistant check and manage this site’s cron events for you. WP Crontrol makes its features available through the WordPress Abilities API, so a connected assistant can use them with the same permissions as your account.', 'wp-crontrol' ); ?>
+			<?php esc_html_e( 'Let an AI assistant check and manage this site’s cron events for you. WP Crontrol makes its features available through the WordPress Abilities API, so a connected assistant can use them with the same permissions as your account.', 'pmpro-crontrol' ); ?>
 		</p>
 
 		<?php if ( ! available() ) : ?>
@@ -36,7 +36,7 @@ function admin_ai_page(): void {
 					<?php
 					printf(
 						/* translators: %s: WordPress version number */
-						esc_html__( 'This site runs WordPress %s. The Abilities API needs WordPress 6.9 or later, so these abilities are not available until WordPress is updated.', 'wp-crontrol' ),
+						esc_html__( 'This site runs WordPress %s. The Abilities API needs WordPress 6.9 or later, so these abilities are not available until WordPress is updated.', 'pmpro-crontrol' ),
 						esc_html( get_bloginfo( 'version' ) )
 					);
 					?>
@@ -48,7 +48,7 @@ function admin_ai_page(): void {
 					<?php
 					printf(
 						/* translators: %s: Number of abilities */
-						esc_html( _n( '%s cron ability is available on this site.', '%s cron abilities are available on this site.', count( $definitions ), 'wp-crontrol' ) ),
+						esc_html( _n( '%s cron ability is available on this site.', '%s cron abilities are available on this site.', count( $definitions ), 'pmpro-crontrol' ) ),
 						esc_html( number_format_i18n( count( $definitions ) ) )
 					);
 					?>
@@ -59,17 +59,17 @@ function admin_ai_page(): void {
 		<div class="crontrol-ai-columns">
 			<div>
 				<div class="card">
-					<h2><?php esc_html_e( 'Things you can ask', 'wp-crontrol' ); ?></h2>
+					<h2><?php esc_html_e( 'Things you can ask', 'pmpro-crontrol' ); ?></h2>
 					<ul class="crontrol-ai-prompts">
-						<li><?php esc_html_e( '“Which cron events failed this week, and why?”', 'wp-crontrol' ); ?></li>
-						<li><?php esc_html_e( '“Run the backup event now and tell me if it worked.”', 'wp-crontrol' ); ?></li>
-						<li><?php esc_html_e( '“Pause the newsletter hook until Monday.”', 'wp-crontrol' ); ?></li>
-						<li><?php esc_html_e( '“Which events are late, or have nothing attached to them?”', 'wp-crontrol' ); ?></li>
-						<li><?php esc_html_e( '“Turn on logging for the WooCommerce events and show me the slowest ones.”', 'wp-crontrol' ); ?></li>
+						<li><?php esc_html_e( '“Which cron events failed this week, and why?”', 'pmpro-crontrol' ); ?></li>
+						<li><?php esc_html_e( '“Run the backup event now and tell me if it worked.”', 'pmpro-crontrol' ); ?></li>
+						<li><?php esc_html_e( '“Pause the newsletter hook until Monday.”', 'pmpro-crontrol' ); ?></li>
+						<li><?php esc_html_e( '“Which events are late, or have nothing attached to them?”', 'pmpro-crontrol' ); ?></li>
+						<li><?php esc_html_e( '“Turn on logging for the WooCommerce events and show me the slowest ones.”', 'pmpro-crontrol' ); ?></li>
 					</ul>
 				</div>
 
-				<h2><?php esc_html_e( 'What an assistant can do', 'wp-crontrol' ); ?></h2>
+				<h2><?php esc_html_e( 'What an assistant can do', 'pmpro-crontrol' ); ?></h2>
 				<table class="widefat striped">
 					<tbody>
 						<?php foreach ( $definitions as $name => $definition ) : ?>
@@ -77,7 +77,7 @@ function admin_ai_page(): void {
 								<td>
 									<strong><?php echo esc_html( $definition['label'] ); ?></strong>
 									<?php if ( empty( $definition['annotations']['readonly'] ) ) : ?>
-										<span class="crontrol-ai-changes"><?php esc_html_e( 'Makes changes', 'wp-crontrol' ); ?></span>
+										<span class="crontrol-ai-changes"><?php esc_html_e( 'Makes changes', 'pmpro-crontrol' ); ?></span>
 									<?php endif; ?>
 									<br />
 									<?php echo esc_html( $definition['description'] ); ?>
@@ -90,17 +90,17 @@ function admin_ai_page(): void {
 				</table>
 
 				<p>
-					<?php esc_html_e( 'An assistant can’t create, edit, or delete PHP or URL cron events, and running a PHP cron event also needs permission to edit files. Every action uses your account’s permissions.', 'wp-crontrol' ); ?>
+					<?php esc_html_e( 'An assistant can’t create, edit, or delete PHP or URL cron events, and running a PHP cron event also needs permission to edit files. Every action uses your account’s permissions.', 'pmpro-crontrol' ); ?>
 				</p>
 			</div>
 
 			<div>
 				<div class="card">
-					<h2><?php esc_html_e( 'Connect an AI assistant', 'wp-crontrol' ); ?></h2>
-					<p><?php esc_html_e( 'Connect an AI assistant that supports the WordPress Abilities API, then ask it about your cron events.', 'wp-crontrol' ); ?></p>
+					<h2><?php esc_html_e( 'Connect an AI assistant', 'pmpro-crontrol' ); ?></h2>
+					<p><?php esc_html_e( 'Connect an AI assistant that supports the WordPress Abilities API, then ask it about your cron events.', 'pmpro-crontrol' ); ?></p>
 				</div>
 				<p class="description">
-					<?php esc_html_e( 'These abilities also work with any other MCP client or AI tool that supports the WordPress Abilities API.', 'wp-crontrol' ); ?>
+					<?php esc_html_e( 'These abilities also work with any other MCP client or AI tool that supports the WordPress Abilities API.', 'pmpro-crontrol' ); ?>
 				</p>
 			</div>
 		</div>

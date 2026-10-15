@@ -1,5 +1,6 @@
-# Translation of Plugins - WP Crontrol - Stable (latest release) in English (UK)
-# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+# Translation of PMPro Crontrol 2.0.0 (en_GB).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
+# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-10-15 19:08:10+0000\n"
@@ -8,8 +9,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.1.0\n"
+"X-Domain: pmpro-crontrol\n"
 "Language: en_GB\n"
-"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
+"Project-Id-Version: PMPro Crontrol 2.0.0
+"
 
 #: src/retire-pro.php:126
 msgid "WP Crontrol Pro is active across the network, so this site is still using it. Its features are now included in WP Crontrol: network activate WP Crontrol to replace it on every site."
@@ -18,107 +21,6 @@ msgstr "WP Crontrol Pro is active across the network, so this site is still usin
 #: src/retire-pro.php:112
 msgid "WP Crontrol Pro’s features are now included in WP Crontrol, so WP Crontrol Pro has been deactivated. You can delete it. Your logs are kept."
 msgstr "WP Crontrol Pro’s features are now included in WP Crontrol, so WP Crontrol Pro has been deactivated. You can delete it. Your logs are kept."
-
-#: src/promos.php:616
-msgid "Want this code to run on every page instead of on a schedule? WPCode keeps PHP snippets you can switch on and off."
-msgstr "Want this code to run on every page instead of on a schedule? WPCode keeps PHP snippets you can switch on and off."
-
-#: src/promos.php:585
-msgid "Unless your host backs it up for you, take a backup with Duplicator before something goes wrong."
-msgstr "Unless your host backs it up for you, take a backup with Duplicator before something goes wrong."
-
-#: src/promos.php:584
-msgid "No scheduled backups found on this site."
-msgstr "No scheduled backups found on this site."
-
-#: src/promos.php:434
-msgid "Also from the team now looking after WP Crontrol:"
-msgstr "Also from the team now looking after WP Crontrol:"
-
-#: src/promos.php:430
-msgid "John Blackbourn, creator of WP Crontrol"
-msgstr "John Blackbourn, creator of WP Crontrol"
-
-#: src/promos.php:429
-msgid "I’ve always maintained that if I was to hand over ownership of any of my plugins it could only be to a long-standing and respected member of the WordPress ecosystem, in whose hands I know the plugin would be well maintained. The team at Awesome Motive absolutely fit that requirement and I’m pleased that they’ve agreed to take over my WP Crontrol plugin. I’ve enjoyed and learned a lot maintaining it over the last 14 years, but the time has come to pass it on. It’s in good hands."
-msgstr "I’ve always maintained that if I was to hand over ownership of any of my plugins it could only be to a long-standing and respected member of the WordPress ecosystem, in whose hands I know the plugin would be well maintained. The team at Awesome Motive absolutely fit that requirement and I’m pleased that they’ve agreed to take over my WP Crontrol plugin. I’ve enjoyed and learned a lot maintaining it over the last 14 years, but the time has come to pass it on. It’s in good hands."
-
-#: src/promos.php:427
-msgid "A note from John Blackbourn"
-msgstr "A note from John Blackbourn"
-
-#. translators: %s: URL of the Cron Logs screen
-#: src/promos.php:422
-msgid "Cron logs and insights, previously part of WP Crontrol Pro, are now included in WP Crontrol. Logging stays off until you <a href=\"%s\">turn it on</a> for an event. WP Crontrol is still free, open source, and private by default, and is now looked after by the Duplicator team."
-msgstr "Cron logs and insights, previously part of WP Crontrol Pro, are now included in WP Crontrol. Logging stays off until you <a href=\"%s\">turn it on</a> for an event. WP Crontrol is still free, open source, and private by default, and is now looked after by the Duplicator team."
-
-#: src/promos.php:417
-msgid "WP Crontrol Pro is now free for everyone"
-msgstr "WP Crontrol Pro is now free for everyone"
-
-#: src/promos.php:415 src/promos.php:588 src/promos.php:619
-msgid "Dismiss"
-msgstr "Dismiss"
-
-#. translators: %s: Plugin name
-#: src/promos.php:260
-msgid "Set up %s →"
-msgstr "Set up %s →"
-
-#. translators: %s: Plugin name
-#: src/promos.php:258
-msgid "%s could not be installed"
-msgstr "%s could not be installed"
-
-#. translators: %s: Plugin name
-#: src/promos.php:256
-msgid "%s is active"
-msgstr "%s is active"
-
-#. translators: %s: Plugin name
-#: src/promos.php:254
-msgid "Activating %s…"
-msgstr "Activating %s…"
-
-#. translators: %s: Plugin name
-#: src/promos.php:252
-msgid "Installing %s…"
-msgstr "Installing %s…"
-
-#: src/promos.php:225
-msgid "Recommended"
-msgstr "Recommended"
-
-#. translators: %s: Plugin name
-#: src/promos.php:194
-msgid "Learn more about %s"
-msgstr "Learn more about %s"
-
-#. translators: %s: Plugin name
-#: src/promos.php:186
-msgid "Install %s (free)"
-msgstr "Install %s (free)"
-
-#. translators: %s: Plugin name
-#: src/promos.php:181
-msgid "Activate %s"
-msgstr "Activate %s"
-
-#: src/promos.php:67
-msgid "Keep custom PHP in snippets you can switch off, without editing your theme’s functions.php file."
-msgstr "Keep custom PHP in snippets you can switch off, without editing your theme’s functions.php file."
-
-#: src/promos.php:61
-msgid "Order receipts, password resets, and other emails your scheduled tasks send often never arrive. WP Mail SMTP sends them through a real mail provider."
-msgstr "Order receipts, password resets, and other emails your scheduled tasks send often never arrive. WP Mail SMTP sends them through a real mail provider."
-
-#: src/promos.php:55
-msgid "Back up, migrate, or clone this site. Take a full backup before you change cron events you don’t recognise."
-msgstr "Back up, migrate, or clone this site. Take a full backup before you change cron events you don’t recognise."
-
-#: src/promos.php:49
-msgid "Connect Claude or ChatGPT to this site. Ask which cron events failed and why, run one again, or fix the code behind it. Free to start."
-msgstr "Connect Claude or ChatGPT to this site. Ask which cron events failed and why, run one again, or fix the code behind it. Free to start."
 
 #. translators: %s: Schedule recurrence interval
 #: src/Pro/Table.php:956
@@ -232,11 +134,6 @@ msgstr "View"
 #: src/bootstrap.php:2549
 msgid "Secondary menu"
 msgstr "Secondary menu"
-
-#. Description of the plugin
-#: wp-crontrol.php
-msgid "Take control of the cron events on your WordPress website or WooCommerce store."
-msgstr "Take control of the cron events on your WordPress website or WooCommerce store."
 
 #: src/event-list-table.php:313
 msgid "WooCommerce events"
@@ -433,11 +330,6 @@ msgstr "At this time: %s"
 #: src/event-list-table.php:498
 msgid "Check and edit"
 msgstr "Check and edit"
-
-#. Plugin URI of the plugin
-#: wp-crontrol.php
-msgid "https://wp-crontrol.com"
-msgstr "https://wp-crontrol.com"
 
 #: src/event-list-table.php:106
 msgid "One or more of your cron events needs to be checked for integrity. These events will not run until you check and re-save them."

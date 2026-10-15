@@ -1,5 +1,6 @@
-# Translation of Plugins - WP Crontrol - Stable (latest release) in German
-# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+# Translation of PMPro Crontrol 2.0.0 (de_DE).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
+# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-03-03 19:17:58+0000\n"
@@ -8,8 +9,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.1.0\n"
+"X-Domain: pmpro-crontrol\n"
 "Language: de\n"
-"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
+"Project-Id-Version: PMPro Crontrol 2.0.0
+"
 
 #. translators: %s: The URL that failed validation.
 #: src/event.php:700
@@ -100,11 +103,6 @@ msgstr "URL-Cron"
 msgctxt "noun"
 msgid "Schedule"
 msgstr "Zeitplan"
-
-#. Plugin URI of the plugin
-#: wp-crontrol.php
-msgid "https://wp-crontrol.com"
-msgstr "https://wp-crontrol.com"
 
 #: src/event-list-table.php:498
 msgid "Check and edit"

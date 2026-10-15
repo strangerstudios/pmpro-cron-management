@@ -1,5 +1,6 @@
-# Translation of Plugins - WP Crontrol - Stable (latest release) in Russian
-# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+# Translation of PMPro Crontrol 2.0.0 (ru_RU).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
+# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-10-10 06:15:07+0000\n"
@@ -8,8 +9,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.1.0\n"
+"X-Domain: pmpro-crontrol\n"
 "Language: ru\n"
-"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
+"Project-Id-Version: PMPro Crontrol 2.0.0
+"
 
 #: src/bootstrap.php:938
 msgid "You are not allowed to export cron events."
@@ -22,11 +25,6 @@ msgstr "События WooCommerce"
 #: src/bootstrap.php:2549
 msgid "Secondary menu"
 msgstr "Дополнительное меню"
-
-#. Description of the plugin
-#: wp-crontrol.php
-msgid "Take control of the cron events on your WordPress website or WooCommerce store."
-msgstr "Управляйте cron-событиями на вашем WordPress сайте или магазине WooCommerce."
 
 #: src/event-list-table.php:727
 msgid "PHP cron events are disabled"
@@ -219,11 +217,6 @@ msgstr "В настоящее время: %s"
 #: src/event-list-table.php:498
 msgid "Check and edit"
 msgstr "Проверить и изменить"
-
-#. Plugin URI of the plugin
-#: wp-crontrol.php
-msgid "https://wp-crontrol.com"
-msgstr "https://wp-crontrol.com"
 
 #: src/event-list-table.php:678
 msgid "Needs checking"

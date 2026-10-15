@@ -1,5 +1,6 @@
-# Translation of Plugins - WP Crontrol - Stable (latest release) in Polish
-# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+# Translation of PMPro Crontrol 2.0.0 (pl_PL).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
+# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-05-29 04:28:00+0000\n"
@@ -8,8 +9,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.1.0\n"
+"X-Domain: pmpro-crontrol\n"
 "Language: pl\n"
-"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
+"Project-Id-Version: PMPro Crontrol 2.0.0
+"
 
 #. translators: %s: The URL that failed validation.
 #: src/event.php:700
@@ -158,11 +161,6 @@ msgstr "Kod PHP w wywołaniu musi zostać sprawdzony pod kątem integralności. 
 #: src/Pro/Table.php:755
 msgid "PHP cron event"
 msgstr "Wywołania PHP cron"
-
-#. Plugin URI of the plugin
-#: wp-crontrol.php
-msgid "https://wp-crontrol.com"
-msgstr "https://wp-crontrol.com"
 
 #: src/event-list-table.php:106
 msgid "One or more of your cron events needs to be checked for integrity. These events will not run until you check and re-save them."

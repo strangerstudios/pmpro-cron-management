@@ -39,7 +39,7 @@ Added: `src/coexist.php`, the guard that keeps the plugin inactive while WP Cron
 - The version number tracks the upstream WP Crontrol release the fork is based on: PMPro Crontrol 2.0.0 is WP Crontrol 2.0.0 minus the removals above. Porting a new upstream release sets the version to that release.
 - A fork-only release between upstream releases (a fix in `src/coexist.php`, say) adds a fourth segment: 2.0.0.1, 2.0.0.2. Version comparisons keep working, and the next upstream port resets to the plain upstream number.
 - Releases are manual: tag `v<version>` on `main` and attach a `pmpro-crontrol.zip` built from the tag with a `pmpro-crontrol/` root and without `.git`, `README.md`, and `SECURITY.md`. Adding the plugin to the PMPro license server comes later; GitHub releases are the download until then.
-- Translations: the text domain is still `wp-crontrol`, so a site that already has WP Crontrol language packs reuses them. Managing packs on translate.strangerstudios.com will require renaming the text domain to `pmpro-crontrol` (PMPro Update Manager fetches packs by plugin slug, and WordPress loads them by text domain, so the two must match). That rename is one mechanical pass over the tree and will become part of the upstream sync policy when it happens.
+- Translations: the text domain is `pmpro-crontrol` and language packs are managed on translate.strangerstudios.com, delivered by PMPro Update Manager. `languages-seed/` holds the POT and the seed PO files for that project. Upstream merges must keep the fork's text domain on every string; the sync policy re-runs the rename after each merge.
 
 ## Branches and upstream tracking
 

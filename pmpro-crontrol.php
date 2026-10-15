@@ -6,7 +6,7 @@
  * Author:       Paid Memberships Pro
  * Author URI:   https://www.paidmembershipspro.com
  * Version:      2.0.0
- * Text Domain:  wp-crontrol
+ * Text Domain:  pmpro-crontrol
  * Domain Path:  /languages/
  * Requires at least: 6.6
  * Requires PHP: 7.4

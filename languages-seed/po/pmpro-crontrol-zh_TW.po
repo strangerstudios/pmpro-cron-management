@@ -1,5 +1,6 @@
-# Translation of Plugins - WP Crontrol - Stable (latest release) in Chinese (Taiwan)
-# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+# Translation of PMPro Crontrol 2.0.0 (zh_TW).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
+# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-08-06 19:20:45+0000\n"
@@ -8,8 +9,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/4.1.0\n"
+"X-Domain: pmpro-crontrol\n"
 "Language: zh_TW\n"
-"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
+"Project-Id-Version: PMPro Crontrol 2.0.0
+"
 
 #: src/bootstrap.php:2549
 msgid "Secondary menu"
@@ -18,11 +21,6 @@ msgstr "次要選單"
 #: src/event-list-table.php:313
 msgid "WooCommerce events"
 msgstr "WooCommerce 事件"
-
-#. Description of the plugin
-#: wp-crontrol.php
-msgid "Take control of the cron events on your WordPress website or WooCommerce store."
-msgstr "控制 WordPress 網站或 WooCommerce 商店的 Cron 事件。"
 
 #: src/bootstrap.php:2107 src/event-list-table.php:698
 msgid "This event has invalid arguments and will not run correctly."
@@ -245,11 +243,6 @@ msgstr "檢查並編輯"
 #: src/event-list-table.php:678
 msgid "Needs checking"
 msgstr "需要檢查"
-
-#. Plugin URI of the plugin
-#: wp-crontrol.php
-msgid "https://wp-crontrol.com"
-msgstr "https://wp-crontrol.com"
 
 #. translators: Resume is a verb
 #: src/event-list-table.php:534

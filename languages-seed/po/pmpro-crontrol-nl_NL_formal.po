@@ -1,5 +1,6 @@
-# Translation of Plugins - WP Crontrol - Stable (latest release) in Dutch
-# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+# Translation of PMPro Crontrol 2.0.0 (nl_NL_formal).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
+# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-10-08 17:29:23+0000\n"
@@ -8,8 +9,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.1.0\n"
+"X-Domain: pmpro-crontrol\n"
 "Language: nl\n"
-"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
+"Project-Id-Version: PMPro Crontrol 2.0.0
+"
 
 #: src/bootstrap.php:938
 msgid "You are not allowed to export cron events."
@@ -18,11 +21,6 @@ msgstr "U heeft geen toestemming om cron evenementen te exporteren."
 #: src/event-list-table.php:313
 msgid "WooCommerce events"
 msgstr "WooCommerce evenementen"
-
-#. Description of the plugin
-#: wp-crontrol.php
-msgid "Take control of the cron events on your WordPress website or WooCommerce store."
-msgstr "Neem controle over de cron evenementen op uw WordPress site of WooCommerce winkel."
 
 #: src/bootstrap.php:2549
 msgid "Secondary menu"
@@ -210,11 +208,6 @@ msgstr "HTTP methode"
 #: src/bootstrap.php:1424
 msgid "Adding a new schedule allows you to schedule recurring events at the given interval."
 msgstr "Door een nieuwe planning toe te voegen kunt u terugkerende events plannen op het opgegeven interval."
-
-#. Plugin URI of the plugin
-#: wp-crontrol.php
-msgid "https://wp-crontrol.com"
-msgstr "https://wp-crontrol.com"
 
 #: src/bootstrap.php:2035
 msgid "The PHP code in this event needs to be checked for integrity. This event will not run until you re-save it."

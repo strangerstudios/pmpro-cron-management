@@ -155,7 +155,7 @@ final class Insights {
 
 		$list[] = array(
 			'slug'  => self::NONRECURRING,
-			'label' => __( 'Non-recurring', 'wp-crontrol' ),
+			'label' => __( 'Non-recurring', 'pmpro-crontrol' ),
 		);
 
 		return $list;

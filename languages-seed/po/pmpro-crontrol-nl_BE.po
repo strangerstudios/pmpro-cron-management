@@ -1,5 +1,6 @@
-# Translation of Plugins - WP Crontrol - Stable (latest release) in Dutch (Belgium)
-# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+# Translation of PMPro Crontrol 2.0.0 (nl_BE).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
+# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-10-15 14:43:07+0000\n"
@@ -8,41 +9,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.1.0\n"
+"X-Domain: pmpro-crontrol\n"
 "Language: nl_BE\n"
-"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
-
-#. Author of the plugin
-#: wp-crontrol.php
-msgid "Duplicator"
-msgstr "Duplicator"
+"Project-Id-Version: PMPro Crontrol 2.0.0
+"
 
 #: src/abilities.php:79 src/bootstrap.php:1122
 msgid "Cron"
 msgstr "Cron"
-
-#. translators: %s: Plugin name
-#: src/promos.php:181
-msgid "Activate %s"
-msgstr "%s activeren"
-
-#. translators: %s: Plugin name
-#: src/promos.php:194
-msgid "Learn more about %s"
-msgstr "Leer meer over %s"
-
-#: src/promos.php:225
-msgid "Recommended"
-msgstr "Aanbevolen"
-
-#. translators: %s: Plugin name
-#: src/promos.php:254
-msgid "Activating %s…"
-msgstr "%s wordt geactiveerd …"
-
-#. translators: %s: Plugin name
-#: src/promos.php:256
-msgid "%s is active"
-msgstr "%s is actief"
 
 #. translators: %s: Error message
 #: src/alerts.php:393
@@ -97,11 +71,6 @@ msgstr "Fouten"
 #: src/Pro/bootstrap.php:545
 msgid "ms"
 msgstr "ms"
-
-#. Author URI of the plugin
-#: wp-crontrol.php
-msgid "https://duplicator.com"
-msgstr "https://duplicator.com"
 
 #: src/Pro/bootstrap.php:690
 msgid "Log Settings"
@@ -190,10 +159,6 @@ msgstr "Details bekijken"
 msgid "Emails sent"
 msgstr "Verzonden e-mails"
 
-#: src/ai.php:114
-msgid "Open WPVibe"
-msgstr "Open WPVibe"
-
 #. translators: Hidden accessibility text.
 #: src/Pro/Table.php:309
 msgid "Next page"
@@ -202,14 +167,6 @@ msgstr "Volgende pagina"
 #: src/Pro/Table.php:148
 msgid "All"
 msgstr "Alle"
-
-#: src/promos.php:415 src/promos.php:588 src/promos.php:619
-msgid "Dismiss"
-msgstr "Negeren"
-
-#: src/promos.php:417
-msgid "WP Crontrol Pro is now free for everyone"
-msgstr "WP Crontrol Pro is nu gratis voor iedereen"
 
 #: src/Pro/bootstrap.php:707
 msgid "Hooks to log"
@@ -226,11 +183,6 @@ msgstr "Secundair menu"
 #: src/event-list-table.php:313
 msgid "WooCommerce events"
 msgstr "WooCommerce events"
-
-#. Description of the plugin
-#: wp-crontrol.php
-msgid "Take control of the cron events on your WordPress website or WooCommerce store."
-msgstr "Neem controle over de cron events op je WordPress website of WooCommerce winkel."
 
 #: src/bootstrap.php:2107 src/event-list-table.php:698
 msgid "This event has invalid arguments and will not run correctly."
@@ -414,11 +366,6 @@ msgstr "URL cron event (%s)"
 #: src/bootstrap.php:1976
 msgid "The URL in this event needs to be checked for integrity. This event will not run until you re-save it."
 msgstr "De URL in dit event moet worden gecontroleerd op integriteit. Dit event wordt pas uitgevoerd als je hem opnieuw opslaat."
-
-#. Plugin URI of the plugin
-#: wp-crontrol.php
-msgid "https://wp-crontrol.com"
-msgstr "https://wp-crontrol.com"
 
 #: src/bootstrap.php:1937
 msgid "Standard cron event"

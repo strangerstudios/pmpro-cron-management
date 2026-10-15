@@ -36,6 +36,6 @@ function show_wp_crontrol_active_notice(): void {
 
 	printf(
 		'<div class="notice notice-warning"><p>%s</p></div>',
-		esc_html__( 'PMPro Crontrol is not running because WP Crontrol is active. Deactivate one of the two plugins; they cannot run together.', 'wp-crontrol' )
+		esc_html__( 'PMPro Crontrol is not running because WP Crontrol is active. Deactivate one of the two plugins; they cannot run together.', 'pmpro-crontrol' )
 	);
 }

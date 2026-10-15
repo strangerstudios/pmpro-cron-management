@@ -1,5 +1,6 @@
-# Translation of Plugins - WP Crontrol - Stable (latest release) in Korean
-# This file is distributed under the same license as the Plugins - WP Crontrol - Stable (latest release) package.
+# Translation of PMPro Crontrol 2.0.0 (ko_KR).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
+# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2026-10-08 14:37:27+0000\n"
@@ -8,8 +9,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/4.1.0\n"
+"X-Domain: pmpro-crontrol\n"
 "Language: ko_KR\n"
-"Project-Id-Version: Plugins - WP Crontrol - Stable (latest release)\n"
+"Project-Id-Version: PMPro Crontrol 2.0.0
+"
 
 #: src/bootstrap.php:2549
 msgid "Secondary menu"
@@ -18,11 +21,6 @@ msgstr "보조 메뉴"
 #: src/event-list-table.php:313
 msgid "WooCommerce events"
 msgstr "WooCommerce 이벤트"
-
-#. Description of the plugin
-#: wp-crontrol.php
-msgid "Take control of the cron events on your WordPress website or WooCommerce store."
-msgstr "워드프레스 웹사이트나 우커머스 스토어의 크론 이벤트를 직접 관리해 보세요."
 
 #: src/bootstrap.php:2107 src/event-list-table.php:698
 msgid "This event has invalid arguments and will not run correctly."
@@ -206,11 +204,6 @@ msgstr "URL cron 이벤트"
 #: src/bootstrap.php:1424
 msgid "Adding a new schedule allows you to schedule recurring events at the given interval."
 msgstr "새 일정을 추가하면 지정된 주기로 반복하는 이벤트를 예약할 수 있습니다."
-
-#. Plugin URI of the plugin
-#: wp-crontrol.php
-msgid "https://wp-crontrol.com"
-msgstr "https://wp-crontrol.com"
 
 #. translators: %s: An input field for specifying a date and time
 #: src/bootstrap.php:2179
