@@ -10,9 +10,24 @@ Take control of the cron events on your WordPress website or Paid Memberships Pr
 
 ## Description
 
-PMPro Crontrol is a fork of [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/) maintained by the Paid Memberships Pro team. It keeps the full feature set of WP Crontrol 2.0 (events, logs, insights, alerts, Abilities API) and removes the in-admin promotions and one-click installers for other plugins that arrived with the 2.0.0 release. Settings and log tables are shared with WP Crontrol, so you can swap one plugin for the other without losing anything. The two plugins cannot run at the same time.
+PMPro Crontrol is a fork of [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/) maintained by the Paid Memberships Pro team. It keeps the full feature set of WP Crontrol 2.0 (events, logs, insights, alerts, Abilities API) and removes the in-admin promotions and one-click installers for other plugins. Settings, custom schedules, and log tables are shared with WP Crontrol, so you can switch between the two plugins without losing anything. The two plugins cannot be active at the same time.
 
-Updates are not delivered through WordPress.org. New releases are published at [github.com/strangerstudios/pmpro-crontrol](https://github.com/strangerstudios/pmpro-crontrol).
+### Who this plugin is for
+
+This plugin is primarily meant for sites running [Paid Memberships Pro](https://www.paidmembershipspro.com). The Paid Memberships Pro team is likely to update it with features, and possibly promos, for their own plugins. You shouldn't use this as a straight replacement for WP Crontrol unless you are also using Paid Memberships Pro.
+
+### Switching from WP Crontrol
+
+PMPro Crontrol and WP Crontrol use the same options and database tables, so a switch keeps your events, custom schedules, logging choices, alert settings, and logs. Do it in this order:
+
+1. Install PMPro Crontrol but do not activate it yet.
+2. Deactivate WP Crontrol. Do not delete it yet.
+3. Activate PMPro Crontrol and check Cron → Cron Events (and Cron Logs, if you had logging on). On a multisite network, network-deactivate and network-activate in the same order.
+4. Decide what to do with WP Crontrol. Leaving it deactivated is safe. Deleting it runs its uninstall routine, which drops the shared log tables and removes the logging and alert settings. Your cron events and custom schedules are not affected, but you will need to turn logging and alerts back on afterwards.
+
+Switching back works the same way in reverse: deactivate PMPro Crontrol, then activate WP Crontrol. The same deletion caveat applies to PMPro Crontrol's uninstall.
+
+Updates are not delivered through WordPress.org. New releases are published at [github.com/strangerstudios/pmpro-crontrol](https://github.com/strangerstudios/pmpro-crontrol/releases).
 
 Take control of the cron events on your WordPress website or WooCommerce store with WP Crontrol. From the admin screens you can:
 
@@ -82,6 +97,13 @@ WP Crontrol aims to be fully accessible to all of its users. [WP Crontrol's full
 ### Legal
 
 Crontrol® is a registered trademark of Clever Things For The Web Limited.
+
+## Installation
+
+1. Download the latest `pmpro-crontrol.zip` from the [releases page](https://github.com/strangerstudios/pmpro-crontrol/releases).
+2. In the WordPress admin, go to Plugins → Add New → Upload Plugin, choose the zip, and install it.
+3. If WP Crontrol is active on the site, follow "Switching from WP Crontrol" above before activating.
+4. Activate PMPro Crontrol. The Cron menu appears in the admin sidebar.
 
 ## Frequently Asked Questions
 
