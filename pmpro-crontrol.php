@@ -1,15 +1,16 @@
 <?php
 /**
- * Plugin Name:  WP Crontrol
- * Plugin URI:   https://wp-crontrol.com
- * Description:  Take control of the cron events on your WordPress website or WooCommerce store.
- * Author:       Duplicator
- * Author URI:   https://duplicator.com
+ * Plugin Name:  PMPro Crontrol
+ * Plugin URI:   https://github.com/strangerstudios/pmpro-crontrol
+ * Description:  Take control of the cron events on your WordPress website or Paid Memberships Pro site. A fork of WP Crontrol without the third-party plugin promotions.
+ * Author:       Paid Memberships Pro
+ * Author URI:   https://www.paidmembershipspro.com
  * Version:      2.0.0
  * Text Domain:  wp-crontrol
  * Domain Path:  /languages/
  * Requires at least: 6.6
  * Requires PHP: 7.4
+ * Update URI:   https://github.com/strangerstudios/pmpro-crontrol
  * License URI:  https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * License:      GPL v2 or later
  *
@@ -30,7 +31,7 @@
  * @author     John Blackbourn & Edward Dale
  * @copyright  Copyright 2008 Edward Dale, 2012-2026 John Blackbourn
  * @license    https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt GPL 2.0
- * @link       https://github.com/awesomemotive/wp-crontrol/
+ * @link       https://github.com/strangerstudios/pmpro-crontrol/
  */
 
 namespace Crontrol;
@@ -42,6 +43,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // @phpstan-ignore booleanNot.alwaysFalse
 if ( ! version_compare( PHP_VERSION, '7.4', '>=' ) ) {
+	return;
+}
+
+// PMPro Crontrol declares the same namespace and functions as WP Crontrol, so the two can't run together.
+// When WP Crontrol is active, this plugin stays out of the way and leaves a notice.
+require_once __DIR__ . '/src/coexist.php';
+
+if ( wp_crontrol_is_active() ) {
+	add_action( 'admin_notices', __NAMESPACE__ . '\show_wp_crontrol_active_notice' );
+	add_action( 'network_admin_notices', __NAMESPACE__ . '\show_wp_crontrol_active_notice' );
 	return;
 }
 
@@ -75,7 +86,6 @@ require_once __DIR__ . '/src/bootstrap.php';
 require_once __DIR__ . '/src/event.php';
 require_once __DIR__ . '/src/schedule.php';
 require_once __DIR__ . '/src/Pro/bootstrap.php';
-require_once __DIR__ . '/src/promos.php';
 require_once __DIR__ . '/src/alerts.php';
 require_once __DIR__ . '/src/abilities.php';
 require_once __DIR__ . '/src/ai.php';

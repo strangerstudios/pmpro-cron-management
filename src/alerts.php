@@ -541,11 +541,9 @@ function admin_alerts_page(): void {
 	$settings   = get_alert_settings();
 	$state      = get_state();
 	$last       = $state['last_result'];
-	$smtp       = \Crontrol\Promos\get_plugin( 'wp-mail-smtp' );
 	$logged     = class_exists( Log::class ) ? Log::get_enabled_hooks() : array();
 	$message    = isset( $_GET['crontrol_alerts_message'] ) ? sanitize_key( wp_unslash( $_GET['crontrol_alerts_message'] ) ) : '';
 	$recipients = get_recipients();
-	$show_smtp  = $smtp && ! $smtp['active'];
 
 	?>
 	<div class="wrap">
@@ -571,13 +569,10 @@ function admin_alerts_page(): void {
 					echo esc_html( sprintf( __( 'WordPress reported: %s', 'wp-crontrol' ), (string) ( $last['error'] ?? '' ) ) );
 					?>
 				</p>
-				<?php if ( $show_smtp ) : ?>
-					<p><?php esc_html_e( 'Many hosts can’t send email reliably from WordPress. WP Mail SMTP sends it through a real mail provider instead.', 'wp-crontrol' ); ?></p>
-				<?php endif; ?>
 			</div>
 		<?php endif; ?>
 
-		<div class="<?php echo $show_smtp ? 'crontrol-columns' : ''; ?>">
+		<div>
 		<div>
 		<p><?php esc_html_e( 'Get an email when a logged cron event errors or hits a fatal error.', 'wp-crontrol' ); ?></p>
 
@@ -661,19 +656,6 @@ function admin_alerts_page(): void {
 		</form>
 
 		</div>
-		<?php if ( $show_smtp ) : ?>
-			<aside class="crontrol-alerts-smtp">
-				<?php
-				$card = \Crontrol\Promos\featured_card(
-					'wp-mail-smtp',
-					$smtp,
-					__( 'Make sure alert emails get delivered', 'wp-crontrol' ),
-					__( 'WordPress sends email through your host, and many hosts don’t deliver it reliably, so alerts can end up in spam or never arrive. WP Mail SMTP sends WordPress email through a real mail provider such as Gmail, Outlook, or SendGrid.', 'wp-crontrol' )
-				);
-				echo $card; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in featured_card().
-				?>
-			</aside>
-		<?php endif; ?>
 		</div>
 	</div>
 	<?php

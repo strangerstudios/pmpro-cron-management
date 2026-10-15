@@ -1,5 +1,5 @@
 {
-	"name": "johnbillion/wp-crontrol",
+	"name": "strangerstudios/pmpro-crontrol",
 	"description": "Take control of the cron events on your WordPress website or WooCommerce store",
 	"homepage": "https://wp-crontrol.com",
 	"license": "GPL-2.0-or-later",
@@ -89,9 +89,9 @@
 		]
 	},
 	"support": {
-		"issues": "https://github.com/awesomemotive/wp-crontrol/issues",
+		"issues": "https://github.com/strangerstudios/pmpro-crontrol/issues",
 		"forum": "https://wordpress.org/support/plugin/wp-crontrol",
-		"source": "https://github.com/awesomemotive/wp-crontrol",
-		"security": "https://wp-crontrol.com/security/"
+		"source": "https://github.com/strangerstudios/pmpro-crontrol",
+		"security": "https://github.com/strangerstudios/pmpro-crontrol/security"
 	}
 }

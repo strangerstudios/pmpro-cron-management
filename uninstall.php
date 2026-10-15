@@ -53,7 +53,6 @@ if ( ! function_exists( 'crontrol_uninstall_pro_in_use' ) ) {
 }
 
 // WP Crontrol's own user settings go either way.
-delete_metadata( 'user', 0, 'crontrol_dismissed_promos', '', true );
 delete_metadata( 'user', 0, 'crontrol_seen_tabs', '', true );
 
 if ( crontrol_uninstall_pro_in_use() ) {
@@ -70,7 +69,6 @@ if ( ! function_exists( 'crontrol_uninstall_site' ) ) {
 		delete_option( 'crontrol_retired_pro_notice' );
 		delete_option( 'crontrol_alerts' );
 		delete_option( 'crontrol_alerts_state' );
-		delete_option( 'wp_crontrol_referred_plugins' );
 
 		wp_clear_scheduled_hook( 'crontrol/metrics' );
 		wp_clear_scheduled_hook( 'crontrol/maintenance' );

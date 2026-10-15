@@ -1,14 +1,18 @@
-# WP Crontrol
+# PMPro Crontrol
 
-Contributors: johnbillion, scompt, smub, seedprod
+Contributors: strangerstudios, johnbillion, scompt
 Tags: cron, wp-cron, crontrol, debug, woocommerce
 Tested up to: 7.1
 Stable tag: 2.0.0
 License: GPL v2 or later
 
-Take control of the cron events on your WordPress website or WooCommerce store with WP Crontrol.
+Take control of the cron events on your WordPress website or Paid Memberships Pro site. A fork of WP Crontrol without the third-party plugin promotions.
 
 ## Description
+
+PMPro Crontrol is a fork of [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/) maintained by the Paid Memberships Pro team. It keeps the full feature set of WP Crontrol 2.0 (events, logs, insights, alerts, Abilities API) and removes the in-admin promotions and one-click installers for other plugins that arrived with the 2.0.0 release. Settings and log tables are shared with WP Crontrol, so you can swap one plugin for the other without losing anything. The two plugins cannot run at the same time.
+
+Updates are not delivered through WordPress.org. New releases are published at [github.com/strangerstudios/pmpro-crontrol](https://github.com/strangerstudios/pmpro-crontrol).
 
 Take control of the cron events on your WordPress website or WooCommerce store with WP Crontrol. From the admin screens you can:
 
@@ -64,15 +68,6 @@ WP Crontrol was built by John Blackbourn, who also maintains these plugins for d
 
 * [Query Monitor](https://wordpress.org/plugins/query-monitor/) is the developer tools panel for WordPress.
 * [User Switching](https://wordpress.org/plugins/user-switching/) provides instant switching between user accounts in WordPress.
-
-### More Plugins From Our Team
-
-WP Crontrol is now looked after by the Duplicator team. If it's useful to you, these might be too:
-
-* [WPVibe](https://wordpress.org/plugins/vibe-ai/) connects AI assistants like Claude and ChatGPT to your WordPress site, so they can build and manage it for you.
-* [Duplicator](https://wordpress.org/plugins/duplicator/) backs up, migrates, and clones WordPress sites.
-* [WP Mail SMTP](https://wordpress.org/plugins/wp-mail-smtp/) fixes WordPress email delivery, so the emails your scheduled tasks send actually arrive.
-* [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/) adds custom code snippets to WordPress safely, without editing your theme's functions.php file.
 
 ### Privacy Statement
 
@@ -228,7 +223,7 @@ The cron commands which were previously included in WP Crontrol are now part of 
 
 ### How can I report a security bug?
 
-You can submit a private security vulnerability report to WP Crontrol via [the Security tab on the GitHub repo](https://github.com/awesomemotive/wp-crontrol/security). The GitHub Security Advisory process facilitates private collaboration on security issues. You'll receive credit for a valid report and a CVE if necessary.
+You can submit a private security vulnerability report to WP Crontrol via [the Security tab on the GitHub repo](https://github.com/strangerstudios/pmpro-crontrol/security). The GitHub Security Advisory process facilitates private collaboration on security issues. You'll receive credit for a valid report and a CVE if necessary.
 
 Do not report security issues on the WordPress.org support forums or via email. Thank you.
 
@@ -243,6 +238,10 @@ The photo was taken by <a href="https://www.flickr.com/photos/michaelpardo/21453
 3. New cron schedules can be added, giving plugin developers more options when scheduling events
 
 ## Changelog ##
+
+### 2.0.0 (PMPro Crontrol) ###
+
+* Forked from WP Crontrol 2.0.0. Removes the welcome panel, plugin suggestion cards, backup and WPCode notices, and the one-click plugin installers; the Cron AI screen keeps the Abilities API integration without the WPVibe card. Adds a guard so the plugin stays inactive while WP Crontrol is active.
 
 ### 2.0.0 (15 October 2026) ###
 
