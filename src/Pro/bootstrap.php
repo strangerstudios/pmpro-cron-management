@@ -66,7 +66,7 @@ function init_hooks(): void {
 		$insights = array(
 			'insights' => array(
 				'tools.php?page=wp-crontrol-insights',
-				__( 'Cron Insights', 'pmpro-crontrol' ),
+				__( 'Cron Insights', 'pmpro-cron-management' ),
 				true,
 			),
 		);
@@ -332,8 +332,8 @@ function tables_ready(): bool {
  */
 function action_admin_menu(): void {
 	add_management_page(
-		esc_html__( 'Cron Insights', 'pmpro-crontrol' ),
-		esc_html__( 'Cron Insights', 'pmpro-crontrol' ),
+		esc_html__( 'Cron Insights', 'pmpro-cron-management' ),
+		esc_html__( 'Cron Insights', 'pmpro-cron-management' ),
 		'manage_options',
 		'wp-crontrol-insights',
 		__NAMESPACE__ . '\admin_insights_page'
@@ -355,7 +355,7 @@ function action_admin_init(): void {
 
 		// Check permissions
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You do not have permission to perform this action.', 'pmpro-crontrol' ) );
+			wp_die( esc_html__( 'You do not have permission to perform this action.', 'pmpro-cron-management' ) );
 		}
 
 		// Verify nonce
@@ -395,7 +395,7 @@ function action_admin_init(): void {
 
 		// Check permissions.
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You do not have permission to perform this action.', 'pmpro-crontrol' ) );
+			wp_die( esc_html__( 'You do not have permission to perform this action.', 'pmpro-cron-management' ) );
 		}
 
 		// Verify nonce.
@@ -425,7 +425,7 @@ function action_admin_init(): void {
 	// Handle the toggle logging action from the cron event list table
 	if ( isset( $_GET['crontrol_action'] ) && 'crontrol-pro-toggle-logging' === $_GET['crontrol_action'] ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You do not have permission to perform this action.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You do not have permission to perform this action.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$hook = ( isset( $_GET['crontrol_id'] ) && is_string( $_GET['crontrol_id'] ) )
@@ -475,14 +475,14 @@ function action_admin_notices(): void {
 		case MESSAGE_LOGGING_ENABLED:
 			$message = sprintf(
 				/* translators: %s: The name of a cron event hook. */
-				__( 'Logging has been enabled for the %s hook.', 'pmpro-crontrol' ),
+				__( 'Logging has been enabled for the %s hook.', 'pmpro-cron-management' ),
 				'<b>' . esc_html( $hook ) . '</b>'
 			);
 			break;
 		case MESSAGE_LOGGING_DISABLED:
 			$message = sprintf(
 				/* translators: %s: The name of a cron event hook. */
-				__( 'Logging has been disabled for the %s hook.', 'pmpro-crontrol' ),
+				__( 'Logging has been disabled for the %s hook.', 'pmpro-cron-management' ),
 				'<b>' . esc_html( $hook ) . '</b>'
 			);
 			break;
@@ -535,16 +535,16 @@ function action_admin_enqueue_scripts( string $hook_suffix ): void {
 			'data'     => Insights::get(),
 			'metrics'  => MetricsInsights::get(),
 			'i18n'     => array(
-				'now'          => __( 'Now', 'pmpro-crontrol' ),
-				'total_label'  => __( 'Total', 'pmpro-crontrol' ),
-				'busiestHour'  => __( 'Busiest hour of the week', 'pmpro-crontrol' ),
-				'selectedHour' => __( 'Selected hour', 'pmpro-crontrol' ),
-				'errors'       => __( 'Errors', 'pmpro-crontrol' ),
-				'baselineAvg'  => __( 'Baseline average', 'pmpro-crontrol' ),
-				'recentAvg'    => __( 'Recent average', 'pmpro-crontrol' ),
-				'milliseconds' => __( 'ms', 'pmpro-crontrol' ),
-				'noData'       => __( 'No metrics have been recorded yet.', 'pmpro-crontrol' ),
-				'noAnomalies'  => __( 'No hook slowdowns detected in the available history.', 'pmpro-crontrol' ),
+				'now'          => __( 'Now', 'pmpro-cron-management' ),
+				'total_label'  => __( 'Total', 'pmpro-cron-management' ),
+				'busiestHour'  => __( 'Busiest hour of the week', 'pmpro-cron-management' ),
+				'selectedHour' => __( 'Selected hour', 'pmpro-cron-management' ),
+				'errors'       => __( 'Errors', 'pmpro-cron-management' ),
+				'baselineAvg'  => __( 'Baseline average', 'pmpro-cron-management' ),
+				'recentAvg'    => __( 'Recent average', 'pmpro-cron-management' ),
+				'milliseconds' => __( 'ms', 'pmpro-cron-management' ),
+				'noData'       => __( 'No metrics have been recorded yet.', 'pmpro-cron-management' ),
+				'noAnomalies'  => __( 'No hook slowdowns detected in the available history.', 'pmpro-cron-management' ),
 			),
 		) );
 
@@ -572,9 +572,9 @@ function action_admin_enqueue_scripts( string $hook_suffix ): void {
 	);
 
 	wp_localize_script( 'wp-crontrol-logs', 'wpCrontrolPro', array(
-		'confirmClearLogs' => __( 'Are you sure you want to clear all logs? This action cannot be undone.', 'pmpro-crontrol' ),
+		'confirmClearLogs' => __( 'Are you sure you want to clear all logs? This action cannot be undone.', 'pmpro-cron-management' ),
 		/* translators: %s: The name of a cron event hook. */
-		'confirmClearLogsForHook' => __( 'Are you sure you want to clear all logs for the %s hook? This action cannot be undone.', 'pmpro-crontrol' ),
+		'confirmClearLogsForHook' => __( 'Are you sure you want to clear all logs for the %s hook? This action cannot be undone.', 'pmpro-cron-management' ),
 	) );
 }
 
@@ -590,12 +590,12 @@ function admin_logs_page(): void {
 		<div class="wrap">
 			<?php \Crontrol\do_tabs(); ?>
 
-			<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Logs', 'pmpro-crontrol' ); ?></h1>
+			<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Logs', 'pmpro-cron-management' ); ?></h1>
 
 			<hr class="wp-header-end">
 
 			<div class="notice notice-info inline">
-				<p><?php esc_html_e( 'Logging is off. Turn it on for the cron events you want to watch, either below or with the "Enable logging" link on the Cron Events screen. Each run of a logged event is recorded here, with its duration, errors, HTTP requests, emails sent, and database queries.', 'pmpro-crontrol' ); ?></p>
+				<p><?php esc_html_e( 'Logging is off. Turn it on for the cron events you want to watch, either below or with the "Enable logging" link on the Cron Events screen. Each run of a logged event is recorded here, with its duration, errors, HTTP requests, emails sent, and database queries.', 'pmpro-cron-management' ); ?></p>
 			</div>
 
 			<?php logging_settings_panel(); ?>
@@ -612,7 +612,7 @@ function admin_logs_page(): void {
 		<?php \Crontrol\do_tabs(); ?>
 
 		<h1 class="wp-heading-inline">
-			<?php esc_html_e( 'Cron Logs', 'pmpro-crontrol' ); ?>
+			<?php esc_html_e( 'Cron Logs', 'pmpro-cron-management' ); ?>
 		</h1>
 
 		<hr class="wp-header-end">
@@ -625,7 +625,7 @@ function admin_logs_page(): void {
 
 			switch ( $message_id ) {
 				case MESSAGE_LOGS_CLEARED:
-					$message = __( 'All logs have been cleared successfully.', 'pmpro-crontrol' );
+					$message = __( 'All logs have been cleared successfully.', 'pmpro-cron-management' );
 					break;
 				case MESSAGE_LOGS_CLEARED_FOR_HOOK:
 					$hook = ( isset( $_GET['crontrol_pro_hook'] ) && is_string( $_GET['crontrol_pro_hook'] ) )
@@ -633,16 +633,16 @@ function admin_logs_page(): void {
 						: '';
 					$message = sprintf(
 						/* translators: %s: The name of a cron event hook. */
-						__( 'Logs for the %s hook have been cleared successfully.', 'pmpro-crontrol' ),
+						__( 'Logs for the %s hook have been cleared successfully.', 'pmpro-cron-management' ),
 						$hook
 					);
 					break;
 				case MESSAGE_CLEAR_FAILED:
-					$message = __( 'Failed to clear logs. Please try again.', 'pmpro-crontrol' );
+					$message = __( 'Failed to clear logs. Please try again.', 'pmpro-cron-management' );
 					$notice_class = 'notice-error';
 					break;
 				case MESSAGE_LOGGING_SETTINGS_SAVED:
-					$message = __( 'Logging settings saved successfully.', 'pmpro-crontrol' );
+					$message = __( 'Logging settings saved successfully.', 'pmpro-cron-management' );
 					break;
 			}
 
@@ -687,24 +687,24 @@ function logging_settings_panel(): void {
 
 	?>
 	<div class="crontrol-logging-settings">
-		<h2><?php esc_html_e( 'Log Settings', 'pmpro-crontrol' ); ?></h2>
-		<p><?php esc_html_e( 'Select which cron event hooks should have their execution logged.', 'pmpro-crontrol' ); ?></p>
+		<h2><?php esc_html_e( 'Log Settings', 'pmpro-cron-management' ); ?></h2>
+		<p><?php esc_html_e( 'Select which cron event hooks should have their execution logged.', 'pmpro-cron-management' ); ?></p>
 
 		<form method="post">
 			<?php wp_nonce_field( 'crontrol-save-logging-settings', 'crontrol_nonce' ); ?>
 			<input type="hidden" name="crontrol_action" value="save-logging-settings" />
 
 			<?php if ( empty( $hooks ) ) : ?>
-				<p><?php esc_html_e( 'No cron event hooks were found.', 'pmpro-crontrol' ); ?></p>
+				<p><?php esc_html_e( 'No cron event hooks were found.', 'pmpro-cron-management' ); ?></p>
 			<?php else : ?>
 				<p>
 					<label>
 						<input type="checkbox" data-crontrol-select-all <?php checked( ! in_array( false, $hooks, true ) ); ?> />
-						<strong><?php esc_html_e( 'Select all', 'pmpro-crontrol' ); ?></strong>
+						<strong><?php esc_html_e( 'Select all', 'pmpro-cron-management' ); ?></strong>
 					</label>
 				</p>
 				<fieldset>
-					<legend class="screen-reader-text"><?php esc_html_e( 'Hooks to log', 'pmpro-crontrol' ); ?></legend>
+					<legend class="screen-reader-text"><?php esc_html_e( 'Hooks to log', 'pmpro-cron-management' ); ?></legend>
 					<?php
 					foreach ( $custom as $hook => $logged ) {
 						logging_hook_checkbox( $hook, $logged, $schedules );
@@ -721,20 +721,20 @@ function logging_settings_panel(): void {
 				</fieldset>
 
 				<p class="submit">
-					<button type="submit" class="button button-primary"><?php esc_html_e( 'Save Logging Settings', 'pmpro-crontrol' ); ?></button>
-					<button type="submit" class="button" name="crontrol_log_plugin_hooks" value="1"><?php esc_html_e( 'Log All Plugin Hooks', 'pmpro-crontrol' ); ?></button>
+					<button type="submit" class="button button-primary"><?php esc_html_e( 'Save Logging Settings', 'pmpro-cron-management' ); ?></button>
+					<button type="submit" class="button" name="crontrol_log_plugin_hooks" value="1"><?php esc_html_e( 'Log All Plugin Hooks', 'pmpro-cron-management' ); ?></button>
 				</p>
-				<p class="description"><?php esc_html_e( 'Logging is off by default. "Log All Plugin Hooks" turns it on for the scheduled events added by plugins and themes, leaving out WordPress core events and events that run every minute.', 'pmpro-crontrol' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Logging is off by default. "Log All Plugin Hooks" turns it on for the scheduled events added by plugins and themes, leaving out WordPress core events and events that run every minute.', 'pmpro-cron-management' ); ?></p>
 			<?php endif; ?>
 		</form>
 	</div>
 	<div class="crontrol-logging-settings">
-		<h2><?php esc_html_e( 'Log Retention', 'pmpro-crontrol' ); ?></h2>
+		<h2><?php esc_html_e( 'Log Retention', 'pmpro-cron-management' ); ?></h2>
 		<p>
 			<?php
 			printf(
 				/* translators: 1: Number of days, 2: Number of log entries */
-				esc_html__( 'Log entries are kept for %1$s days, up to %2$s entries per site. A daily cron event removes older entries.', 'pmpro-crontrol' ),
+				esc_html__( 'Log entries are kept for %1$s days, up to %2$s entries per site. A daily cron event removes older entries.', 'pmpro-cron-management' ),
 				esc_html( number_format_i18n( (int) apply_filters( 'crontrol/log_retention_days', LOG_RETENTION_DAYS ) ) ),
 				esc_html( number_format_i18n( EventRunModel::SOFT_LIMIT ) )
 			);
@@ -780,14 +780,14 @@ function admin_insights_page(): void {
 		?>
 		<div class="wrap">
 			<?php \Crontrol\do_tabs(); ?>
-			<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Insights', 'pmpro-crontrol' ); ?></h1>
+			<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Insights', 'pmpro-cron-management' ); ?></h1>
 			<hr class="wp-header-end">
 			<div class="notice notice-info inline">
 				<p>
 					<?php
 					printf(
 						/* translators: %s: URL of the Cron Logs screen */
-						wp_kses( __( 'Insights are built from cron event logs. <a href="%s">Turn on logging</a> to start collecting them.', 'pmpro-crontrol' ), array( 'a' => array( 'href' => array() ) ) ),
+						wp_kses( __( 'Insights are built from cron event logs. <a href="%s">Turn on logging</a> to start collecting them.', 'pmpro-cron-management' ), array( 'a' => array( 'href' => array() ) ) ),
 						esc_url( admin_url( 'tools.php?page=wp-crontrol-logs' ) )
 					);
 					?>
@@ -804,24 +804,24 @@ function admin_insights_page(): void {
 	<div class="wrap">
 		<?php \Crontrol\do_tabs(); ?>
 
-		<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Insights', 'pmpro-crontrol' ); ?></h1>
+		<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Insights', 'pmpro-cron-management' ); ?></h1>
 
 		<hr class="wp-header-end">
 
 		<div class="crontrol-insights">
 			<div class="chart-container">
-				<div class="chart-title"><?php esc_html_e( 'Upcoming weekly view', 'pmpro-crontrol' ); ?></div>
+				<div class="chart-title"><?php esc_html_e( 'Upcoming weekly view', 'pmpro-cron-management' ); ?></div>
 				<div id="crontrol-insights-weekly-legend" class="crontrol-insights-legend"></div>
 				<canvas id="crontrol-insights-weekly"></canvas>
 			</div>
 
 			<div class="chart-container">
-				<div class="chart-title" id="crontrol-insights-minutely-title"><?php esc_html_e( 'Minutely View', 'pmpro-crontrol' ); ?></div>
+				<div class="chart-title" id="crontrol-insights-minutely-title"><?php esc_html_e( 'Minutely View', 'pmpro-cron-management' ); ?></div>
 				<div id="crontrol-insights-minutely-legend" class="crontrol-insights-legend"></div>
 				<canvas id="crontrol-insights-minutely"></canvas>
 			</div>
 
-			<h2 class="crontrol-insights-section-title"><?php esc_html_e( 'Historical metrics', 'pmpro-crontrol' ); ?></h2>
+			<h2 class="crontrol-insights-section-title"><?php esc_html_e( 'Historical metrics', 'pmpro-cron-management' ); ?></h2>
 
 			<div class="crontrol-insights-stats" id="crontrol-insights-stats">
 				<div class="crontrol-insights-stat is-error">
@@ -830,7 +830,7 @@ function admin_insights_page(): void {
 						echo esc_html(
 							sprintf(
 								/* translators: %s: The number of errors. */
-								_n( '%s error in the last 7 days', '%s errors in the last 7 days', $totals['errors'], 'pmpro-crontrol' ),
+								_n( '%s error in the last 7 days', '%s errors in the last 7 days', $totals['errors'], 'pmpro-cron-management' ),
 								number_format_i18n( $totals['errors'] ),
 							)
 						);
@@ -843,19 +843,19 @@ function admin_insights_page(): void {
 							'page' => 'wp-crontrol-logs',
 							'crontrol_status' => 'errored',
 						], admin_url( 'tools.php' ) ) ),
-						esc_html__( 'View error logs', 'pmpro-crontrol' )
+						esc_html__( 'View error logs', 'pmpro-cron-management' )
 					);
 					?>
 				</div>
 			</div>
 
 			<div class="chart-container">
-				<div class="chart-title"><?php esc_html_e( 'Errors (last 7 days)', 'pmpro-crontrol' ); ?></div>
+				<div class="chart-title"><?php esc_html_e( 'Errors (last 7 days)', 'pmpro-cron-management' ); ?></div>
 				<canvas id="crontrol-insights-errors"></canvas>
 			</div>
 
 			<!-- <div class="chart-container">
-				<div class="chart-title"><?php esc_html_e( 'Slowest hooks vs. baseline', 'pmpro-crontrol' ); ?></div>
+				<div class="chart-title"><?php esc_html_e( 'Slowest hooks vs. baseline', 'pmpro-cron-management' ); ?></div>
 				<p id="crontrol-insights-slow-empty" class="crontrol-insights-empty hidden"></p>
 				<canvas id="crontrol-insights-slow"></canvas>
 			</div> -->
@@ -897,7 +897,7 @@ function filter_event_admin_messages( array $messages, string $hook, int $messag
 		$messages[ \Crontrol\MESSAGE_EVENT_RUN_NOW ][0] .= str_replace( '%', '%%', sprintf(
 			'<br><br><a href="%s">%s</a>',
 			esc_url( $url ),
-			esc_html__( 'View logs', 'pmpro-crontrol' ),
+			esc_html__( 'View logs', 'pmpro-cron-management' ),
 		) );
 	} elseif ( ! in_array( $hook, INTERNAL_HOOKS, true ) ) {
 		// Logging is disabled, so offer to enable it for this hook.
@@ -910,9 +910,9 @@ function filter_event_admin_messages( array $messages, string $hook, int $messag
 
 		$messages[ \Crontrol\MESSAGE_EVENT_RUN_NOW ][0] .= str_replace( '%', '%%', sprintf(
 			'<br><br>%s <a href="%s">%s</a>',
-			esc_html__( 'Logging is not enabled for this hook.', 'pmpro-crontrol' ),
+			esc_html__( 'Logging is not enabled for this hook.', 'pmpro-cron-management' ),
 			esc_url( $url ),
-			esc_html__( 'Enable logging', 'pmpro-crontrol' ),
+			esc_html__( 'Enable logging', 'pmpro-cron-management' ),
 		) );
 	}
 
@@ -945,8 +945,8 @@ function filter_event_actions( array $links, \Crontrol\Event\Event $event ): arr
 		'<a href="%s">%s</a>',
 		esc_url( $url ),
 		$logged
-			? esc_html__( 'Disable logging', 'pmpro-crontrol' )
-			: esc_html__( 'Enable logging', 'pmpro-crontrol' )
+			? esc_html__( 'Disable logging', 'pmpro-cron-management' )
+			: esc_html__( 'Enable logging', 'pmpro-cron-management' )
 	);
 
 	return $links;
@@ -973,7 +973,7 @@ function render_logging_field( \Crontrol\Event\Event $existing ): void {
 
 	printf(
 		'<p><label><input type="checkbox" name="crontrol_pro_enable_logging" value="1" checked> %s</label></p>',
-		esc_html__( 'Enable logging of this hook', 'pmpro-crontrol' )
+		esc_html__( 'Enable logging of this hook', 'pmpro-cron-management' )
 	);
 }
 
@@ -1021,7 +1021,7 @@ function filter_event_table_columns( array $columns ): array {
 		$new[ $key ] = $label;
 
 		if ( 'crontrol_hook' === $key ) {
-			$new['crontrol_pro_last_run'] = __( 'Last Run', 'pmpro-crontrol' );
+			$new['crontrol_pro_last_run'] = __( 'Last Run', 'pmpro-cron-management' );
 		}
 	}
 
@@ -1049,7 +1049,7 @@ function filter_event_table_last_run_column( string $output, \Crontrol\Event\Eve
 	if ( ! $last_run instanceof \DateTimeImmutable ) {
 		return sprintf(
 			'<span aria-hidden="true">&mdash;</span><span class="screen-reader-text">%s</span>',
-			esc_html__( 'Never', 'pmpro-crontrol' )
+			esc_html__( 'Never', 'pmpro-cron-management' )
 		);
 	}
 
@@ -1061,12 +1061,12 @@ function filter_event_table_last_run_column( string $output, \Crontrol\Event\Eve
 	$time = sprintf(
 		'<a href="%1$s">%2$s</a>',
 		esc_url( $url ),
-		esc_html__( 'View logs', 'pmpro-crontrol' ),
+		esc_html__( 'View logs', 'pmpro-cron-management' ),
 	);
 
 	$ago = sprintf(
 		/* translators: %s: Time period, for example "8 minutes" */
-		__( '%s ago', 'pmpro-crontrol' ),
+		__( '%s ago', 'pmpro-cron-management' ),
 		\Crontrol\interval( time() - (int) $last_run->format( 'U' ) )
 	);
 

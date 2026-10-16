@@ -2,8 +2,8 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: PMPro Crontrol 2.0.0\n"
-"Report-Msgid-Bugs-To: https://github.com/strangerstudios/pmpro-crontrol/issues\n"
+"Project-Id-Version: PMPro Cron Management 2.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/strangerstudios/pmpro-cron-management/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,30 +12,30 @@ msgstr ""
 "POT-Creation-Date: 2026-10-15T22:43:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: pmpro-crontrol\n"
+"X-Domain: pmpro-cron-management\n"
 
 #. Plugin Name of the plugin
-#: pmpro-crontrol.php
-msgid "PMPro Crontrol"
+#: pmpro-cron-management.php
+msgid "PMPro Cron Management"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: pmpro-crontrol.php
-msgid "https://github.com/strangerstudios/pmpro-crontrol"
+#: pmpro-cron-management.php
+msgid "https://github.com/strangerstudios/pmpro-cron-management"
 msgstr ""
 
 #. Description of the plugin
-#: pmpro-crontrol.php
+#: pmpro-cron-management.php
 msgid "Take control of the cron events on your WordPress website or Paid Memberships Pro site. A fork of WP Crontrol without the third-party plugin promotions."
 msgstr ""
 
 #. Author of the plugin
-#: pmpro-crontrol.php
+#: pmpro-cron-management.php
 msgid "Paid Memberships Pro"
 msgstr ""
 
 #. Author URI of the plugin
-#: pmpro-crontrol.php
+#: pmpro-cron-management.php
 msgid "https://www.paidmembershipspro.com"
 msgstr ""
 
@@ -1097,7 +1097,7 @@ msgid "WP Crontrol: %s"
 msgstr ""
 
 #: src/coexist.php:39
-msgid "PMPro Crontrol is not running because WP Crontrol is active. Deactivate one of the two plugins; they cannot run together."
+msgid "PMPro Cron Management is not running because WP Crontrol is active. Deactivate one of the two plugins; they cannot run together."
 msgstr ""
 
 #: src/event-list-table.php:106

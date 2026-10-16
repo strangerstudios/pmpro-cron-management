@@ -109,7 +109,7 @@ function show_retired_pro_notice(): void {
 
 	printf(
 		'<div class="notice notice-info is-dismissible"><p>%s</p></div>',
-		esc_html__( 'WP Crontrol Pro’s features are now included in WP Crontrol, so WP Crontrol Pro has been deactivated. You can delete it. Your logs are kept.', 'pmpro-crontrol' )
+		esc_html__( 'WP Crontrol Pro’s features are now included in WP Crontrol, so WP Crontrol Pro has been deactivated. You can delete it. Your logs are kept.', 'pmpro-cron-management' )
 	);
 }
 
@@ -123,6 +123,6 @@ function show_network_pro_notice(): void {
 
 	printf(
 		'<div class="notice notice-warning"><p>%s</p></div>',
-		esc_html__( 'WP Crontrol Pro is active across the network, so this site is still using it. Its features are now included in WP Crontrol: network activate WP Crontrol to replace it on every site.', 'pmpro-crontrol' )
+		esc_html__( 'WP Crontrol Pro is active across the network, so this site is still using it. Its features are now included in WP Crontrol: network activate WP Crontrol to replace it on every site.', 'pmpro-cron-management' )
 	);
 }

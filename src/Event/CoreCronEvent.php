@@ -35,7 +35,7 @@ final class CoreCronEvent extends Event {
 	 */
 	#[\Override]
 	public function get_persistent_message(): string {
-		return __( 'This is a WordPress core event and cannot be deleted', 'pmpro-crontrol' );
+		return __( 'This is a WordPress core event and cannot be deleted', 'pmpro-cron-management' );
 	}
 
 	#[\Override]

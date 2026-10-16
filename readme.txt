@@ -1,4 +1,4 @@
-# PMPro Crontrol
+# PMPro Cron Management
 
 Contributors: strangerstudios, johnbillion, scompt
 Tags: cron, wp-cron, crontrol, debug, woocommerce
@@ -10,7 +10,7 @@ Take control of the cron events on your WordPress website or Paid Memberships Pr
 
 ## Description
 
-PMPro Crontrol is a fork of [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/) maintained by the Paid Memberships Pro team. It keeps the full feature set of WP Crontrol 2.0 (events, logs, insights, alerts, Abilities API) and removes the in-admin promotions and one-click installers for other plugins. Settings, custom schedules, and log tables are shared with WP Crontrol, so you can switch between the two plugins without losing anything. The two plugins cannot be active at the same time.
+PMPro Cron Management is a fork of [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/) maintained by the Paid Memberships Pro team. It keeps the full feature set of WP Crontrol 2.0 (events, logs, insights, alerts, Abilities API) and removes the in-admin promotions and one-click installers for other plugins. Settings, custom schedules, and log tables are shared with WP Crontrol, so you can switch between the two plugins without losing anything. The two plugins cannot be active at the same time.
 
 ### Who this plugin is for
 
@@ -18,16 +18,16 @@ This plugin is primarily meant for sites running [Paid Memberships Pro](https://
 
 ### Switching from WP Crontrol
 
-PMPro Crontrol and WP Crontrol use the same options and database tables, so a switch keeps your events, custom schedules, logging choices, alert settings, and logs. Do it in this order:
+PMPro Cron Management and WP Crontrol use the same options and database tables, so a switch keeps your events, custom schedules, logging choices, alert settings, and logs. Do it in this order:
 
-1. Install PMPro Crontrol but do not activate it yet.
+1. Install PMPro Cron Management but do not activate it yet.
 2. Deactivate WP Crontrol. Do not delete it yet.
-3. Activate PMPro Crontrol and check Cron → Cron Events (and Cron Logs, if you had logging on). On a multisite network, network-deactivate and network-activate in the same order.
+3. Activate PMPro Cron Management and check Cron → Cron Events (and Cron Logs, if you had logging on). On a multisite network, network-deactivate and network-activate in the same order.
 4. Decide what to do with WP Crontrol. Leaving it deactivated is safe. Deleting it runs its uninstall routine, which drops the shared log tables and removes the logging and alert settings. Your cron events and custom schedules are not affected, but you will need to turn logging and alerts back on afterwards.
 
-Switching back works the same way in reverse: deactivate PMPro Crontrol, then activate WP Crontrol. The same deletion caveat applies to PMPro Crontrol's uninstall.
+Switching back works the same way in reverse: deactivate PMPro Cron Management, then activate WP Crontrol. The same deletion caveat applies to PMPro Cron Management's uninstall.
 
-Updates are not delivered through WordPress.org. New releases are published at [github.com/strangerstudios/pmpro-crontrol](https://github.com/strangerstudios/pmpro-crontrol/releases).
+Updates are not delivered through WordPress.org. New releases are published at [github.com/strangerstudios/pmpro-cron-management](https://github.com/strangerstudios/pmpro-cron-management/releases).
 
 Take control of the cron events on your WordPress website or WooCommerce store with WP Crontrol. From the admin screens you can:
 
@@ -100,10 +100,10 @@ Crontrol® is a registered trademark of Clever Things For The Web Limited.
 
 ## Installation
 
-1. Download the latest `pmpro-crontrol.zip` from the [releases page](https://github.com/strangerstudios/pmpro-crontrol/releases).
+1. Download the latest `pmpro-cron-management.zip` from the [releases page](https://github.com/strangerstudios/pmpro-cron-management/releases).
 2. In the WordPress admin, go to Plugins → Add New → Upload Plugin, choose the zip, and install it.
 3. If WP Crontrol is active on the site, follow "Switching from WP Crontrol" above before activating.
-4. Activate PMPro Crontrol. The Cron menu appears in the admin sidebar.
+4. Activate PMPro Cron Management. The Cron menu appears in the admin sidebar.
 
 ## Frequently Asked Questions
 
@@ -245,7 +245,7 @@ The cron commands which were previously included in WP Crontrol are now part of 
 
 ### How can I report a security bug?
 
-You can submit a private security vulnerability report to WP Crontrol via [the Security tab on the GitHub repo](https://github.com/strangerstudios/pmpro-crontrol/security). The GitHub Security Advisory process facilitates private collaboration on security issues. You'll receive credit for a valid report and a CVE if necessary.
+You can submit a private security vulnerability report to WP Crontrol via [the Security tab on the GitHub repo](https://github.com/strangerstudios/pmpro-cron-management/security). The GitHub Security Advisory process facilitates private collaboration on security issues. You'll receive credit for a valid report and a CVE if necessary.
 
 Do not report security issues on the WordPress.org support forums or via email. Thank you.
 
@@ -261,7 +261,7 @@ The photo was taken by <a href="https://www.flickr.com/photos/michaelpardo/21453
 
 ## Changelog ##
 
-### 2.0.0 (PMPro Crontrol) ###
+### 2.0.0 (PMPro Cron Management) ###
 
 * Forked from WP Crontrol 2.0.0. Removes the welcome panel, plugin suggestion cards, backup and WPCode notices, and the one-click plugin installers; the Cron AI screen keeps the Abilities API integration without the WPVibe card. Adds a guard so the plugin stays inactive while WP Crontrol is active.
 

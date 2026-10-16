@@ -303,7 +303,7 @@ class Log {
 
 		$run->run->errors[] = array(
 			'level'   => Logger::ERROR,
-			'message' => __( 'The run ended early because an exception was thrown and caught by the code that fired this hook.', 'pmpro-crontrol' ),
+			'message' => __( 'The run ended early because an exception was thrown and caught by the code that fired this hook.', 'pmpro-cron-management' ),
 		);
 
 		$this->finish( $run, true );
@@ -406,7 +406,7 @@ class Log {
 			if ( is_wp_error( $response ) ) {
 				$message = sprintf(
 					/* translators: 1: HTTP method, 2: Request URL, 3: Error message */
-					__( 'HTTP %1$s request to %2$s failed: %3$s', 'pmpro-crontrol' ),
+					__( 'HTTP %1$s request to %2$s failed: %3$s', 'pmpro-cron-management' ),
 					$method,
 					'{url}',
 					'{error}'
@@ -418,7 +418,7 @@ class Log {
 			} else {
 				$message = sprintf(
 					/* translators: 1: HTTP method, 2: Request URL, 3: HTTP status code */
-					__( 'HTTP %1$s request to %2$s returned status code %3$s', 'pmpro-crontrol' ),
+					__( 'HTTP %1$s request to %2$s returned status code %3$s', 'pmpro-cron-management' ),
 					$method,
 					'{url}',
 					'{code}'
@@ -435,7 +435,7 @@ class Log {
 				'crontrol/debug',
 				sprintf(
 					/* translators: 1: HTTP method, 2: Request URL, 3: HTTP status code */
-					__( 'HTTP %1$s request to %2$s returned status code %3$s', 'pmpro-crontrol' ),
+					__( 'HTTP %1$s request to %2$s returned status code %3$s', 'pmpro-cron-management' ),
 					$method,
 					'{url}',
 					'{code}'
@@ -506,7 +506,7 @@ class Log {
 		if ( '' !== $hook ) {
 			$message = sprintf(
 				/* translators: 1: Action Scheduler action ID, 2: Hook name */
-				__( 'Action Scheduler processed action %1$s (%2$s)', 'pmpro-crontrol' ),
+				__( 'Action Scheduler processed action %1$s (%2$s)', 'pmpro-cron-management' ),
 				'{id}',
 				'{hook}'
 			);
@@ -517,7 +517,7 @@ class Log {
 		} else {
 			$message = sprintf(
 				/* translators: %s: Action Scheduler action ID */
-				__( 'Action Scheduler processed action %s', 'pmpro-crontrol' ),
+				__( 'Action Scheduler processed action %s', 'pmpro-cron-management' ),
 				'{id}'
 			);
 			$context = array(
@@ -542,7 +542,7 @@ class Log {
 
 		$message = sprintf(
 			/* translators: 1: Action Scheduler action ID, 2: Error message */
-			__( 'Action Scheduler action %1$s failed: %2$s', 'pmpro-crontrol' ),
+			__( 'Action Scheduler action %1$s failed: %2$s', 'pmpro-cron-management' ),
 			'{id}',
 			'{error}'
 		);
@@ -778,7 +778,7 @@ class Log {
 		if ( defined( 'CAVALCADE_JOB_ID' ) ) {
 			$message = sprintf(
 				/* translators: %s: Job ID */
-				__( 'Cavalcade job ID: %s', 'pmpro-crontrol' ),
+				__( 'Cavalcade job ID: %s', 'pmpro-cron-management' ),
 				'{id}'
 			);
 			do_action( 'crontrol/debug', $message, array(
@@ -880,7 +880,7 @@ class Log {
 				'level'   => Logger::NOTICE,
 				'message' => sprintf(
 					/* translators: %s: Number of log messages */
-					__( '%s more messages were not kept.', 'pmpro-crontrol' ),
+					__( '%s more messages were not kept.', 'pmpro-cron-management' ),
 					number_format_i18n( $state->logger->get_omitted() )
 				),
 			);
@@ -897,9 +897,9 @@ class Log {
 				'level'   => Logger::WARNING,
 				'message' => sprintf(
 					/* translators: 1: Number of emails, 2: Error message */
-					_n( '%1$s email failed to send: %2$s', '%1$s emails failed to send: %2$s', $state->mail_failed, 'pmpro-crontrol' ),
+					_n( '%1$s email failed to send: %2$s', '%1$s emails failed to send: %2$s', $state->mail_failed, 'pmpro-cron-management' ),
 					number_format_i18n( $state->mail_failed ),
-					'' !== $state->mail_error ? $state->mail_error : __( 'no error message', 'pmpro-crontrol' )
+					'' !== $state->mail_error ? $state->mail_error : __( 'no error message', 'pmpro-cron-management' )
 				),
 			);
 		}
@@ -937,7 +937,7 @@ class Log {
 			$run->errors = array(
 				array(
 					'level'   => Logger::WARNING,
-					'message' => __( 'The details of this run could not be saved.', 'pmpro-crontrol' ),
+					'message' => __( 'The details of this run could not be saved.', 'pmpro-cron-management' ),
 				),
 			);
 
@@ -1015,7 +1015,7 @@ class Log {
 					'level'   => Logger::NOTICE,
 					'message' => sprintf(
 						/* translators: %s: Number of log entries */
-						__( '%s more entries were not saved.', 'pmpro-crontrol' ),
+						__( '%s more entries were not saved.', 'pmpro-cron-management' ),
 						number_format_i18n( count( $entries ) - $i )
 					),
 				);
@@ -1094,7 +1094,7 @@ class Log {
 			$labels[ $schedule->name ] = ( '' !== $schedule->display ) ? $schedule->display : $schedule->name;
 		}
 
-		$non_recurring = __( 'Non-recurring', 'pmpro-crontrol' );
+		$non_recurring = __( 'Non-recurring', 'pmpro-cron-management' );
 		$schedules = array();
 
 		foreach ( \Crontrol\Event\get() as $event ) {

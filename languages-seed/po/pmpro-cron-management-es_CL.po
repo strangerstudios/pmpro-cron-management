@@ -1,66 +1,62 @@
-# Translation of PMPro Crontrol 2.0.0 (cs_CZ).
-# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-crontrol.pot.
-# This file is distributed under the same license as the PMPro Crontrol package (GPL v2 or later).
+# Translation of PMPro Cron Management 2.0.0 (es_CL).
+# Seeded from the WordPress.org WP Crontrol 2.0.0 language pack on 2026-10-15, filtered to strings present in pmpro-cron-management.pot.
+# This file is distributed under the same license as the PMPro Cron Management package (GPL v2 or later).
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-10-11 20:57:26+0000\n"
+"PO-Revision-Date: 2026-08-22 23:13:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/4.1.0\n"
-"X-Domain: pmpro-crontrol\n"
-"Language: cs_CZ\n"
-"Project-Id-Version: PMPro Crontrol 2.0.0
+"X-Domain: pmpro-cron-management\n"
+"Language: es_CL\n"
+"Project-Id-Version: PMPro Cron Management 2.0.0
 "
-
-#: src/bootstrap.php:938
-msgid "You are not allowed to export cron events."
-msgstr "Export událostí cron není povolen."
 
 #: src/event-list-table.php:313
 msgid "WooCommerce events"
-msgstr "Události WooCommerce"
+msgstr "Eventos de WooCommerce"
 
 #: src/bootstrap.php:2549
 msgid "Secondary menu"
-msgstr "Podruhé menu"
+msgstr "Menú secundario"
 
 #: src/event-list-table.php:727
 msgid "PHP cron events are disabled"
-msgstr "Cron události spuštěné přes PHP jsou zakázány"
+msgstr "Los eventos cron de PHP están desactivados"
 
 #. translators: %s: The PHP type of the invalid value
 #: src/bootstrap.php:2110
 msgid "Arguments should be an array but %s was provided. The event will likely fail with a PHP error when it attempts to run."
-msgstr "Argumenty mají být ve formátu pole, ale místo toho bylo předáno %s. Při pokusu o spuštění události pravděpodobně dojde k chybě PHP."
+msgstr "Los argumentos deben ser un array pero se ha entregado %s. Es bastante probable que falle el evento con un error de PHP cuando trate de ejecutarse."
 
 #: src/bootstrap.php:2107 src/event-list-table.php:698
 msgid "This event has invalid arguments and will not run correctly."
-msgstr "Tato událost má neplatné argumenty a nebude spuštěna správně."
+msgstr "Este evento tiene argumentos no válidos y no se ejecutará correctamente."
 
 #. translators: %s: The internal name of the schedule.
 #: src/schedule.php:28
 msgid "A schedule with the name \"%s\" already exists."
-msgstr "Plán s názvem „%s“ již existuje."
+msgstr "Ya existe una programación con el nombre “%s”."
 
 #. translators: %s: Schedule name
 #: src/Event/Event.php:270
 msgid "Unknown schedule (%s)"
-msgstr "Neznámý plán (%s)"
+msgstr "Programación desconocida (%s)"
 
 #: src/event-list-table.php:705 src/Pro/Table.php:364
 msgid "View arguments"
-msgstr "Zobrazit argumenty"
+msgstr "Ver argumentos"
 
 #. translators: State of a cron event, adjective
 #: src/event-list-table.php:673
 msgid "Disabled"
-msgstr "Zakázáno"
+msgstr "Desactivado"
 
 #: src/event-list-table.php:319
 msgid "Duplicated events"
-msgstr "Duplicitní události"
+msgstr "Eventos duplicados"
 
 #. translators: %s: Message text.
 #: src/bootstrap.php:3252 src/bootstrap.php:3358
@@ -69,127 +65,127 @@ msgstr "WP Crontrol: %s"
 
 #: src/bootstrap.php:2010 src/bootstrap.php:2062
 msgid "Display Name (optional)"
-msgstr "Zobrazované Jméno (volitelné)"
+msgstr "Nombre para mostrar (opcional)"
 
 #. translators: %s: The name of the cron schedule.
 #: src/bootstrap.php:1384
 msgid "A schedule with the name %s already exists."
-msgstr "Plán s názvem %s již existuje."
+msgstr "Ya existe una programación con el nombre %s."
 
 #: src/bootstrap.php:760
 msgid "You are not allowed to delete URL cron events."
-msgstr "Nemáte oprávnění mazat URL cron události."
+msgstr "No tienes permisos para borrar eventos cron de URL."
 
 #: src/bootstrap.php:360
 msgid "You are not allowed to edit URL cron events."
-msgstr "Nemáte oprávnění upravovat URL cron události."
+msgstr "No tienes permisos para editar eventos cron de URL."
 
 #: src/bootstrap.php:166 src/bootstrap.php:222
 msgid "You are not allowed to add new URL cron events."
-msgstr "Nemáte oprávnění přidávat nové URL cron události."
+msgstr "No puedes agregar nuevos eventos cron de URL."
 
 #. translators: %s: The URL that failed validation.
 #: src/event.php:700
 msgid "The URL \"%s\" is not allowed"
-msgstr "Adresa URL „%s“ není povolena."
+msgstr "La URL “%s” no está permitida"
 
 #. translators: %s: The error message.
 #: src/event.php:188
 msgid "The cron event was saved but contains an error: %s."
-msgstr "Cron událost byla uložena, ale obsahuje chybu: %s."
+msgstr "El evento cron se guardó pero contiene un error: %s."
 
 #. translators: %s: Time period, for example "8 minutes"
 #: src/event-list-table.php:818
 msgid "In %s"
-msgstr "V %s"
+msgstr "En %s"
 
 #. translators: 1: Hook name, 2: Date and time
 #. translators: 1: Date, 2: Time
 #: src/alerts.php:385 src/bootstrap.php:2916
 msgid "%1$s at %2$s"
-msgstr "%1$s v %2$s"
+msgstr "%1$s a las %2$s"
 
 #. translators: %s: Time
 #: src/bootstrap.php:2910
 msgid "Yesterday at %s"
-msgstr "Včera v %s"
+msgstr "Ayer a las %s"
 
 #. translators: %s: Time
 #: src/bootstrap.php:2904
 msgid "Tomorrow at %s"
-msgstr "Zítra v %s"
+msgstr "Mañana a las %s"
 
 #. translators: %s: Time
 #: src/bootstrap.php:2898
 msgid "Today at %s"
-msgstr "Dnes v %s"
+msgstr "Hoy a las %s"
 
 #: src/event-list-table.php:784
 msgid "Immediately"
-msgstr "Ihned"
+msgstr "Inmediatamente"
 
 #: src/bootstrap.php:3002
 msgid "Are you sure you want to delete all events with this hook?"
-msgstr "Opravdu chcete smazat všechny události s tímto hookem?"
+msgstr "¿Seguro que quieres borrar todos los eventos con este gancho?"
 
 #: src/bootstrap.php:3001
 msgid "Are you sure you want to delete this event?"
-msgstr "Opravdu chcete smazat tuto událost?"
+msgstr "¿Seguro que quieres borrar este evento?"
 
 #. translators: A Closure is a type of PHP function. 1: File name, 2: Line
 #. number
 #: src/bootstrap.php:2696
 msgid "Closure in %1$s at line %2$d"
-msgstr "Anonymní funkce v %1$s na řádku %2$d"
+msgstr "Cierre en %1$s en la línea %2$d"
 
 #. translators: 1: The time since the event was scheduled, 2: The URL to search
 #. for the event.
 #: src/bootstrap.php:1792
 msgid "The event probably ran %1$s ago. <a href=\"%2$s\">Click here to see if it was rescheduled</a>."
-msgstr "Událost se pravděpodobně spustila před %1$s. <a href=\"%2$s\">Klikněte sem a zjistěte, zda byla přeplánována</a>."
+msgstr "El evento se ejecutó probablemente hace %1$s. <a href=\"%2$s\">Haz clic aquí para ver si se ha reprogramado</a>."
 
 #: src/event-list-table.php:740
 msgid "URL cron events are disabled"
-msgstr "Cron události spuštěné přes URL jsou vypnuté"
+msgstr "Los eventos cron de URL están desactivados."
 
 #. translators: %s: Name of the URL cron event
 #. translators: %s: Details about the URL cron event.
 #: src/abilities.php:493 src/Event/URLCronEvent.php:65
 #: src/Event/URLCronEvent.php:75
 msgid "URL cron event (%s)"
-msgstr "Událost URL cron (%s)"
+msgstr "Evento cron de URL (%s)"
 
 #. translators: %s: Name of the PHP cron event
 #. translators: %s: Details about the PHP cron event.
 #: src/abilities.php:489 src/Event/PHPCronEvent.php:73
 #: src/Event/PHPCronEvent.php:91
 msgid "PHP cron event (%s)"
-msgstr "Událost PHP cron (%s)"
+msgstr "Evento cron PHP (%s)"
 
 #: src/event-list-table.php:317
 msgid "URL events"
-msgstr "Události URL"
+msgstr "Eventos URL"
 
 #: src/bootstrap.php:2308
 msgid "PHP cron event saved."
-msgstr "Událost PHP cron uložena."
+msgstr "Evento cron PHP guardado."
 
 #: src/bootstrap.php:2304
 msgid "URL cron event saved."
-msgstr "Událost URL cron uložena."
+msgstr "Evento cron de URL guardado."
 
 #: src/bootstrap.php:2210 src/event-list-table.php:245
 msgctxt "noun"
 msgid "Schedule"
-msgstr "Naplánovat"
+msgstr "Programación"
 
 #: src/bootstrap.php:1994
 msgid "HTTP Method"
-msgstr "Metoda HTTP"
+msgstr "Método HTTP"
 
 #: src/bootstrap.php:1976
 msgid "The URL in this event needs to be checked for integrity. This event will not run until you re-save it."
-msgstr "Adresa URL v této události musí být zkontrolována z hlediska integrity. Tato událost se nespustí, dokud ji znovu neuložíte."
+msgstr "Es necesario comprobar la integridad de la URL de este evento. Este evento no se ejecutará hasta que lo vuelvas a guardar."
 
 #: src/bootstrap.php:1967
 msgid "URL"
@@ -199,404 +195,418 @@ msgstr "URL"
 #: src/abilities.php:493 src/bootstrap.php:1944 src/Event/URLCronEvent.php:78
 #: src/Pro/Table.php:754
 msgid "URL cron event"
-msgstr "Událost URL cron"
+msgstr "Evento cron de URL"
 
 #: src/bootstrap.php:1424
 msgid "Adding a new schedule allows you to schedule recurring events at the given interval."
-msgstr "Přidání nového plánu vám umožní naplánovat opakující se události v daném intervalu."
+msgstr "Agregar una nueva programación te permite programar eventos recurrentes en el intervalo dado."
 
 #: src/bootstrap.php:268 src/bootstrap.php:451
 msgid "URL Cron"
-msgstr "URL Cron"
+msgstr "Cron de URL"
 
 #: src/event-list-table.php:678
 msgid "Needs checking"
-msgstr "Potřebuje kontrolu"
+msgstr "Necesita comprobación"
 
 #: src/event-list-table.php:498
 msgid "Check and edit"
-msgstr "Zkontrolujte a upravte"
+msgstr "Comprobar y editar"
 
 #: src/event-list-table.php:316
 msgid "PHP events"
-msgstr "PHP události"
+msgstr "Eventos PHP"
 
 #: src/event-list-table.php:106
 msgid "One or more of your cron events needs to be checked for integrity. These events will not run until you check and re-save them."
-msgstr "Je třeba zkontrolovat integritu jedné nebo více událostí cronu. Tyto události se nespustí, dokud je nezkontrolujete a znovu neuložíte."
+msgstr "Es necesario comprobar la integridad de uno o más de tus eventos cron. Estos eventos no se ejecutarán hasta que los compruebes y los vuelvas a guardar."
 
 #. translators: %s: An input field for specifying a date and time
 #: src/bootstrap.php:2179
 msgid "At this time: %s"
-msgstr "V tuto chvíli: %s"
+msgstr "En este momento: %s"
 
 #: src/bootstrap.php:1978 src/bootstrap.php:2037 src/event-list-table.php:108
 msgid "Read what to do"
-msgstr "Přečtěte si, co dělat"
+msgstr "Lee qué hacer"
 
 #: src/bootstrap.php:2035
 msgid "The PHP code in this event needs to be checked for integrity. This event will not run until you re-save it."
-msgstr "Kód PHP v této události musí být zkontrolován z hlediska integrity. Tato událost se nespustí, dokud ji znovu neuložíte."
+msgstr "Es necesario comprobar la integridad del código PHP de este evento. Este evento no se ejecutará hasta que lo vuelvas a guardar."
 
 #. translators: %s: Name of the PHP cron event
 #: src/abilities.php:489 src/bootstrap.php:1952 src/Event/PHPCronEvent.php:96
 #: src/Pro/Table.php:755
 msgid "PHP cron event"
-msgstr "Událost PHP cron"
+msgstr "Evento cron PHP"
 
 #: src/bootstrap.php:1937
 msgid "Standard cron event"
-msgstr "Standardní událost cronu"
+msgstr "Evento cron estándar"
 
 #. translators: %s: The number of events with this hook
 #: src/event-list-table.php:581
 msgid "Delete all events with this hook (%s)"
-msgstr "Smazat všechny události s tímto háčkem (%s)"
+msgstr "Borrar todos los eventos con este gancho (%s)"
 
 #. translators: Pause is a verb
 #: src/event-list-table.php:545
 msgid "Pause this hook"
-msgstr "Pozastavte tímto háčkem"
+msgstr "Pausar este gancho"
 
 #. translators: Resume is a verb
 #: src/event-list-table.php:534
 msgid "Resume this hook"
-msgstr "Obnovte tímto háčkem"
+msgstr "Reiniciar este gancho"
 
 #. translators: 1: Date and time, 2: Timezone
 #: src/bootstrap.php:2226 src/bootstrap.php:2384
 msgid "Site time when page loaded: %1$s, %2$s"
-msgstr "Čas webu při načtení stránky: %1$s, %2$s"
+msgstr "Hora del sitio cuando cargó la página: %1$s, %2$s"
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2300
 msgid "Resumed the %s hook."
-msgstr "Obnoveno háčkem %s."
+msgstr "Reanudado el hook %s."
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2295
 msgid "Paused the %s hook."
-msgstr "Pozastaveno %s háčkem."
+msgstr "Pausado el hook %s."
 
 #: src/bootstrap.php:844 src/bootstrap.php:850 src/bootstrap.php:891
 #: src/bootstrap.php:897
 msgid "You are not allowed to pause or resume cron events."
-msgstr "Nemáte povoleno pozastavit nebo obnovit události cron."
+msgstr "No tienes permiso para pausar o reanudar eventos cron."
 
 #. translators: %s: The name of the cron event.
 #: src/event.php:271
 msgid "Failed to resume the cron event %s."
-msgstr "Nepodařilo se obnovit událost cron %s."
+msgstr "Error al reanudar el evento cron %s."
 
 #. translators: %s: The name of the cron event.
 #: src/event.php:240
 msgid "Failed to pause the cron event %s."
-msgstr "Nepodařilo se pozastavit událost cron %s."
+msgstr "Error al pausar el evento cron %s."
 
 #. translators: State of a cron event, adjective
 #: src/event-list-table.php:691
 msgid "Paused"
-msgstr "Pozastaveno"
+msgstr "Pausado"
 
 #: src/event-list-table.php:318
 msgid "Paused events"
-msgstr "Pozastavené události"
+msgstr "Eventos pausados"
 
 #. translators: %s: Function name
 #: src/bootstrap.php:2719
 msgid "Function %s does not exist"
-msgstr "Funkce %s neexistuje"
+msgstr "La función %s no existe"
 
 #: src/bootstrap.php:2312
 msgid "An unknown error occurred."
-msgstr "Vyskytla se neznámá chyba."
+msgstr "Ocurrió un error desconocido."
 
 #: src/bootstrap.php:960
 msgid "Could not save CSV file."
-msgstr "Soubor CSV nelze uložit."
+msgstr "No se pudo guardar el archivo CSV."
 
 #: src/event-list-table.php:383
 msgid "Export"
-msgstr "Exportovat"
-
-#. translators: %s: The name of the cron event.
-#: src/bootstrap.php:2251
-msgid "Scheduled the cron event %s to run now. The original event will not be affected."
-msgstr "Naplánováno spuštění události cron %s nyní. Původní událost nebude ovlivněna."
+msgstr "Exportar"
 
 #: src/bootstrap.php:1290 src/bootstrap.php:1322 src/bootstrap.php:1340
 #: src/event-list-table.php:723 src/event-list-table.php:736
 #: src/event-list-table.php:765 src/event-list-table.php:803
 #: src/Pro/Table.php:377
 msgid "Help"
-msgstr "Nápověda"
+msgstr "Ayuda"
 
 #. translators: %s: URL to the documentation
 #: src/bootstrap.php:1276
 msgid "<a href=\"%s\">Read the WordPress.org documentation on WP-Cron</a> for more technical details about the WP-Cron system for developers."
-msgstr "<a href=\"%s\">Přečtěte si dokumentaci WordPress.org k WP-Cron</a>, kde najdete další technické podrobnosti o systému WP-Cron pro vývojáře."
+msgstr "<a href=\"%s\">Lee la documentación de WordPress.org sobre WP-Cron</a> para más detalles técnicos para desarrolladores sobre el sistema WP-Cron."
 
 #. translators: %s: URL to the documentation
 #: src/bootstrap.php:1262
 msgid "<a href=\"%s\">Read the Frequently Asked Questions (FAQ)</a> which cover many common questions and answers."
-msgstr "<a href=\"%s\">Přečtěte si často kladené otázky (FAQ)</a>, které obsahují mnoho běžných otázek a odpovědí."
+msgstr "<a href=\"%s\">Lee las preguntas frecuentes (FAQ)</a> que cubren muchas preguntas y respuestas comunes."
 
 #. translators: 1: URL to the documentation, 2: WP Crontrol
 #: src/bootstrap.php:1247
 msgid "<a href=\"%1$s\">Read the %2$s website</a> which contains information about events that have missed their schedule, problems with spawning a call to the WP-Cron system, and much more."
-msgstr "<a href=\"%1$s\">Přečtěte si webovou stránku %2$s</a>, která obsahuje informace o událostech, které zmeškaly svůj plán, problémech s vyvoláním volání do systému WP-Cron a mnoho dalšího."
+msgstr "<a href=\"%1$s\">Lee el sitio de %2$s</a> que contiene información sobre eventos que han perdido la programación, problemas al realizar una llamada al sistema de WP-Cron y mucho más."
 
 #: src/bootstrap.php:1241
 msgid "There are several places to get help with issues relating to WP-Cron:"
-msgstr "Existuje několik míst, kde můžete získat pomoc s problémy souvisejícími s WP-Cron:"
+msgstr "Hay varios lugares dónde obtener ayuda con problemas relacionados con WP-Cron:"
 
 #: src/Event/CoreCronEvent.php:38
 msgid "This is a WordPress core event and cannot be deleted"
-msgstr "Toto je základní událost WordPress a nelze ji smazat"
+msgstr "Este es un evento del núcleo de WordPress y no se puede borrar"
 
 #: src/event-list-table.php:315
 msgid "Custom events"
-msgstr "Vlastní události"
+msgstr "Eventos personalizados"
 
 #: src/event-list-table.php:314
 msgid "WordPress core events"
-msgstr "Klíčové události WordPress"
+msgstr "Eventos del núcleo de WordPress"
 
 #: src/event-list-table.php:312
 msgid "Events with no action"
-msgstr "Události bez akce"
+msgstr "Eventos sin ninguna acción"
 
 #: src/event-list-table.php:311
 msgid "All events"
-msgstr "Všechny události"
+msgstr "Todos los eventos"
 
 #: src/event.php:136
 msgid "Invalid timestamp provided."
-msgstr "Bylo zadáno neplatné časové razítko."
+msgstr "La marca temporal facilitada no es válida."
 
 #. translators: %s: The name of the cron event.
 #: src/event.php:107
 msgid "Failed to schedule the cron event %s."
-msgstr "Nepodařilo se naplánovat událost cron %s."
+msgstr "Fallo al programar el evento cron %s."
 
 #. translators: %s: The name of the cron event.
 #: src/event.php:64 src/event.php:371
 msgid "The cron event %s could not be found."
-msgstr "Událost cron %s nebyla nalezena."
+msgstr "El evento cron %s no se pudo encontrar."
+
+#. translators: %s: The name of the cron event.
+#: src/bootstrap.php:2251
+msgid "Scheduled the cron event %s to run now. The original event will not be affected."
+msgstr "Evento cron %s programado para ejecutarse ahora. El evento original no se verá afectado."
 
 #: src/event-list-table.php:872
 msgid "No matching cron events."
-msgstr "Žádné odpovídající události cronu."
+msgstr "No hay eventos cron que coincidan."
 
 #: src/bootstrap.php:1927 src/bootstrap.php:1932
 msgid "Event Type"
-msgstr "Typ události"
+msgstr "Tipo de evento"
+
+#: src/bootstrap.php:1595 src/bootstrap.php:1625
+msgid "More information"
+msgstr "Más información"
+
+#: src/bootstrap.php:1593
+msgid "PHP default timezone is not set to UTC. This may cause issues with cron event timings."
+msgstr "La zona horaria por defecto de PHP no está establecida en UTC. Esto puede causar problemas con los horarios de los eventos cron."
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:1786
 msgid "The %s event you are trying to edit does not exist."
-msgstr "Událost, kterou se pokoušíte upravit, neexistuje."
-
-#: src/bootstrap.php:1595 src/bootstrap.php:1625
-msgid "More information"
-msgstr "Více informací"
-
-#: src/bootstrap.php:1593
-msgid "PHP default timezone is not set to UTC. This may cause issues with cron event timings."
-msgstr "Výchozí časové pásmo PHP není nastaveno na UTC. To může způsobit problémy s časováním událostí cronu."
+msgstr "El evento %s que estás intentando editar no existe."
 
 #. translators: 1: The name of the configuration constant, 2: The value of the
 #. configuration constant
 #: src/event-list-table.php:852 src/schedule-list-table.php:171
 msgid "This interval is less than the %1$s constant which is set to %2$s seconds. Events that use it may not run on time."
-msgstr "Tento interval je kratší než konstanta %1$s, která je nastavena na %2$s sekund. Události, které jej používají, nemusí běžet včas."
+msgstr "Este intervalo es menor que la constante %1$s que está establecida en %2$s segundos. Los eventos que la usan pueden que no se ejecuten a tiempo."
 
 #: src/event-list-table.php:870
 msgid "There are currently no scheduled cron events."
-msgstr "Momentálně nejsou žádné naplánované události cronu."
+msgstr "En este momento no hay eventos cron programados."
 
 #. translators: %s: Time period, for example "8 minutes"
 #: src/event-list-table.php:797 src/Pro/bootstrap.php:1069
 #: src/Pro/Table.php:338
 msgid "%s ago"
-msgstr "před %s"
+msgstr "hace %s"
 
 #. translators: 1: Line number, 2: Error message text
 #: src/Event/PHPCronEvent.php:109
 msgid "Line %1$s: %2$s"
-msgstr "Řádek %1$s: %2$s"
+msgstr "Línea %1$s: %2$s"
 
 #: src/event-list-table.php:631
 msgid "Select this row"
-msgstr "Vyberte tento řádek"
+msgstr "Seleccionar esta fila"
 
 #: src/event-list-table.php:243 src/Pro/Table.php:325 src/Pro/Table.php:501
 msgid "Hook"
-msgstr "Háček"
+msgstr "Gancho"
 
 #: src/schedule-list-table.php:197
 msgid "There are no schedules."
-msgstr "Neexistují žádné rozvrhy."
+msgstr "No hay programaciones."
 
 #: src/Schedule/ThirdPartySchedule.php:27
 msgid "This schedule is added by another plugin and cannot be deleted"
-msgstr "Tento plán je přidán jiným pluginem a nelze jej smazat"
+msgstr "Esta programación ha sido agregado por otro plugin y no puede ser borrada"
 
 #: src/Schedule/CoreSchedule.php:27
 msgid "This is a WordPress core schedule and cannot be deleted"
-msgstr "Toto je základní plán jádra WordPress a nelze jej smazat"
+msgstr "Esta es una programación del núcleo de WordPress y no se puede borrar"
 
 #: src/bootstrap.php:2371
 msgid "Search Hook Names"
-msgstr "Hledejte jména háčků"
+msgstr "Buscar nombres de ganchos"
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2290
 msgid "Failed to save the cron event %s."
-msgstr "Událost cron %s se nepodařilo uložit."
+msgstr "Fallo al guardar el evento cron %s."
 
 #: src/bootstrap.php:2285
 msgid "Deleted the selected cron events."
-msgstr "Vybrané události cronu byly smazány."
+msgstr "Los eventos cron seleccionados se han borrado."
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2271
 msgid "Deleted the cron event %s."
-msgstr "Smazána událost cron %s."
+msgstr "Se borró el evento cron %s."
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2266
 msgid "Saved the cron event %s."
-msgstr "Událost cron %s byla uložena."
+msgstr "Se ha guardado el evento cron %s."
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2261
 msgid "There are no %s cron events to delete."
-msgstr "Nejsou žádné %s události cron ke smazání."
+msgstr "No hay ningún evento cron %s que borrar."
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2256
 msgid "Deleted all %s cron events."
-msgstr "Smazány všechny %s události cron."
+msgstr "Se han borrado todos los eventos cron %s."
 
 #: src/bootstrap.php:1881 src/bootstrap.php:2593
 msgid "Edit Cron Event"
-msgstr "Upravit událost Cron"
+msgstr "Editar evento cron"
 
 #: src/bootstrap.php:1851
 msgid "Add Event"
-msgstr "Přidat událost"
+msgstr "Agregar un evento"
 
 #: src/bootstrap.php:1843
 msgid "Update Event"
-msgstr "Aktualizovat událost"
+msgstr "Actualizar evento"
 
 #. translators: %s: The name of the plugin that controls the running of cron
 #. events.
 #: src/bootstrap.php:1512
 msgid "WP-Cron spawning is being managed by the %s plugin."
-msgstr "Vytváření WP-Cron je řízeno pluginem %s."
+msgstr "El procesamiento de WP-Cron lo está gestionando el plugin %s."
 
 #. translators: %s: The name of the cron schedule.
 #: src/bootstrap.php:1379
 msgid "Added the cron schedule %s."
-msgstr "Přidán plán cron %s."
+msgstr "Agregada la programación del cron %s."
 
 #. translators: %s: The name of the cron schedule.
 #: src/bootstrap.php:1374
 msgid "Deleted the cron schedule %s."
-msgstr "Smazán plán cron %s."
+msgstr "Borrada la programación del cron %s."
 
 #: src/bootstrap.php:2170
 msgid "Tomorrow"
-msgstr "Zítra"
+msgstr "Mañana"
 
 #: src/bootstrap.php:2164 src/event-list-table.php:814
 #: src/Pro/bootstrap.php:538
 msgid "Now"
-msgstr "Nyní"
+msgstr "Ahora"
 
 #: src/bootstrap.php:712 src/bootstrap.php:757
 msgid "You are not allowed to delete PHP cron events."
-msgstr "Nemáte povoleno mazat události PHP cron."
+msgstr "No tienes permisos para borrar eventos cron PHP."
 
 #: src/bootstrap.php:356 src/bootstrap.php:519
 msgid "You are not allowed to edit PHP cron events."
-msgstr "Nemáte oprávnění upravovat události PHP cron."
+msgstr "No tienes permisos para editar eventos cron PHP."
 
 #. translators: 1, 2, and 3: Example values for an input field.
 #: src/bootstrap.php:2127
 msgid "Use a JSON encoded array, e.g. %1$s, %2$s, or %3$s"
-msgstr "Použijte pole kódované JSON, např. %1$s, %2$s nebo %3$s"
+msgstr "Utiliza un array codificado con JSON, p. ej. %1$s, %2$s, o %3$s"
 
 #. translators: The PHP tag name
 #: src/bootstrap.php:2050
 msgid "The opening %s tag must not be included."
-msgstr "Úvodní značka %s nesmí být zahrnuta."
+msgstr "El etiqueta %s de apertura no debe incluirse."
 
 #: src/Schedule/CrontrolSchedule.php:27
 msgid "This custom schedule is in use and cannot be deleted"
-msgstr "Tento vlastní plán se používá a nelze jej smazat"
+msgstr "Esta programación personalizada está en uso y no puede borrarse"
 
 #: src/event-list-table.php:246 src/Pro/Table.php:326 src/Pro/Table.php:518
 #: src/Pro/Table.php:520
 msgid "Action"
-msgstr "Akce"
+msgstr "Acción"
 
 #: src/bootstrap.php:2235
 msgid "You cannot add, edit, or delete PHP cron events because your user account does not have the ability to edit files."
-msgstr "Události PHP cron nemůžete přidávat, upravovat ani odstraňovat, protože váš uživatelský účet nemá možnost upravovat soubory."
+msgstr "No puedes agregar, editar o borrar eventos cron de PHP porque tu cuenta de usuario no tiene la posibilidad de editar archivos."
 
 #. translators: %s Timezone name.
 #: src/bootstrap.php:2200
 msgid "Timezone: %s"
-msgstr "Časové pásmo: %s"
+msgstr "Zona horaria: %s"
 
 #: src/bootstrap.php:2098
 msgid "Arguments (optional)"
-msgstr "Argumenty (volitelné)"
+msgstr "Argumentos (opcional)"
 
 #. translators: %s: The name of the PHP constant that is set.
 #: src/bootstrap.php:1529
 msgid "The %s constant is set to true."
-msgstr "Konstanta %s je nastavena na hodnotu true."
+msgstr "La constante %s está configurada a true."
 
 #. translators: %s: The name of the PHP constant that is set.
 #: src/bootstrap.php:1521
 msgid "The %s constant is set to true. WP-Cron spawning is disabled."
-msgstr "Konstanta %s je nastavena na hodnotu true. Vytváření WP-Cron je zakázáno."
+msgstr "La constante %s está configurada a true. La llamada de WP-Cron está desactivada."
 
 #. translators: %s: The HTTP response code.
 #: src/bootstrap.php:1561
 msgid "Unexpected HTTP response code: %s"
-msgstr "Neočekávaný kód odezvy HTTP: %s"
+msgstr "Código de respuesta HTTP inesperado: %s"
 
 #: src/bootstrap.php:1423 src/bootstrap.php:1445
 msgid "Add Cron Schedule"
-msgstr "Přidejte plán Cron"
+msgstr "Agregar programación cron"
 
 #: src/bootstrap.php:1039 src/bootstrap.php:1040 src/bootstrap.php:1081
 #: src/bootstrap.php:1307 src/bootstrap.php:2361 src/bootstrap.php:2521
 msgid "Cron Events"
-msgstr "Události Cron"
+msgstr "Eventos cron"
 
 #: src/bootstrap.php:163 src/bootstrap.php:285
 msgid "You are not allowed to add new PHP cron events."
-msgstr "Nemáte povoleno přidávat nové události PHP cron."
+msgstr "No tienes permisos para agregar nuevos eventos cron de PHP."
+
+#: src/event-list-table.php:500
+msgid "Edit"
+msgstr "Editar"
 
 #: src/event-list-table.php:294 src/event-list-table.php:482
 #: src/event-list-table.php:561 src/schedule-list-table.php:123
 msgid "Delete"
-msgstr "Smazat"
+msgstr "Borrar"
 
-#: src/event-list-table.php:500
-msgid "Edit"
-msgstr "Upravit"
+#. translators: %s: The number of days in an interval of time.
+#: src/bootstrap.php:2807
+msgid "%s day"
+msgid_plural "%s days"
+msgstr[0] "%s día"
+msgstr[1] "%s días"
 
 #: src/event-list-table.php:769 src/Pro/Table.php:381 src/Pro/Table.php:510
 #: src/Pro/Table.php:520 src/Pro/Table.php:568 src/Pro/Table.php:574
 msgid "None"
-msgstr "Nic"
+msgstr "Ninguna"
+
+#. translators: %s: The number of years in an interval of time.
+#: src/bootstrap.php:2801
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] "%s año."
+msgstr[1] "%s años."
 
 #. Plugin Name of the plugin
 #: wp-crontrol.php src/bootstrap.php:1121
@@ -605,148 +615,127 @@ msgstr "WP Crontrol"
 
 #: src/bootstrap.php:2817
 msgid "now"
-msgstr "nyní"
+msgstr "ahora"
 
 #. translators: %s: The number of seconds in an interval of time.
 #: src/bootstrap.php:2813
 msgid "%s second"
 msgid_plural "%s seconds"
-msgstr[0] "%s sekunda"
-msgstr[1] "%s sekundy"
-msgstr[2] "%s sekund"
+msgstr[0] "%s segundo"
+msgstr[1] "%s segundos"
 
 #. translators: %s: The number of minutes in an interval of time.
 #: src/bootstrap.php:2811 src/bootstrap.php:2824
 msgid "%s minute"
 msgid_plural "%s minutes"
-msgstr[0] "%s minuta"
-msgstr[1] "%s minuty"
-msgstr[2] "%s minut"
+msgstr[0] "%s minuto"
+msgstr[1] "%s minutos"
 
 #. translators: %s: The number of hours in an interval of time.
 #: src/bootstrap.php:2809
 msgid "%s hour"
 msgid_plural "%s hours"
-msgstr[0] "%s hodina"
-msgstr[1] "%s hodiny"
-msgstr[2] "%s hodin"
-
-#. translators: %s: The number of days in an interval of time.
-#: src/bootstrap.php:2807
-msgid "%s day"
-msgid_plural "%s days"
-msgstr[0] "%s den"
-msgstr[1] "%s dny"
-msgstr[2] "%s dnů"
+msgstr[0] "%s hora"
+msgstr[1] "%s horas"
 
 #. translators: %s: The number of weeks in an interval of time.
 #: src/bootstrap.php:2805
 msgid "%s week"
 msgid_plural "%s weeks"
-msgstr[0] "%s týden"
-msgstr[1] "%s týdny"
-msgstr[2] "%s týdnů"
+msgstr[0] "%s semana"
+msgstr[1] "%s semanas"
 
 #. translators: %s: The number of months in an interval of time.
 #: src/bootstrap.php:2803
 msgid "%s month"
 msgid_plural "%s months"
-msgstr[0] "%s měsíc"
-msgstr[1] "%s měsíce"
-msgstr[2] "%s měsíců"
-
-#. translators: %s: The number of years in an interval of time.
-#: src/bootstrap.php:2801
-msgid "%s year"
-msgid_plural "%s years"
-msgstr[0] "%s rok"
-msgstr[1] "%s roky"
-msgstr[2] "%s roků"
+msgstr[0] "%s mes"
+msgstr[1] "%s meses"
 
 #: src/event-list-table.php:521
 msgid "Run now"
-msgstr "Spustit nyní"
+msgstr "Ejecutar ahora"
 
 #: src/bootstrap.php:2026 src/Event/PHPCronEvent.php:118
 msgid "PHP Code"
-msgstr "Kód PHP"
+msgstr "Código PHP"
 
 #: src/bootstrap.php:331 src/bootstrap.php:533
 msgid "PHP Cron"
-msgstr "PHP Cron"
+msgstr "Cron PHP"
 
 #: src/bootstrap.php:2142 src/bootstrap.php:2159 src/event-list-table.php:244
 msgid "Next Run"
-msgstr "Další spuštění"
+msgstr "Próxima ejecución"
 
 #: src/bootstrap.php:2078 src/bootstrap.php:2081
 msgid "Hook Name"
-msgstr "Název háčku"
+msgstr "Nombre del gancho"
 
 #: src/bootstrap.php:1883 src/bootstrap.php:2363 src/bootstrap.php:2588
 msgid "Add Cron Event"
-msgstr "Přidat událost Cron"
+msgstr "Agregar evento cron"
 
 #. translators: %s: Error message text.
 #: src/bootstrap.php:1621
 msgid "There was a problem spawning a call to the WP-Cron system on your site. This means WP-Cron events on your site may not work. The problem was: %s"
-msgstr "Při vytváření volání systému WP-Cron na vašem webu došlo k problému. To znamená, že události WP-Cron na vašem webu nemusí fungovat. Problém byl: %s"
+msgstr "Hubo un problema al generar una llamada al sistema WP-Cron en tu sitio. Esto significa que los eventos de WP-Cron de tu sitio podrían no funcionar. El problema fue: %s"
 
 #: src/bootstrap.php:1428
 msgid "Interval (seconds)"
-msgstr "Interval (sekundy)"
+msgstr "Intervalo (segundos)"
 
 #: src/bootstrap.php:1440 src/schedule-list-table.php:74
 msgid "Internal Name"
-msgstr "Interní název"
+msgstr "Nombre interno"
 
 #: src/bootstrap.php:1434 src/schedule-list-table.php:76
 msgid "Display Name"
-msgstr "Zobrazit název"
+msgstr "Nombre a mostrar"
 
 #: src/schedule-list-table.php:75
 msgid "Interval"
-msgstr "Interval"
+msgstr "Intervalo"
 
 #: src/bootstrap.php:1032 src/bootstrap.php:1033 src/bootstrap.php:1086
 #: src/bootstrap.php:1312 src/bootstrap.php:1415 src/bootstrap.php:2539
 msgid "Cron Schedules"
-msgstr "Plány Cron"
+msgstr "Programaciones cron"
 
 #: src/bootstrap.php:800 src/bootstrap.php:808 src/bootstrap.php:812
 msgid "You are not allowed to run cron events."
-msgstr "Nemáte povoleno spouštět události cronu."
+msgstr "No tienes permisos para ejecutar eventos cron."
 
 #: src/bootstrap.php:648 src/bootstrap.php:703 src/bootstrap.php:749
 msgid "You are not allowed to delete cron events."
-msgstr "Nemáte povoleno mazat události cronu."
+msgstr "No tienes permisos para borrar eventos cron."
 
 #: src/bootstrap.php:633
 msgid "You are not allowed to delete cron schedules."
-msgstr "Nemáte povoleno mazat plány cronu."
+msgstr "No tienes permisos para borrar programaciones del cron."
 
 #: src/bootstrap.php:601
 msgid "You are not allowed to add new cron schedules."
-msgstr "Nemáte povoleno přidávat nové plány cronu."
+msgstr "No tienes permisos para agregar nuevas programaciones del cron."
 
 #: src/bootstrap.php:348 src/bootstrap.php:436
 msgid "You are not allowed to edit cron events."
-msgstr "Nemáte oprávnění upravovat události cronu."
+msgstr "No tienes permisos para editar eventos cron."
 
 #: src/bootstrap.php:156
 msgid "You are not allowed to add new cron events."
-msgstr "Nemáte povoleno přidávat nové události cronu."
+msgstr "No tienes permisos para agregar nuevos eventos cron."
 
 #: src/Event/Event.php:258 src/schedule.php:110
 msgid "Non-repeating"
-msgstr "Neopakující se"
+msgstr "No se repite"
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2276
 msgid "Failed to the delete the cron event %s."
-msgstr "Nepodařilo se odstranit událost cron %s."
+msgstr "Fallo al borrar el evento cron %s."
 
 #. translators: %s: The name of the cron event.
 #: src/bootstrap.php:2281
 msgid "Failed to the execute the cron event %s."
-msgstr "Selhalo spuštění události cron %s."
+msgstr "Fallo al ejecutar el evento cron %s."

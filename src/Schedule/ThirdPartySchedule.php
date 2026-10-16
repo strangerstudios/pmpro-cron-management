@@ -24,7 +24,7 @@ final class ThirdPartySchedule extends Schedule {
 	 */
 	#[\Override]
 	public function get_persistent_message(): string {
-		return __( 'This schedule is added by another plugin and cannot be deleted', 'pmpro-crontrol' );
+		return __( 'This schedule is added by another plugin and cannot be deleted', 'pmpro-cron-management' );
 	}
 
 	/**

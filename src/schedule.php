@@ -25,7 +25,7 @@ function add( $name, $interval, $display ) {
 		throw new DuplicateScheduleException(
 			sprintf(
 				/* translators: %s: The internal name of the schedule. */
-				__( 'A schedule with the name "%s" already exists.', 'pmpro-crontrol' ),
+				__( 'A schedule with the name "%s" already exists.', 'pmpro-cron-management' ),
 				$name
 			)
 		);
@@ -107,7 +107,7 @@ function dropdown( ?string $current = null ) {
 	$schedules = get();
 	?>
 	<select class="postform" name="crontrol_schedule" id="crontrol_schedule" required>
-	<option <?php selected( $current, '_oneoff' ); ?> value="_oneoff"><?php esc_html_e( 'Non-repeating', 'pmpro-crontrol' ); ?></option>
+	<option <?php selected( $current, '_oneoff' ); ?> value="_oneoff"><?php esc_html_e( 'Non-repeating', 'pmpro-cron-management' ); ?></option>
 	<hr/>
 	<?php foreach ( $schedules as $schedule ) { ?>
 		<option <?php selected( $current, $schedule->name ); ?> value="<?php echo esc_attr( $schedule->name ); ?>">

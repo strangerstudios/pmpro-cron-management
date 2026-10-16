@@ -59,10 +59,10 @@ function logs_upgrading(): bool {
  */
 function logs_unavailable_message(): string {
 	if ( logs_upgrading() ) {
-		return __( 'Logging is on, but the cron event logs are being upgraded. Try again in a few minutes.', 'pmpro-crontrol' );
+		return __( 'Logging is on, but the cron event logs are being upgraded. Try again in a few minutes.', 'pmpro-cron-management' );
 	}
 
-	return __( 'Logging is off. Turn it on for the cron events you want to watch.', 'pmpro-crontrol' );
+	return __( 'Logging is off. Turn it on for the cron events you want to watch.', 'pmpro-cron-management' );
 }
 
 /**
@@ -76,8 +76,8 @@ function register_category(): void {
 	wp_register_ability_category(
 		CATEGORY,
 		array(
-			'label'       => __( 'Cron', 'pmpro-crontrol' ),
-			'description' => __( 'View, run, and pause cron events, and read their logs, with WP Crontrol.', 'pmpro-crontrol' ),
+			'label'       => __( 'Cron', 'pmpro-cron-management' ),
+			'description' => __( 'View, run, and pause cron events, and read their logs, with WP Crontrol.', 'pmpro-cron-management' ),
 		)
 	);
 }
@@ -98,32 +98,32 @@ function get_definitions(): array {
 	$event_ref = array(
 		'hook' => array(
 			'type'        => 'string',
-			'description' => __( 'The hook name of the cron event.', 'pmpro-crontrol' ),
+			'description' => __( 'The hook name of the cron event.', 'pmpro-cron-management' ),
 			'minLength'   => 1,
 		),
 		'sig'  => array(
 			'type'        => 'string',
-			'description' => __( 'The signature of the cron event, from the list of events.', 'pmpro-crontrol' ),
+			'description' => __( 'The signature of the cron event, from the list of events.', 'pmpro-cron-management' ),
 			'minLength'   => 1,
 		),
 	);
 
 	return array(
 		'wp-crontrol/list-events'      => array(
-			'label'               => __( 'List cron events', 'pmpro-crontrol' ),
-			'description'         => __( 'Lists scheduled cron events with their next run time, schedule, actions, and whether they are paused, late, logged, or have no action. Filter by hook name or type.', 'pmpro-crontrol' ),
+			'label'               => __( 'List cron events', 'pmpro-cron-management' ),
+			'description'         => __( 'Lists scheduled cron events with their next run time, schedule, actions, and whether they are paused, late, logged, or have no action. Filter by hook name or type.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => array(
 					'search'   => array(
 						'type'        => 'string',
-						'description' => __( 'Only events whose hook name contains this text.', 'pmpro-crontrol' ),
+						'description' => __( 'Only events whose hook name contains this text.', 'pmpro-cron-management' ),
 					),
 					'type'     => array(
 						'type'        => 'string',
 						'enum'        => array( 'all', 'core', 'custom', 'php', 'url', 'no_action', 'paused', 'logged', 'late' ),
 						'default'     => 'all',
-						'description' => __( 'Which events to list.', 'pmpro-crontrol' ),
+						'description' => __( 'Which events to list.', 'pmpro-cron-management' ),
 					),
 					'page'     => array(
 						'type'    => 'integer',
@@ -145,8 +145,8 @@ function get_definitions(): array {
 			'annotations'         => $readonly,
 		),
 		'wp-crontrol/get-event'        => array(
-			'label'               => __( 'Get a cron event', 'pmpro-crontrol' ),
-			'description'         => __( 'Returns the details of one cron event, including the callbacks attached to its hook.', 'pmpro-crontrol' ),
+			'label'               => __( 'Get a cron event', 'pmpro-cron-management' ),
+			'description'         => __( 'Returns the details of one cron event, including the callbacks attached to its hook.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => $event_ref,
@@ -158,8 +158,8 @@ function get_definitions(): array {
 			'annotations'         => $readonly,
 		),
 		'wp-crontrol/list-schedules'   => array(
-			'label'               => __( 'List cron schedules', 'pmpro-crontrol' ),
-			'description'         => __( 'Lists the cron schedules (intervals) available on this site.', 'pmpro-crontrol' ),
+			'label'               => __( 'List cron schedules', 'pmpro-cron-management' ),
+			'description'         => __( 'Lists the cron schedules (intervals) available on this site.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => array(),
@@ -171,8 +171,8 @@ function get_definitions(): array {
 			'annotations'         => $readonly,
 		),
 		'wp-crontrol/run-event'        => array(
-			'label'               => __( 'Run a cron event now', 'pmpro-crontrol' ),
-			'description'         => __( 'Runs a cron event now, the same way as Run now on the Cron Events screen. It runs in the background through WP-Cron, so check the logs for the outcome. The event keeps its normal schedule.', 'pmpro-crontrol' ),
+			'label'               => __( 'Run a cron event now', 'pmpro-cron-management' ),
+			'description'         => __( 'Runs a cron event now, the same way as Run now on the Cron Events screen. It runs in the background through WP-Cron, so check the logs for the outcome. The event keeps its normal schedule.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => $event_ref,
@@ -189,8 +189,8 @@ function get_definitions(): array {
 			),
 		),
 		'wp-crontrol/pause-hook'       => array(
-			'label'               => __( 'Pause a cron event hook', 'pmpro-crontrol' ),
-			'description'         => __( 'Pauses every event with this hook name. Paused events stay scheduled but do nothing when they run, until the hook is resumed.', 'pmpro-crontrol' ),
+			'label'               => __( 'Pause a cron event hook', 'pmpro-cron-management' ),
+			'description'         => __( 'Pauses every event with this hook name. Paused events stay scheduled but do nothing when they run, until the hook is resumed.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => array( 'hook' => $event_ref['hook'] ),
@@ -206,8 +206,8 @@ function get_definitions(): array {
 			),
 		),
 		'wp-crontrol/resume-hook'      => array(
-			'label'               => __( 'Resume a cron event hook', 'pmpro-crontrol' ),
-			'description'         => __( 'Resumes a paused cron event hook, so its events do their work again.', 'pmpro-crontrol' ),
+			'label'               => __( 'Resume a cron event hook', 'pmpro-cron-management' ),
+			'description'         => __( 'Resumes a paused cron event hook, so its events do their work again.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => array( 'hook' => $event_ref['hook'] ),
@@ -223,14 +223,14 @@ function get_definitions(): array {
 			),
 		),
 		'wp-crontrol/list-logs'        => array(
-			'label'               => __( 'List cron event logs', 'pmpro-crontrol' ),
-			'description'         => __( 'Lists recent runs of logged cron events, newest first, with their status, duration, and first error. Only events with logging turned on are recorded.', 'pmpro-crontrol' ),
+			'label'               => __( 'List cron event logs', 'pmpro-cron-management' ),
+			'description'         => __( 'Lists recent runs of logged cron events, newest first, with their status, duration, and first error. Only events with logging turned on are recorded.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => array(
 					'hook'     => array(
 						'type'        => 'string',
-						'description' => __( 'Only runs of this hook.', 'pmpro-crontrol' ),
+						'description' => __( 'Only runs of this hook.', 'pmpro-cron-management' ),
 					),
 					'status'   => array(
 						'type' => 'string',
@@ -241,12 +241,12 @@ function get_definitions(): array {
 						'minimum'     => 1,
 						'maximum'     => 720,
 						'default'     => 168,
-						'description' => __( 'How far back to look, in hours.', 'pmpro-crontrol' ),
+						'description' => __( 'How far back to look, in hours.', 'pmpro-cron-management' ),
 					),
 					'before'   => array(
 						'type'        => 'integer',
 						'minimum'     => 1,
-						'description' => __( 'Only runs older than this log ID, for the next page.', 'pmpro-crontrol' ),
+						'description' => __( 'Only runs older than this log ID, for the next page.', 'pmpro-cron-management' ),
 					),
 					'per_page' => array(
 						'type'    => 'integer',
@@ -263,8 +263,8 @@ function get_definitions(): array {
 			'annotations'         => $readonly,
 		),
 		'wp-crontrol/get-log'          => array(
-			'label'               => __( 'Get a cron event log', 'pmpro-crontrol' ),
-			'description'         => __( 'Returns everything recorded for one run of a logged cron event: errors, log messages, duration, emails, HTTP requests, and database queries.', 'pmpro-crontrol' ),
+			'label'               => __( 'Get a cron event log', 'pmpro-cron-management' ),
+			'description'         => __( 'Returns everything recorded for one run of a logged cron event: errors, log messages, duration, emails, HTTP requests, and database queries.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => array(
@@ -281,8 +281,8 @@ function get_definitions(): array {
 			'annotations'         => $readonly,
 		),
 		'wp-crontrol/get-insights'     => array(
-			'label'               => __( 'Get cron insights', 'pmpro-crontrol' ),
-			'description'         => __( 'Summarises logged cron event runs over the last 7 days: runs, failures, and the slowest hooks.', 'pmpro-crontrol' ),
+			'label'               => __( 'Get cron insights', 'pmpro-cron-management' ),
+			'description'         => __( 'Summarises logged cron event runs over the last 7 days: runs, failures, and the slowest hooks.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => array(),
@@ -294,15 +294,15 @@ function get_definitions(): array {
 			'annotations'         => $readonly,
 		),
 		'wp-crontrol/set-hook-logging' => array(
-			'label'               => __( 'Turn logging on or off for a hook', 'pmpro-crontrol' ),
-			'description'         => __( 'Turns cron event logging on or off for one hook. While logging is on, each run of the hook is recorded in the cron logs.', 'pmpro-crontrol' ),
+			'label'               => __( 'Turn logging on or off for a hook', 'pmpro-cron-management' ),
+			'description'         => __( 'Turns cron event logging on or off for one hook. While logging is on, each run of the hook is recorded in the cron logs.', 'pmpro-cron-management' ),
 			'input_schema'        => array(
 				'type'                 => 'object',
 				'properties'           => array(
 					'hook'    => $event_ref['hook'],
 					'enabled' => array(
 						'type'        => 'boolean',
-						'description' => __( 'True to log the hook, false to stop logging it.', 'pmpro-crontrol' ),
+						'description' => __( 'True to log the hook, false to stop logging it.', 'pmpro-cron-management' ),
 					),
 				),
 				'required'             => array( 'hook', 'enabled' ),
@@ -425,7 +425,7 @@ function is_hook_paused( string $hook ): bool {
  */
 function check_pausable( string $hook, bool $resume ): ?WP_Error {
 	if ( in_array( $hook, array( PHPCronEvent::HOOK_NAME, URLCronEvent::HOOK_NAME ), true ) ) {
-		return new WP_Error( 'crontrol_hook_not_pausable', __( 'This hook can’t be paused or resumed.', 'pmpro-crontrol' ), array( 'status' => 400 ) );
+		return new WP_Error( 'crontrol_hook_not_pausable', __( 'This hook can’t be paused or resumed.', 'pmpro-cron-management' ), array( 'status' => 400 ) );
 	}
 
 	if ( $resume ) {
@@ -438,11 +438,11 @@ function check_pausable( string $hook, bool $resume ): ?WP_Error {
 
 	foreach ( Event\get() as $event ) {
 		if ( $event->hook === $hook ) {
-			return $event->pausable() ? null : new WP_Error( 'crontrol_hook_not_pausable', __( 'This hook can’t be paused or resumed.', 'pmpro-crontrol' ), array( 'status' => 400 ) );
+			return $event->pausable() ? null : new WP_Error( 'crontrol_hook_not_pausable', __( 'This hook can’t be paused or resumed.', 'pmpro-cron-management' ), array( 'status' => 400 ) );
 		}
 	}
 
-	return new WP_Error( 'crontrol_hook_not_found', __( 'There are no scheduled cron events with this hook name.', 'pmpro-crontrol' ), array( 'status' => 404 ) );
+	return new WP_Error( 'crontrol_hook_not_found', __( 'There are no scheduled cron events with this hook name.', 'pmpro-cron-management' ), array( 'status' => 404 ) );
 }
 
 /**
@@ -486,11 +486,11 @@ function event_label( Event\Event $event, string $type ): string {
 
 	if ( 'php' === $type ) {
 		/* translators: %s: Name of the PHP cron event */
-		return '' !== $name ? sprintf( __( 'PHP cron event (%s)', 'pmpro-crontrol' ), $name ) : __( 'PHP cron event', 'pmpro-crontrol' );
+		return '' !== $name ? sprintf( __( 'PHP cron event (%s)', 'pmpro-cron-management' ), $name ) : __( 'PHP cron event', 'pmpro-cron-management' );
 	}
 
 	/* translators: %s: Name of the URL cron event */
-	return '' !== $name ? sprintf( __( 'URL cron event (%s)', 'pmpro-crontrol' ), $name ) : __( 'URL cron event', 'pmpro-crontrol' );
+	return '' !== $name ? sprintf( __( 'URL cron event (%s)', 'pmpro-cron-management' ), $name ) : __( 'URL cron event', 'pmpro-cron-management' );
 }
 
 /**
@@ -636,7 +636,7 @@ function get_event( $input ) {
 	$event = find_event( $input );
 
 	if ( ! $event ) {
-		return new WP_Error( 'crontrol_event_not_found', __( 'The cron event could not be found. It may have already run.', 'pmpro-crontrol' ), array( 'status' => 404 ) );
+		return new WP_Error( 'crontrol_event_not_found', __( 'The cron event could not be found. It may have already run.', 'pmpro-cron-management' ), array( 'status' => 404 ) );
 	}
 
 	return format_event( $event );
@@ -668,7 +668,7 @@ function run_event( $input ) {
 	$event = find_event( $input );
 
 	if ( ! $event ) {
-		return new WP_Error( 'crontrol_event_not_found', __( 'The cron event could not be found. It may have already run.', 'pmpro-crontrol' ), array( 'status' => 404 ) );
+		return new WP_Error( 'crontrol_event_not_found', __( 'The cron event could not be found. It may have already run.', 'pmpro-cron-management' ), array( 'status' => 404 ) );
 	}
 
 	try {
@@ -679,7 +679,7 @@ function run_event( $input ) {
 	}
 
 	if ( ! $runnable ) {
-		return new WP_Error( 'crontrol_event_not_runnable', __( 'This cron event can’t be run. It may be paused, or it may need to be checked and saved again on the Cron Events screen.', 'pmpro-crontrol' ), array( 'status' => 409 ) );
+		return new WP_Error( 'crontrol_event_not_runnable', __( 'This cron event can’t be run. It may be paused, or it may need to be checked and saved again on the Cron Events screen.', 'pmpro-cron-management' ), array( 'status' => 409 ) );
 	}
 
 	$ran = Event\run( $event->hook, $event->sig );
@@ -692,7 +692,7 @@ function run_event( $input ) {
 		'scheduled' => true,
 		'hook'      => $event->hook,
 		'logged'    => logging_available() && Log::is_hook_logged( $event->hook ),
-		'message'   => __( 'The event was sent to WP-Cron to run now. It runs in the background, so check the cron logs for the outcome.', 'pmpro-crontrol' ),
+		'message'   => __( 'The event was sent to WP-Cron to run now. It runs in the background, so check the cron logs for the outcome.', 'pmpro-cron-management' ),
 	);
 }
 
@@ -858,7 +858,7 @@ function list_logs( $input = array() ): array {
  * @return array<string,mixed>|WP_Error
  */
 function get_log( $input ) {
-	$not_found = new WP_Error( 'crontrol_log_not_found', __( 'The cron event log could not be found.', 'pmpro-crontrol' ), array( 'status' => 404 ) );
+	$not_found = new WP_Error( 'crontrol_log_not_found', __( 'The cron event log could not be found.', 'pmpro-cron-management' ), array( 'status' => 404 ) );
 
 	if ( ! logging_available() || ! \Crontrol\Pro\tables_ready() ) {
 		return $not_found;
@@ -973,16 +973,16 @@ function set_hook_logging( $input ) {
 	$enabled = (bool) $input['enabled'];
 
 	if ( ! logging_available() ) {
-		return new WP_Error( 'crontrol_logging_unavailable', __( 'Cron event logging isn’t available on this site right now.', 'pmpro-crontrol' ), array( 'status' => 409 ) );
+		return new WP_Error( 'crontrol_logging_unavailable', __( 'Cron event logging isn’t available on this site right now.', 'pmpro-cron-management' ), array( 'status' => 409 ) );
 	}
 
 	if ( in_array( $hook, \Crontrol\Pro\INTERNAL_HOOKS, true ) || ! Log::is_loggable_hook( $hook ) ) {
-		return new WP_Error( 'crontrol_hook_not_loggable', __( 'WP Crontrol’s own maintenance events can’t be logged.', 'pmpro-crontrol' ), array( 'status' => 400 ) );
+		return new WP_Error( 'crontrol_hook_not_loggable', __( 'WP Crontrol’s own maintenance events can’t be logged.', 'pmpro-cron-management' ), array( 'status' => 400 ) );
 	}
 
 	// Logging can be turned on only for hooks that have scheduled cron events. Turning it off always works.
 	if ( $enabled && ! in_array( $hook, array_map( static fn ( Event\Event $event ): string => $event->hook, Event\get() ), true ) ) {
-		return new WP_Error( 'crontrol_hook_not_found', __( 'There are no scheduled cron events with this hook name.', 'pmpro-crontrol' ), array( 'status' => 404 ) );
+		return new WP_Error( 'crontrol_hook_not_found', __( 'There are no scheduled cron events with this hook name.', 'pmpro-cron-management' ), array( 'status' => 404 ) );
 	}
 
 	if ( $enabled ) {

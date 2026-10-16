@@ -24,7 +24,7 @@ final class CoreSchedule extends Schedule {
 	 */
 	#[\Override]
 	public function get_persistent_message(): string {
-		return __( 'This is a WordPress core schedule and cannot be deleted', 'pmpro-crontrol' );
+		return __( 'This is a WordPress core schedule and cannot be deleted', 'pmpro-cron-management' );
 	}
 
 	/**
