@@ -1,16 +1,16 @@
 # Translation seed
 
-Starting point for a `pmpro-crontrol` project on translate.strangerstudios.com. Nothing in this folder is loaded by WordPress; the `.distignore` at the repo root keeps it out of release zips.
+Starting point for a `pmpro-cron-management` project on translate.strangerstudios.com. Nothing in this folder is loaded by WordPress; the `.distignore` at the repo root keeps it out of release zips.
 
-- `pmpro-crontrol.pot`: the fork's source strings, generated from this repo with `wp i18n make-pot` on 2026-10-15 (367 strings, text domain `pmpro-crontrol`).
-- `po/pmpro-crontrol-<locale>.po`: the 28 WP Crontrol 2.0.0 language packs published on WordPress.org, pulled from `api.wordpress.org/translations/plugins/1.0/?slug=wp-crontrol&version=2.0.0` on 2026-10-15. Each file carries the header "distributed under the same license as the WP Crontrol package", so they are GPL v2 or later, like the plugin. Packs contain translated strings only; untranslated originals are simply absent.
+- `pmpro-cron-management.pot`: the fork's source strings, generated from this repo with `wp i18n make-pot` on 2026-10-15 (367 strings, text domain `pmpro-cron-management`).
+- `po/pmpro-cron-management-<locale>.po`: the 28 WP Crontrol 2.0.0 language packs published on WordPress.org, pulled from `api.wordpress.org/translations/plugins/1.0/?slug=wp-crontrol&version=2.0.0` on 2026-10-15. Each file carries the header "distributed under the same license as the WP Crontrol package", so they are GPL v2 or later, like the plugin. Packs contain translated strings only; untranslated originals are simply absent.
 
-Source strings are the key GlotPress matches on, and the text domain is not part of that key, so the text-domain rename to `pmpro-crontrol` did not affect them; each PO is filtered to the strings the fork actually ships. The fork's own strings (plugin description, the coexistence notice) have no translations yet.
+Source strings are the key GlotPress matches on, and the text domain is not part of that key, so the text-domain rename to `pmpro-cron-management` did not affect them; each PO is filtered to the strings the fork actually ships. The fork's own strings (plugin description, the coexistence notice) have no translations yet.
 
 ## Import
 
-1. Create the project (slug `pmpro-crontrol`) and import `pmpro-crontrol.pot` as originals.
-2. For each locale, add the translation set and import `po/pmpro-crontrol-<locale>.po` with "current" status.
+1. Create the project (slug `pmpro-cron-management`) and import `pmpro-cron-management.pot` as originals.
+2. For each locale, add the translation set and import `po/pmpro-cron-management-<locale>.po` with "current" status.
 3. Re-export language packs from GlotPress; PMPro Update Manager's GlotPress helper serves them by plugin slug.
 
 ## Coverage (against 367 originals in the POT)

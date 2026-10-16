@@ -115,7 +115,7 @@ function get_message() {
  * @return void
  */
 function action_init() {
-	load_plugin_textdomain( 'pmpro-crontrol', false, dirname( plugin_basename( PLUGIN_FILE ) ) . '/languages' );
+	load_plugin_textdomain( 'pmpro-cron-management', false, dirname( plugin_basename( PLUGIN_FILE ) ) . '/languages' );
 
 	/** @var array<array-key, true>|false $paused */
 	$paused = get_option( PAUSED_OPTION );
@@ -153,17 +153,17 @@ function pauser() {
 function action_handle_posts() {
 	if ( isset( $_POST['crontrol_action'] ) && ( 'new_cron' === $_POST['crontrol_action'] ) ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to add new cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to add new cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		check_admin_referer( 'crontrol-new-cron' );
 
 		$cr = Request::init( wp_unslash( $_POST ) );
 
 		if ( PHPCronEvent::HOOK_NAME === $cr->hookname ) {
-			wp_die( esc_html__( 'You are not allowed to add new PHP cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to add new PHP cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		if ( URLCronEvent::HOOK_NAME === $cr->hookname ) {
-			wp_die( esc_html__( 'You are not allowed to add new URL cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to add new URL cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		$args = json_decode( $cr->args, true );
 
@@ -219,7 +219,7 @@ function action_handle_posts() {
 
 	} elseif ( isset( $_POST['crontrol_action'] ) && ( 'new_url_cron' === $_POST['crontrol_action'] ) ) {
 		if ( ! current_user_can_edit_url_cron_events() ) {
-			wp_die( esc_html__( 'You are not allowed to add new URL cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to add new URL cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		check_admin_referer( 'crontrol-new-cron' );
 
@@ -265,7 +265,7 @@ function action_handle_posts() {
 
 		$added = Event\add( $next_run_local, $cr->schedule, URLCronEvent::HOOK_NAME, $args );
 
-		$hookname = ( ! empty( $cr->eventname ) ) ? $cr->eventname : __( 'URL Cron', 'pmpro-crontrol' );
+		$hookname = ( ! empty( $cr->eventname ) ) ? $cr->eventname : __( 'URL Cron', 'pmpro-cron-management' );
 		$redirect = array(
 			'page'             => 'wp-crontrol',
 			'crontrol_message' => MESSAGE_EVENT_URL_EVENT_SAVED,
@@ -282,7 +282,7 @@ function action_handle_posts() {
 
 	} elseif ( isset( $_POST['crontrol_action'] ) && ( 'new_php_cron' === $_POST['crontrol_action'] ) ) {
 		if ( ! current_user_can_edit_php_cron_events() ) {
-			wp_die( esc_html__( 'You are not allowed to add new PHP cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to add new PHP cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		check_admin_referer( 'crontrol-new-cron' );
 
@@ -328,7 +328,7 @@ function action_handle_posts() {
 
 		$added = Event\add( $next_run_local, $cr->schedule, PHPCronEvent::HOOK_NAME, $args );
 
-		$hookname = ( ! empty( $cr->eventname ) ) ? $cr->eventname : __( 'PHP Cron', 'pmpro-crontrol' );
+		$hookname = ( ! empty( $cr->eventname ) ) ? $cr->eventname : __( 'PHP Cron', 'pmpro-cron-management' );
 		$redirect = array(
 			'page'             => 'wp-crontrol',
 			'crontrol_message' => MESSAGE_EVENT_PHP_EVENT_SAVED,
@@ -345,7 +345,7 @@ function action_handle_posts() {
 
 	} elseif ( isset( $_POST['crontrol_action'] ) && ( 'edit_cron' === $_POST['crontrol_action'] ) ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to edit cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to edit cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$cr = Request::init( wp_unslash( $_POST ) );
@@ -353,11 +353,11 @@ function action_handle_posts() {
 		check_admin_referer( "crontrol-edit-cron_{$cr->original_hookname}_{$cr->original_sig}_{$cr->original_next_run_utc}" );
 
 		if ( PHPCronEvent::HOOK_NAME === $cr->hookname && ! current_user_can_edit_php_cron_events() ) {
-			wp_die( esc_html__( 'You are not allowed to edit PHP cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to edit PHP cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		if ( URLCronEvent::HOOK_NAME === $cr->hookname && ! current_user_can_edit_url_cron_events() ) {
-			wp_die( esc_html__( 'You are not allowed to edit URL cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to edit URL cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$args = json_decode( $cr->args, true );
@@ -433,7 +433,7 @@ function action_handle_posts() {
 
 	} elseif ( isset( $_POST['crontrol_action'] ) && ( 'edit_url_cron' === $_POST['crontrol_action'] ) ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to edit cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to edit cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$cr = Request::init( wp_unslash( $_POST ) );
@@ -448,7 +448,7 @@ function action_handle_posts() {
 				'hash' => Event\url_hash( $cr->url ),
 			),
 		);
-		$hookname = ( ! empty( $cr->eventname ) ) ? $cr->eventname : __( 'URL Cron', 'pmpro-crontrol' );
+		$hookname = ( ! empty( $cr->eventname ) ) ? $cr->eventname : __( 'URL Cron', 'pmpro-cron-management' );
 		$redirect = array(
 			'page'             => 'wp-crontrol',
 			'crontrol_message' => MESSAGE_EVENT_URL_EVENT_SAVED,
@@ -516,7 +516,7 @@ function action_handle_posts() {
 
 	} elseif ( isset( $_POST['crontrol_action'] ) && ( 'edit_php_cron' === $_POST['crontrol_action'] ) ) {
 		if ( ! current_user_can_edit_php_cron_events() ) {
-			wp_die( esc_html__( 'You are not allowed to edit PHP cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to edit PHP cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$cr = Request::init( wp_unslash( $_POST ) );
@@ -530,7 +530,7 @@ function action_handle_posts() {
 				'hash' => wp_hash( $cr->hookcode ),
 			),
 		);
-		$hookname = ( ! empty( $cr->eventname ) ) ? $cr->eventname : __( 'PHP Cron', 'pmpro-crontrol' );
+		$hookname = ( ! empty( $cr->eventname ) ) ? $cr->eventname : __( 'PHP Cron', 'pmpro-cron-management' );
 		$redirect = array(
 			'page'             => 'wp-crontrol',
 			'crontrol_message' => MESSAGE_EVENT_PHP_EVENT_SAVED,
@@ -598,7 +598,7 @@ function action_handle_posts() {
 
 	} elseif ( isset( $_POST['crontrol_new_schedule'] ) ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to add new cron schedules.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to add new cron schedules.', 'pmpro-cron-management' ), 403 );
 		}
 		check_admin_referer( 'crontrol-new-schedule' );
 		$name     = sanitize_text_field( wp_unslash( $_POST['crontrol_schedule_internal_name'] ) );
@@ -630,7 +630,7 @@ function action_handle_posts() {
 
 	} elseif ( isset( $_GET['crontrol_action'] ) && 'delete-schedule' === $_GET['crontrol_action'] ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to delete cron schedules.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to delete cron schedules.', 'pmpro-cron-management' ), 403 );
 		}
 		$schedule = wp_unslash( $_GET['crontrol_id'] );
 		check_admin_referer( "crontrol-delete-schedule_{$schedule}" );
@@ -645,7 +645,7 @@ function action_handle_posts() {
 
 	} elseif ( ( isset( $_POST['action'] ) && 'crontrol_delete_crons' === $_POST['action'] ) || ( isset( $_POST['action2'] ) && 'crontrol_delete_crons' === $_POST['action2'] ) ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to delete cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to delete cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		check_admin_referer( 'bulk-crontrol-events' );
 
@@ -700,7 +700,7 @@ function action_handle_posts() {
 
 	} elseif ( isset( $_GET['crontrol_action'] ) && 'delete-cron' === $_GET['crontrol_action'] ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to delete cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to delete cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		$hook         = wp_unslash( $_GET['crontrol_id'] );
 		$sig          = wp_unslash( $_GET['crontrol_sig'] );
@@ -709,7 +709,7 @@ function action_handle_posts() {
 
 		// PHP cron events can be deleted even if they're disallowed, as long as the user has permission.
 		if ( PHPCronEvent::HOOK_NAME === $hook && ! current_user_can( 'edit_files' ) ) {
-			wp_die( esc_html__( 'You are not allowed to delete PHP cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to delete PHP cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$redirect = array(
@@ -746,7 +746,7 @@ function action_handle_posts() {
 
 	} elseif ( isset( $_GET['crontrol_action'] ) && 'delete-hook' === $_GET['crontrol_action'] ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to delete cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to delete cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		$hook    = wp_unslash( $_GET['crontrol_id'] );
 		$deleted = false;
@@ -754,10 +754,10 @@ function action_handle_posts() {
 
 		// Sanity checks
 		if ( PHPCronEvent::HOOK_NAME === $hook ) {
-			wp_die( esc_html__( 'You are not allowed to delete PHP cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to delete PHP cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		if ( URLCronEvent::HOOK_NAME === $hook ) {
-			wp_die( esc_html__( 'You are not allowed to delete URL cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to delete URL cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$deleted = wp_unschedule_hook( $hook, true );
@@ -797,7 +797,7 @@ function action_handle_posts() {
 		}
 	} elseif ( isset( $_GET['crontrol_action'] ) && 'run-cron' === $_GET['crontrol_action'] ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to run cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to run cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		$hook = wp_unslash( $_GET['crontrol_id'] );
 		$sig = wp_unslash( $_GET['crontrol_sig'] );
@@ -805,11 +805,11 @@ function action_handle_posts() {
 
 		// Don't need an `edit_files` check here because PHP cron events can always be run unless they're disabled.
 		if ( ( PHPCronEvent::HOOK_NAME === $hook ) && ! php_cron_events_enabled() ) {
-			wp_die( esc_html__( 'You are not allowed to run cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to run cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		if ( ( URLCronEvent::HOOK_NAME === $hook ) && ! url_cron_events_enabled() ) {
-			wp_die( esc_html__( 'You are not allowed to run cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to run cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$ran = Event\run( $hook, $sig );
@@ -841,13 +841,13 @@ function action_handle_posts() {
 		exit;
 	} elseif ( isset( $_GET['crontrol_action'] ) && 'pause-hook' === $_GET['crontrol_action'] ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to pause or resume cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to pause or resume cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$hook = wp_unslash( $_GET['crontrol_id'] );
 
 		if ( ( PHPCronEvent::HOOK_NAME === $hook ) || ( URLCronEvent::HOOK_NAME === $hook ) ) {
-			wp_die( esc_html__( 'You are not allowed to pause or resume cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to pause or resume cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		check_admin_referer( "crontrol-pause-hook_{$hook}" );
@@ -888,13 +888,13 @@ function action_handle_posts() {
 		exit;
 	} elseif ( isset( $_GET['crontrol_action'] ) && 'resume-hook' === $_GET['crontrol_action'] ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to pause or resume cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to pause or resume cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		$hook = wp_unslash( $_GET['crontrol_id'] );
 
 		if ( ( PHPCronEvent::HOOK_NAME === $hook ) || ( URLCronEvent::HOOK_NAME === $hook ) ) {
-			wp_die( esc_html__( 'You are not allowed to pause or resume cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to pause or resume cron events.', 'pmpro-cron-management' ), 403 );
 		}
 
 		check_admin_referer( "crontrol-resume-hook_{$hook}" );
@@ -935,7 +935,7 @@ function action_handle_posts() {
 		exit;
 	} elseif ( isset( $_POST['crontrol_action'] ) && 'export-event-csv' === $_POST['crontrol_action'] ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You are not allowed to export cron events.', 'pmpro-crontrol' ), 403 );
+			wp_die( esc_html__( 'You are not allowed to export cron events.', 'pmpro-cron-management' ), 403 );
 		}
 		check_admin_referer( 'crontrol-export-event-csv', 'crontrol_nonce' );
 
@@ -957,7 +957,7 @@ function action_handle_posts() {
 		$csv = fopen( 'php://output', 'w' );
 
 		if ( false === $csv ) {
-			wp_die( esc_html__( 'Could not save CSV file.', 'pmpro-crontrol' ) );
+			wp_die( esc_html__( 'Could not save CSV file.', 'pmpro-cron-management' ) );
 		}
 
 		$events = Table::get_filtered_events( Event\get() );
@@ -1029,36 +1029,36 @@ function action_handle_posts() {
 function action_admin_menu() {
 	$tabs = [];
 	$tabs[] = add_options_page(
-		esc_html__( 'Cron Schedules', 'pmpro-crontrol' ),
-		esc_html__( 'Cron Schedules', 'pmpro-crontrol' ),
+		esc_html__( 'Cron Schedules', 'pmpro-cron-management' ),
+		esc_html__( 'Cron Schedules', 'pmpro-cron-management' ),
 		'manage_options',
 		'wp-crontrol-schedules',
 		__NAMESPACE__ . '\admin_options_page'
 	);
 	$tabs[] = add_management_page(
-		esc_html__( 'Cron Events', 'pmpro-crontrol' ),
-		esc_html__( 'Cron Events', 'pmpro-crontrol' ),
+		esc_html__( 'Cron Events', 'pmpro-cron-management' ),
+		esc_html__( 'Cron Events', 'pmpro-cron-management' ),
 		'manage_options',
 		'wp-crontrol',
 		__NAMESPACE__ . '\admin_manage_page'
 	);
 	$tabs[] = add_management_page(
-		esc_html__( 'Cron Logs', 'pmpro-crontrol' ),
-		esc_html__( 'Cron Logs', 'pmpro-crontrol' ),
+		esc_html__( 'Cron Logs', 'pmpro-cron-management' ),
+		esc_html__( 'Cron Logs', 'pmpro-cron-management' ),
 		'manage_options',
 		'wp-crontrol-logs',
 		'Crontrol\Pro\admin_logs_page'
 	);
 	$tabs[] = add_management_page(
-		esc_html__( 'Cron Alerts', 'pmpro-crontrol' ),
-		esc_html__( 'Cron Alerts', 'pmpro-crontrol' ),
+		esc_html__( 'Cron Alerts', 'pmpro-cron-management' ),
+		esc_html__( 'Cron Alerts', 'pmpro-cron-management' ),
 		'manage_options',
 		'wp-crontrol-alerts',
 		'Crontrol\Alerts\admin_alerts_page'
 	);
 	$tabs[] = add_management_page(
-		esc_html__( 'Cron AI', 'pmpro-crontrol' ),
-		esc_html__( 'Cron AI', 'pmpro-crontrol' ),
+		esc_html__( 'Cron AI', 'pmpro-cron-management' ),
+		esc_html__( 'Cron AI', 'pmpro-cron-management' ),
 		'manage_options',
 		'wp-crontrol-ai',
 		'Crontrol\Abilities\admin_ai_page'
@@ -1078,12 +1078,12 @@ function action_admin_menu() {
  */
 function get_top_level_menu_items(): array {
 	return array(
-		'tools.php?page=wp-crontrol'                => __( 'Cron Events', 'pmpro-crontrol' ),
-		'tools.php?page=wp-crontrol-logs'           => __( 'Cron Logs', 'pmpro-crontrol' ),
-		'tools.php?page=wp-crontrol-insights'       => __( 'Cron Insights', 'pmpro-crontrol' ),
-		'tools.php?page=wp-crontrol-alerts'         => __( 'Cron Alerts', 'pmpro-crontrol' ),
-		'tools.php?page=wp-crontrol-ai'             => __( 'Cron AI', 'pmpro-crontrol' ),
-		'options-general.php?page=wp-crontrol-schedules' => __( 'Cron Schedules', 'pmpro-crontrol' ),
+		'tools.php?page=wp-crontrol'                => __( 'Cron Events', 'pmpro-cron-management' ),
+		'tools.php?page=wp-crontrol-logs'           => __( 'Cron Logs', 'pmpro-cron-management' ),
+		'tools.php?page=wp-crontrol-insights'       => __( 'Cron Insights', 'pmpro-cron-management' ),
+		'tools.php?page=wp-crontrol-alerts'         => __( 'Cron Alerts', 'pmpro-cron-management' ),
+		'tools.php?page=wp-crontrol-ai'             => __( 'Cron AI', 'pmpro-cron-management' ),
+		'options-general.php?page=wp-crontrol-schedules' => __( 'Cron Schedules', 'pmpro-cron-management' ),
 	);
 }
 
@@ -1118,8 +1118,8 @@ function action_top_level_menu(): void {
 	$parent = 'tools.php?page=wp-crontrol';
 
 	add_menu_page(
-		esc_html__( 'WP Crontrol', 'pmpro-crontrol' ),
-		esc_html__( 'Cron', 'pmpro-crontrol' ),
+		esc_html__( 'WP Crontrol', 'pmpro-cron-management' ),
+		esc_html__( 'Cron', 'pmpro-cron-management' ),
 		'manage_options',
 		$parent,
 		'',
@@ -1238,13 +1238,13 @@ function admin_help_tab() {
 		return;
 	}
 
-	$content = '<p>' . esc_html__( 'There are several places to get help with issues relating to WP-Cron:', 'pmpro-crontrol' ) . '</p>';
+	$content = '<p>' . esc_html__( 'There are several places to get help with issues relating to WP-Cron:', 'pmpro-cron-management' ) . '</p>';
 	$content .= '<ul>';
 	$content .= '<li>';
 	$content .= wp_kses(
 		sprintf(
 			/* translators: 1: URL to the documentation, 2: WP Crontrol */
-			__( '<a href="%1$s">Read the %2$s website</a> which contains information about events that have missed their schedule, problems with spawning a call to the WP-Cron system, and much more.', 'pmpro-crontrol' ),
+			__( '<a href="%1$s">Read the %2$s website</a> which contains information about events that have missed their schedule, problems with spawning a call to the WP-Cron system, and much more.', 'pmpro-cron-management' ),
 			'https://wp-crontrol.com/docs/how-to-use/',
 			'WP Crontrol'
 		),
@@ -1259,7 +1259,7 @@ function admin_help_tab() {
 	$content .= wp_kses(
 		sprintf(
 			/* translators: %s: URL to the documentation */
-			__( '<a href="%s">Read the Frequently Asked Questions (FAQ)</a> which cover many common questions and answers.', 'pmpro-crontrol' ),
+			__( '<a href="%s">Read the Frequently Asked Questions (FAQ)</a> which cover many common questions and answers.', 'pmpro-cron-management' ),
 			'https://wordpress.org/plugins/wp-crontrol/faq/'
 		),
 		array(
@@ -1273,7 +1273,7 @@ function admin_help_tab() {
 	$content .= wp_kses(
 		sprintf(
 			/* translators: %s: URL to the documentation */
-			__( '<a href="%s">Read the WordPress.org documentation on WP-Cron</a> for more technical details about the WP-Cron system for developers.', 'pmpro-crontrol' ),
+			__( '<a href="%s">Read the WordPress.org documentation on WP-Cron</a> for more technical details about the WP-Cron system for developers.', 'pmpro-cron-management' ),
 			'https://developer.wordpress.org/plugins/cron/'
 		),
 		array(
@@ -1287,7 +1287,7 @@ function admin_help_tab() {
 	$screen->add_help_tab(
 		array(
 			'id'      => 'crontrol-help',
-			'title'   => __( 'Help', 'pmpro-crontrol' ),
+			'title'   => __( 'Help', 'pmpro-cron-management' ),
 			'content' => $content,
 		)
 	);
@@ -1304,22 +1304,22 @@ function plugin_action_links( $actions ) {
 		'crontrol-events'    => sprintf(
 			'<a href="%s">%s</a>',
 			esc_url( admin_url( 'tools.php?page=wp-crontrol' ) ),
-			esc_html__( 'Cron Events', 'pmpro-crontrol' )
+			esc_html__( 'Cron Events', 'pmpro-cron-management' )
 		),
 		'crontrol-schedules' => sprintf(
 			'<a href="%s">%s</a>',
 			esc_url( admin_url( 'options-general.php?page=wp-crontrol-schedules' ) ),
-			esc_html__( 'Cron Schedules', 'pmpro-crontrol' )
+			esc_html__( 'Cron Schedules', 'pmpro-cron-management' )
 		),
 		'crontrol-logs' => sprintf(
 			'<a href="%s">%s</a>',
 			esc_url( admin_url( 'tools.php?page=wp-crontrol-logs' ) ),
-			esc_html__( 'Cron Logs', 'pmpro-crontrol' )
+			esc_html__( 'Cron Logs', 'pmpro-cron-management' )
 		),
 		'crontrol-help' => sprintf(
 			'<a href="%s">%s</a>',
 			'https://wp-crontrol.com/docs/how-to-use/',
-			esc_html__( 'Help', 'pmpro-crontrol' )
+			esc_html__( 'Help', 'pmpro-cron-management' )
 		),
 	);
 
@@ -1337,7 +1337,7 @@ function network_plugin_action_links( $actions ) {
 		'crontrol-help' => sprintf(
 			'<a href="%s">%s</a>',
 			'https://wp-crontrol.com/docs/how-to-use/',
-			esc_html__( 'Help', 'pmpro-crontrol' )
+			esc_html__( 'Help', 'pmpro-cron-management' )
 		),
 	);
 
@@ -1371,17 +1371,17 @@ function admin_options_page() {
 	$messages = array(
 		MESSAGE_SCHEDULE_DELETED => array(
 			/* translators: %s: The name of the cron schedule. */
-			__( 'Deleted the cron schedule %s.', 'pmpro-crontrol' ),
+			__( 'Deleted the cron schedule %s.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_SCHEDULE_SAVED => array(
 			/* translators: %s: The name of the cron schedule. */
-			__( 'Added the cron schedule %s.', 'pmpro-crontrol' ),
+			__( 'Added the cron schedule %s.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_SCHEDULE_DUPLICATE => array(
 			/* translators: %s: The name of the cron schedule. */
-			__( 'A schedule with the name %s already exists.', 'pmpro-crontrol' ),
+			__( 'A schedule with the name %s already exists.', 'pmpro-cron-management' ),
 			'error',
 		),
 	);
@@ -1412,7 +1412,7 @@ function admin_options_page() {
 
 	<?php do_tabs(); ?>
 
-	<h1><?php esc_html_e( 'Cron Schedules', 'pmpro-crontrol' ); ?></h1>
+	<h1><?php esc_html_e( 'Cron Schedules', 'pmpro-cron-management' ); ?></h1>
 
 	<?php $table->views(); ?>
 
@@ -1420,29 +1420,29 @@ function admin_options_page() {
 		<div id="col-left">
 			<div class="col-wrap">
 				<div class="form-wrap">
-					<h2><?php esc_html_e( 'Add Cron Schedule', 'pmpro-crontrol' ); ?></h2>
-					<p><?php esc_html_e( 'Adding a new schedule allows you to schedule recurring events at the given interval.', 'pmpro-crontrol' ); ?></p>
+					<h2><?php esc_html_e( 'Add Cron Schedule', 'pmpro-cron-management' ); ?></h2>
+					<p><?php esc_html_e( 'Adding a new schedule allows you to schedule recurring events at the given interval.', 'pmpro-cron-management' ); ?></p>
 					<form method="post" action="options-general.php?page=wp-crontrol-schedules">
 						<div class="form-field form-required">
 							<label for="crontrol_schedule_interval">
-								<?php esc_html_e( 'Interval (seconds)', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'Interval (seconds)', 'pmpro-cron-management' ); ?>
 							</label>
 							<input type="number" value="" id="crontrol_schedule_interval" name="crontrol_schedule_interval" min="1" step="1" required/>
 						</div>
 						<div class="form-field form-required">
 							<label for="crontrol_schedule_display_name">
-								<?php esc_html_e( 'Display Name', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'Display Name', 'pmpro-cron-management' ); ?>
 							</label>
 							<input type="text" value="" id="crontrol_schedule_display_name" name="crontrol_schedule_display_name" required/>
 						</div>
 						<div class="form-field form-required">
 							<label for="crontrol_schedule_internal_name">
-								<?php esc_html_e( 'Internal Name', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'Internal Name', 'pmpro-cron-management' ); ?>
 							</label>
 							<input type="text" value="" id="crontrol_schedule_internal_name" name="crontrol_schedule_internal_name" required/>
 						</div>
 						<p class="submit">
-							<input type="submit" class="button button-primary" value="<?php esc_attr_e( 'Add Cron Schedule', 'pmpro-crontrol' ); ?>" name="crontrol_new_schedule"/>
+							<input type="submit" class="button button-primary" value="<?php esc_attr_e( 'Add Cron Schedule', 'pmpro-cron-management' ); ?>" name="crontrol_new_schedule"/>
 						</p>
 						<?php wp_nonce_field( 'crontrol-new-schedule' ); ?>
 					</form>
@@ -1509,7 +1509,7 @@ function test_cron_spawn( $cache = true ) {
 		if ( class_exists( $class ) ) {
 			return new WP_Error( 'crontrol_info', sprintf(
 				/* translators: %s: The name of the plugin that controls the running of cron events. */
-				__( 'WP-Cron spawning is being managed by the %s plugin.', 'pmpro-crontrol' ),
+				__( 'WP-Cron spawning is being managed by the %s plugin.', 'pmpro-cron-management' ),
 				$plugin
 			) );
 		}
@@ -1518,7 +1518,7 @@ function test_cron_spawn( $cache = true ) {
 	if ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ) {
 		return new WP_Error( 'crontrol_info', sprintf(
 			/* translators: %s: The name of the PHP constant that is set. */
-			__( 'The %s constant is set to true. WP-Cron spawning is disabled.', 'pmpro-crontrol' ),
+			__( 'The %s constant is set to true. WP-Cron spawning is disabled.', 'pmpro-cron-management' ),
 			'DISABLE_WP_CRON'
 		) );
 	}
@@ -1526,7 +1526,7 @@ function test_cron_spawn( $cache = true ) {
 	if ( defined( 'ALTERNATE_WP_CRON' ) && ALTERNATE_WP_CRON ) {
 		return new WP_Error( 'crontrol_info', sprintf(
 			/* translators: %s: The name of the PHP constant that is set. */
-			__( 'The %s constant is set to true.', 'pmpro-crontrol' ),
+			__( 'The %s constant is set to true.', 'pmpro-cron-management' ),
 			'ALTERNATE_WP_CRON'
 		) );
 	}
@@ -1558,7 +1558,7 @@ function test_cron_spawn( $cache = true ) {
 	} elseif ( wp_remote_retrieve_response_code( $result ) >= 300 ) {
 		return new WP_Error( 'unexpected_http_response_code', sprintf(
 			/* translators: %s: The HTTP response code. */
-			__( 'Unexpected HTTP response code: %s', 'pmpro-crontrol' ),
+			__( 'Unexpected HTTP response code: %s', 'pmpro-cron-management' ),
 			intval( wp_remote_retrieve_response_code( $result ) )
 		) );
 	} else {
@@ -1590,9 +1590,9 @@ function show_cron_status() {
 		wp_admin_notice(
 			sprintf(
 				'%1$s<br><br><a href="%2$s">%3$s</a>',
-				esc_html__( 'PHP default timezone is not set to UTC. This may cause issues with cron event timings.', 'pmpro-crontrol' ),
+				esc_html__( 'PHP default timezone is not set to UTC. This may cause issues with cron event timings.', 'pmpro-cron-management' ),
 				'https://wp-crontrol.com/help/php-default-timezone/',
-				esc_html__( 'More information', 'pmpro-crontrol' )
+				esc_html__( 'More information', 'pmpro-cron-management' )
 			),
 			array(
 				'id'   => 'crontrol-timezone-warning',
@@ -1618,11 +1618,11 @@ function show_cron_status() {
 					'%1$s<br><br><a href="%2$s">%3$s</a>',
 					sprintf(
 						/* translators: %s: Error message text. */
-						esc_html__( 'There was a problem spawning a call to the WP-Cron system on your site. This means WP-Cron events on your site may not work. The problem was: %s', 'pmpro-crontrol' ),
+						esc_html__( 'There was a problem spawning a call to the WP-Cron system on your site. This means WP-Cron events on your site may not work. The problem was: %s', 'pmpro-cron-management' ),
 						'<br><br><strong>' . esc_html( $status->get_error_message() ) . '</strong>'
 					),
 					'https://wp-crontrol.com/help/problems-spawning-wp-cron/',
-					esc_html__( 'More information', 'pmpro-crontrol' )
+					esc_html__( 'More information', 'pmpro-cron-management' )
 				),
 				array(
 					'id'   => 'crontrol-status-error',
@@ -1783,13 +1783,13 @@ function show_cron_form( $editing ) {
 						'%1$s<br><br>%2$s',
 						sprintf(
 							/* translators: %s: The name of the cron event. */
-							esc_html__( 'The %s event you are trying to edit does not exist.', 'pmpro-crontrol' ),
+							esc_html__( 'The %s event you are trying to edit does not exist.', 'pmpro-cron-management' ),
 							'<b>' . esc_html( $edit_id ) . '</b>'
 						),
 						wp_kses(
 							sprintf(
 								/* translators: 1: The time since the event was scheduled, 2: The URL to search for the event. */
-								__( 'The event probably ran %1$s ago. <a href="%2$s">Click here to see if it was rescheduled</a>.', 'pmpro-crontrol' ),
+								__( 'The event probably ran %1$s ago. <a href="%2$s">Click here to see if it was rescheduled</a>.', 'pmpro-cron-management' ),
 								human_time_diff( intval( $_GET['crontrol_next_run_utc'] ), time() ),
 								esc_url( $search_url )
 							),
@@ -1840,7 +1840,7 @@ function show_cron_form( $editing ) {
 				$display_args = '';
 			}
 		}
-		$button        = __( 'Update Event', 'pmpro-crontrol' );
+		$button        = __( 'Update Event', 'pmpro-cron-management' );
 		$next_run_gmt  = gmdate( 'Y-m-d H:i:s', $existing->timestamp );
 		$next_run_date_local = get_date_from_gmt( $next_run_gmt, 'Y-m-d' );
 		$next_run_time_local = get_date_from_gmt( $next_run_gmt, 'H:i:s' );
@@ -1848,7 +1848,7 @@ function show_cron_form( $editing ) {
 	} else {
 		$other_fields = wp_nonce_field( 'crontrol-new-cron', '_wpnonce', true, false );
 		$existing = Event\Event::create_new();
-		$button        = __( 'Add Event', 'pmpro-crontrol' );
+		$button        = __( 'Add Event', 'pmpro-cron-management' );
 		$suggestion = strtotime( '+1 hour' );
 		$next_run_date_local = get_date_from_gmt( gmdate( 'Y-m-d H:i:s', $suggestion ), 'Y-m-d' );
 		$next_run_time_local = get_date_from_gmt( gmdate( 'Y-m-d H:\0\0:\0\0', $suggestion ), 'H:i:s' );
@@ -1878,9 +1878,9 @@ function show_cron_form( $editing ) {
 		<?php
 		if ( $allowed ) {
 			if ( $editing ) {
-				$heading = __( 'Edit Cron Event', 'pmpro-crontrol' );
+				$heading = __( 'Edit Cron Event', 'pmpro-cron-management' );
 			} else {
-				$heading = __( 'Add Cron Event', 'pmpro-crontrol' );
+				$heading = __( 'Add Cron Event', 'pmpro-cron-management' );
 			}
 
 			do_tabs();
@@ -1924,24 +1924,24 @@ function show_cron_form( $editing ) {
 					?>
 					<tr class="hide-if-no-js">
 						<th scope="row">
-							<?php esc_html_e( 'Event Type', 'pmpro-crontrol' ); ?>
+							<?php esc_html_e( 'Event Type', 'pmpro-cron-management' ); ?>
 						</th>
 						<td>
 							<fieldset>
 								<legend class="screen-reader-text">
-									<?php esc_html_e( 'Event Type', 'pmpro-crontrol' ); ?>
+									<?php esc_html_e( 'Event Type', 'pmpro-cron-management' ); ?>
 								</legend>
 								<p>
 									<label>
 										<input type="radio" name="crontrol_action" value="new_cron" checked>
-										<?php esc_html_e( 'Standard cron event', 'pmpro-crontrol' ); ?>
+										<?php esc_html_e( 'Standard cron event', 'pmpro-cron-management' ); ?>
 									</label>
 								</p>
 								<?php if ( $can_create_url ) { ?>
 									<p>
 										<label>
 											<input type="radio" name="crontrol_action" value="new_url_cron">
-											<?php esc_html_e( 'URL cron event', 'pmpro-crontrol' ); ?>
+											<?php esc_html_e( 'URL cron event', 'pmpro-cron-management' ); ?>
 										</label>
 									</p>
 								<?php } ?>
@@ -1949,7 +1949,7 @@ function show_cron_form( $editing ) {
 									<p>
 										<label>
 											<input type="radio" name="crontrol_action" value="new_php_cron">
-											<?php esc_html_e( 'PHP cron event', 'pmpro-crontrol' ); ?>
+											<?php esc_html_e( 'PHP cron event', 'pmpro-cron-management' ); ?>
 										</label>
 									</p>
 								<?php } ?>
@@ -1964,7 +1964,7 @@ function show_cron_form( $editing ) {
 					<tr class="crontrol-event-url">
 						<th valign="top" scope="row">
 							<label for="crontrol_url">
-								<?php esc_html_e( 'URL', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'URL', 'pmpro-cron-management' ); ?>
 							</label>
 						</th>
 						<td>
@@ -1973,9 +1973,9 @@ function show_cron_form( $editing ) {
 								wp_admin_notice(
 									sprintf(
 										'%1$s<br><br><a href="%2$s">%3$s</a>',
-										esc_html__( 'The URL in this event needs to be checked for integrity. This event will not run until you re-save it.', 'pmpro-crontrol' ),
+										esc_html__( 'The URL in this event needs to be checked for integrity. This event will not run until you re-save it.', 'pmpro-cron-management' ),
 										'https://wp-crontrol.com/help/check-cron-events/',
-										esc_html__( 'Read what to do', 'pmpro-crontrol' )
+										esc_html__( 'Read what to do', 'pmpro-cron-management' )
 									),
 									array(
 										'type'               => 'error',
@@ -1991,7 +1991,7 @@ function show_cron_form( $editing ) {
 					<tr class="crontrol-event-url">
 						<th valign="top" scope="row">
 							<label for="crontrol_method">
-								<?php esc_html_e( 'HTTP Method', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'HTTP Method', 'pmpro-cron-management' ); ?>
 							</label>
 						</th>
 						<td>
@@ -2007,7 +2007,7 @@ function show_cron_form( $editing ) {
 					<tr class="crontrol-event-url">
 						<th valign="top" scope="row">
 							<label for="crontrol_eventname">
-								<?php esc_html_e( 'Display Name (optional)', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'Display Name (optional)', 'pmpro-cron-management' ); ?>
 							</label>
 						</th>
 						<td>
@@ -2023,7 +2023,7 @@ function show_cron_form( $editing ) {
 					<tr class="crontrol-event-php">
 						<th scope="row">
 							<label for="crontrol_hookcode">
-								<?php esc_html_e( 'PHP Code', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'PHP Code', 'pmpro-cron-management' ); ?>
 							</label>
 						</th>
 						<td>
@@ -2032,9 +2032,9 @@ function show_cron_form( $editing ) {
 								wp_admin_notice(
 									sprintf(
 										'%1$s<br><br><a href="%2$s">%3$s</a>',
-										esc_html__( 'The PHP code in this event needs to be checked for integrity. This event will not run until you re-save it.', 'pmpro-crontrol' ),
+										esc_html__( 'The PHP code in this event needs to be checked for integrity. This event will not run until you re-save it.', 'pmpro-cron-management' ),
 										'https://wp-crontrol.com/help/check-cron-events/',
-										esc_html__( 'Read what to do', 'pmpro-crontrol' )
+										esc_html__( 'Read what to do', 'pmpro-cron-management' )
 									),
 									array(
 										'type'               => 'error',
@@ -2047,7 +2047,7 @@ function show_cron_form( $editing ) {
 								<?php
 								printf(
 									/* translators: The PHP tag name */
-									esc_html__( 'The opening %s tag must not be included.', 'pmpro-crontrol' ),
+									esc_html__( 'The opening %s tag must not be included.', 'pmpro-cron-management' ),
 									'<code>&lt;?php</code>'
 								);
 								?>
@@ -2059,7 +2059,7 @@ function show_cron_form( $editing ) {
 					<tr class="crontrol-event-php">
 						<th scope="row">
 							<label for="crontrol_eventname">
-								<?php esc_html_e( 'Display Name (optional)', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'Display Name (optional)', 'pmpro-cron-management' ); ?>
 							</label>
 						</th>
 						<td>
@@ -2075,10 +2075,10 @@ function show_cron_form( $editing ) {
 					<tr class="crontrol-event-standard">
 						<th scope="row">
 							<?php if ( ! $hook_name_editable ) { ?>
-								<?php esc_html_e( 'Hook Name', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'Hook Name', 'pmpro-cron-management' ); ?>
 							<?php } else { ?>
 								<label for="crontrol_hookname">
-									<?php esc_html_e( 'Hook Name', 'pmpro-crontrol' ); ?>
+									<?php esc_html_e( 'Hook Name', 'pmpro-cron-management' ); ?>
 								</label>
 							<?php } ?>
 						</th>
@@ -2095,7 +2095,7 @@ function show_cron_form( $editing ) {
 					<tr class="crontrol-event-standard">
 						<th scope="row">
 							<label for="crontrol_args">
-								<?php esc_html_e( 'Arguments (optional)', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'Arguments (optional)', 'pmpro-cron-management' ); ?>
 							</label>
 						</th>
 						<td>
@@ -2104,10 +2104,10 @@ function show_cron_form( $editing ) {
 								wp_admin_notice(
 									sprintf(
 										'%1$s<br><br>%2$s',
-										esc_html__( 'This event has invalid arguments and will not run correctly.', 'pmpro-crontrol' ),
+										esc_html__( 'This event has invalid arguments and will not run correctly.', 'pmpro-cron-management' ),
 										sprintf(
 											/* translators: %s: The PHP type of the invalid value */
-											esc_html__( 'Arguments should be an array but %s was provided. The event will likely fail with a PHP error when it attempts to run.', 'pmpro-crontrol' ),
+											esc_html__( 'Arguments should be an array but %s was provided. The event will likely fail with a PHP error when it attempts to run.', 'pmpro-cron-management' ),
 											esc_html( gettype( $existing->args ) )
 										)
 									),
@@ -2124,7 +2124,7 @@ function show_cron_form( $editing ) {
 								<?php
 								printf(
 									/* translators: 1, 2, and 3: Example values for an input field. */
-									esc_html__( 'Use a JSON encoded array, e.g. %1$s, %2$s, or %3$s', 'pmpro-crontrol' ),
+									esc_html__( 'Use a JSON encoded array, e.g. %1$s, %2$s, or %3$s', 'pmpro-cron-management' ),
 									'<code>[25]</code>',
 									'<code>["asdf"]</code>',
 									'<code>["i","want",25,"cakes"]</code>'
@@ -2139,7 +2139,7 @@ function show_cron_form( $editing ) {
 				<tr>
 					<th scope="row">
 						<label for="crontrol_next_run_date_local">
-							<?php esc_html_e( 'Next Run', 'pmpro-crontrol' ); ?>
+							<?php esc_html_e( 'Next Run', 'pmpro-cron-management' ); ?>
 						</label>
 					</th>
 					<td>
@@ -2156,18 +2156,18 @@ function show_cron_form( $editing ) {
 						<?php } else { ?>
 							<fieldset>
 								<legend class="screen-reader-text">
-									<?php esc_html_e( 'Next Run', 'pmpro-crontrol' ); ?>
+									<?php esc_html_e( 'Next Run', 'pmpro-cron-management' ); ?>
 								</legend>
 								<p>
 									<label>
 										<input type="radio" name="crontrol_next_run_date_local" value="now" checked>
-										<?php esc_html_e( 'Now', 'pmpro-crontrol' ); ?>
+										<?php esc_html_e( 'Now', 'pmpro-cron-management' ); ?>
 									</label>
 								</p>
 								<p>
 									<label>
 										<input type="radio" name="crontrol_next_run_date_local" value="+1 day">
-										<?php esc_html_e( 'Tomorrow', 'pmpro-crontrol' ); ?>
+										<?php esc_html_e( 'Tomorrow', 'pmpro-cron-management' ); ?>
 									</label>
 								</p>
 								<p>
@@ -2176,7 +2176,7 @@ function show_cron_form( $editing ) {
 										<?php
 										printf(
 											/* translators: %s: An input field for specifying a date and time */
-											esc_html__( 'At this time: %s', 'pmpro-crontrol' ),
+											esc_html__( 'At this time: %s', 'pmpro-cron-management' ),
 											sprintf(
 												'<br><br>
 												<input type="date" autocorrect="off" autocapitalize="off" spellcheck="false" name="crontrol_next_run_date_local_custom_date" id="crontrol_next_run_date_local_custom_date" value="%1$s" placeholder="yyyy-mm-dd" pattern="\d{4}-\d{2}-\d{2}" />
@@ -2197,7 +2197,7 @@ function show_cron_form( $editing ) {
 							<?php
 							printf(
 								/* translators: %s Timezone name. */
-								esc_html__( 'Timezone: %s', 'pmpro-crontrol' ),
+								esc_html__( 'Timezone: %s', 'pmpro-cron-management' ),
 								esc_html( get_timezone_name() )
 							);
 							?>
@@ -2207,7 +2207,7 @@ function show_cron_form( $editing ) {
 				<tr>
 					<th scope="row">
 						<label for="crontrol_schedule">
-							<?php echo esc_html_x( 'Schedule', 'noun', 'pmpro-crontrol' ); ?>
+							<?php echo esc_html_x( 'Schedule', 'noun', 'pmpro-cron-management' ); ?>
 						</label>
 					</th>
 					<td>
@@ -2223,7 +2223,7 @@ function show_cron_form( $editing ) {
 				<?php
 				echo esc_html( sprintf(
 					/* translators: 1: Date and time, 2: Timezone */
-					__( 'Site time when page loaded: %1$s, %2$s', 'pmpro-crontrol' ),
+					__( 'Site time when page loaded: %1$s, %2$s', 'pmpro-cron-management' ),
 					date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ) ),
 					get_timezone_name()
 				) );
@@ -2232,7 +2232,7 @@ function show_cron_form( $editing ) {
 		</form>
 		<?php } else { ?>
 			<div class="error inline">
-				<p><?php esc_html_e( 'You cannot add, edit, or delete PHP cron events because your user account does not have the ability to edit files.', 'pmpro-crontrol' ); ?></p>
+				<p><?php esc_html_e( 'You cannot add, edit, or delete PHP cron events because your user account does not have the ability to edit files.', 'pmpro-cron-management' ); ?></p>
 			</div>
 		<?php } ?>
 	</div>
@@ -2248,68 +2248,68 @@ function admin_manage_page() {
 	$messages = array(
 		MESSAGE_EVENT_RUN_NOW => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'Scheduled the cron event %s to run now. The original event will not be affected.', 'pmpro-crontrol' ),
+			__( 'Scheduled the cron event %s to run now. The original event will not be affected.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_HOOK_DELETED_ALL => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'Deleted all %s cron events.', 'pmpro-crontrol' ),
+			__( 'Deleted all %s cron events.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_EVENT_NONE_TO_DELETE => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'There are no %s cron events to delete.', 'pmpro-crontrol' ),
+			__( 'There are no %s cron events to delete.', 'pmpro-cron-management' ),
 			'info',
 		),
 		MESSAGE_EVENT_SAVED => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'Saved the cron event %s.', 'pmpro-crontrol' ),
+			__( 'Saved the cron event %s.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_EVENT_DELETED => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'Deleted the cron event %s.', 'pmpro-crontrol' ),
+			__( 'Deleted the cron event %s.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_EVENT_FAILED_TO_DELETE => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'Failed to the delete the cron event %s.', 'pmpro-crontrol' ),
+			__( 'Failed to the delete the cron event %s.', 'pmpro-cron-management' ),
 			'error',
 		),
 		MESSAGE_EVENT_FAILED_TO_EXECUTE => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'Failed to the execute the cron event %s.', 'pmpro-crontrol' ),
+			__( 'Failed to the execute the cron event %s.', 'pmpro-cron-management' ),
 			'error',
 		),
 		MESSAGE_EVENT_DELETED_SELECTED => array(
-			__( 'Deleted the selected cron events.', 'pmpro-crontrol' ),
+			__( 'Deleted the selected cron events.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_EVENT_FAILED_TO_SAVE => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'Failed to save the cron event %s.', 'pmpro-crontrol' ),
+			__( 'Failed to save the cron event %s.', 'pmpro-cron-management' ),
 			'error',
 		),
 		MESSAGE_HOOK_PAUSED => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'Paused the %s hook.', 'pmpro-crontrol' ),
+			__( 'Paused the %s hook.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_HOOK_RESUMED => array(
 			/* translators: %s: The name of the cron event. */
-			__( 'Resumed the %s hook.', 'pmpro-crontrol' ),
+			__( 'Resumed the %s hook.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_EVENT_URL_EVENT_SAVED => array(
-			__( 'URL cron event saved.', 'pmpro-crontrol' ),
+			__( 'URL cron event saved.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_EVENT_PHP_EVENT_SAVED => array(
-			__( 'PHP cron event saved.', 'pmpro-crontrol' ),
+			__( 'PHP cron event saved.', 'pmpro-cron-management' ),
 			'success',
 		),
 		MESSAGE_UNKNOWN_ERROR => array(
-			__( 'An unknown error occurred.', 'pmpro-crontrol' ),
+			__( 'An unknown error occurred.', 'pmpro-cron-management' ),
 			'error',
 		),
 	);
@@ -2358,9 +2358,9 @@ function admin_manage_page() {
 			<div class="wrap">
 				<?php do_tabs(); ?>
 
-				<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Events', 'pmpro-crontrol' ); ?></h1>
+				<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Events', 'pmpro-cron-management' ); ?></h1>
 
-				<?php echo '<a href="' . esc_url( admin_url( 'tools.php?page=wp-crontrol&crontrol_action=new-cron' ) ) . '" class="page-title-action">' . esc_html__( 'Add Cron Event', 'pmpro-crontrol' ) . '</a>'; ?>
+				<?php echo '<a href="' . esc_url( admin_url( 'tools.php?page=wp-crontrol&crontrol_action=new-cron' ) ) . '" class="page-title-action">' . esc_html__( 'Add Cron Event', 'pmpro-cron-management' ) . '</a>'; ?>
 
 				<hr class="wp-header-end">
 
@@ -2368,7 +2368,7 @@ function admin_manage_page() {
 
 				<form id="posts-filter" method="get" action="tools.php">
 					<input type="hidden" name="page" value="wp-crontrol" />
-					<?php $table->search_box( esc_html__( 'Search Hook Names', 'pmpro-crontrol' ), 'cron-event' ); ?>
+					<?php $table->search_box( esc_html__( 'Search Hook Names', 'pmpro-cron-management' ), 'cron-event' ); ?>
 				</form>
 
 				<form method="post" action="tools.php?page=wp-crontrol">
@@ -2381,7 +2381,7 @@ function admin_manage_page() {
 					<?php
 					echo esc_html( sprintf(
 						/* translators: 1: Date and time, 2: Timezone */
-						__( 'Site time when page loaded: %1$s, %2$s', 'pmpro-crontrol' ),
+						__( 'Site time when page loaded: %1$s, %2$s', 'pmpro-cron-management' ),
 						date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ) ),
 						get_timezone_name()
 					) );
@@ -2518,25 +2518,25 @@ function do_tabs() {
 	$links = array(
 		'events'    => array(
 			'tools.php?page=wp-crontrol',
-			__( 'Cron Events', 'pmpro-crontrol' ),
+			__( 'Cron Events', 'pmpro-cron-management' ),
 		),
 		'logs' => array(
 			'tools.php?page=wp-crontrol-logs',
-			__( 'Cron Logs', 'pmpro-crontrol' ),
+			__( 'Cron Logs', 'pmpro-cron-management' ),
 		),
 		'alerts'    => array(
 			'tools.php?page=wp-crontrol-alerts',
-			__( 'Cron Alerts', 'pmpro-crontrol' ),
+			__( 'Cron Alerts', 'pmpro-cron-management' ),
 			true,
 		),
 		'ai'        => array(
 			'tools.php?page=wp-crontrol-ai',
-			__( 'Cron AI', 'pmpro-crontrol' ),
+			__( 'Cron AI', 'pmpro-cron-management' ),
 			true,
 		),
 		'schedules' => array(
 			'options-general.php?page=wp-crontrol-schedules',
-			__( 'Cron Schedules', 'pmpro-crontrol' ),
+			__( 'Cron Schedules', 'pmpro-cron-management' ),
 		),
 	);
 
@@ -2546,7 +2546,7 @@ function do_tabs() {
 
 	?>
 	<div id="crontrol-header">
-		<nav class="nav-tab-wrapper" aria-label="<?php echo esc_attr( __( 'Secondary menu', 'pmpro-crontrol' ) ); ?>">
+		<nav class="nav-tab-wrapper" aria-label="<?php echo esc_attr( __( 'Secondary menu', 'pmpro-cron-management' ) ); ?>">
 			<?php
 			foreach ( $links as $id => $link ) {
 				$is_active = ! empty( $tabs[ $id ] );
@@ -2563,7 +2563,7 @@ function do_tabs() {
 					} else {
 						$label .= sprintf(
 							' <span class="crontrol-tab-pill">%s</span>',
-							esc_html__( 'New', 'pmpro-crontrol' )
+							esc_html__( 'New', 'pmpro-cron-management' )
 						);
 					}
 				}
@@ -2585,12 +2585,12 @@ function do_tabs() {
 			if ( $tabs['add-event'] ) {
 				printf(
 					'<span class="nav-tab nav-tab-active">%s</span>',
-					esc_html__( 'Add Cron Event', 'pmpro-crontrol' )
+					esc_html__( 'Add Cron Event', 'pmpro-cron-management' )
 				);
 			} elseif ( $tabs['edit-event'] ) {
 				printf(
 					'<span class="nav-tab nav-tab-active">%s</span>',
-					esc_html__( 'Edit Cron Event', 'pmpro-crontrol' )
+					esc_html__( 'Edit Cron Event', 'pmpro-cron-management' )
 				);
 			}
 			?>
@@ -2693,7 +2693,7 @@ function populate_callback( array $callback ) {
 
 				$name = sprintf(
 					/* translators: A Closure is a type of PHP function. 1: File name, 2: Line number */
-					__( 'Closure in %1$s at line %2$d', 'pmpro-crontrol' ),
+					__( 'Closure in %1$s at line %2$d', 'pmpro-cron-management' ),
 					$file,
 					$line
 				);
@@ -2716,7 +2716,7 @@ function populate_callback( array $callback ) {
 			'not_callable',
 			sprintf(
 				/* translators: %s: Function name */
-				__( 'Function %s does not exist', 'pmpro-crontrol' ),
+				__( 'Function %s does not exist', 'pmpro-cron-management' ),
 				$callback['name']
 			)
 		);
@@ -2798,30 +2798,30 @@ function interval( $since, bool $accurate = false ) {
 	// Array of time period chunks.
 	$chunks = array(
 		/* translators: %s: The number of years in an interval of time. */
-		array( YEAR_IN_SECONDS, _n_noop( '%s year', '%s years', 'pmpro-crontrol' ) ),
+		array( YEAR_IN_SECONDS, _n_noop( '%s year', '%s years', 'pmpro-cron-management' ) ),
 		/* translators: %s: The number of months in an interval of time. */
-		array( MONTH_IN_SECONDS, _n_noop( '%s month', '%s months', 'pmpro-crontrol' ) ),
+		array( MONTH_IN_SECONDS, _n_noop( '%s month', '%s months', 'pmpro-cron-management' ) ),
 		/* translators: %s: The number of weeks in an interval of time. */
-		array( WEEK_IN_SECONDS, _n_noop( '%s week', '%s weeks', 'pmpro-crontrol' ) ),
+		array( WEEK_IN_SECONDS, _n_noop( '%s week', '%s weeks', 'pmpro-cron-management' ) ),
 		/* translators: %s: The number of days in an interval of time. */
-		array( DAY_IN_SECONDS, _n_noop( '%s day', '%s days', 'pmpro-crontrol' ) ),
+		array( DAY_IN_SECONDS, _n_noop( '%s day', '%s days', 'pmpro-cron-management' ) ),
 		/* translators: %s: The number of hours in an interval of time. */
-		array( HOUR_IN_SECONDS, _n_noop( '%s hour', '%s hours', 'pmpro-crontrol' ) ),
+		array( HOUR_IN_SECONDS, _n_noop( '%s hour', '%s hours', 'pmpro-cron-management' ) ),
 		/* translators: %s: The number of minutes in an interval of time. */
-		array( MINUTE_IN_SECONDS, _n_noop( '%s minute', '%s minutes', 'pmpro-crontrol' ) ),
+		array( MINUTE_IN_SECONDS, _n_noop( '%s minute', '%s minutes', 'pmpro-cron-management' ) ),
 		/* translators: %s: The number of seconds in an interval of time. */
-		array( 1, _n_noop( '%s second', '%s seconds', 'pmpro-crontrol' ) ),
+		array( 1, _n_noop( '%s second', '%s seconds', 'pmpro-cron-management' ) ),
 	);
 
 	if ( $since <= 0 ) {
-		return __( 'now', 'pmpro-crontrol' );
+		return __( 'now', 'pmpro-cron-management' );
 	}
 
 	if ( ( ! $accurate ) && ( $since >= MINUTE_IN_SECONDS ) && ( $since < HOUR_IN_SECONDS ) ) {
 		$num = intval( floor( $since / MINUTE_IN_SECONDS ) );
 		return sprintf(
 			/* translators: %s: The number of minutes in an interval of time. */
-			_n( '%s minute', '%s minutes', $num, 'pmpro-crontrol' ),
+			_n( '%s minute', '%s minutes', $num, 'pmpro-cron-management' ),
 			$num
 		);
 	}
@@ -2846,7 +2846,7 @@ function interval( $since, bool $accurate = false ) {
 	}
 
 	// Set output var.
-	$output = sprintf( translate_nooped_plural( $name, $count, 'pmpro-crontrol' ), $count );
+	$output = sprintf( translate_nooped_plural( $name, $count, 'pmpro-cron-management' ), $count );
 
 	// Step two: the second chunk.
 	if ( $i + 1 < count( $chunks ) ) {
@@ -2855,7 +2855,7 @@ function interval( $since, bool $accurate = false ) {
 		$count2   = (int) floor( ( $since - ( $seconds * $count ) ) / $seconds2 );
 		if ( $count2 ) {
 			// Add to output var.
-			$output .= ' ' . sprintf( translate_nooped_plural( $name2, $count2, 'pmpro-crontrol' ), $count2 );
+			$output .= ' ' . sprintf( translate_nooped_plural( $name2, $count2, 'pmpro-cron-management' ), $count2 );
 		}
 	}
 
@@ -2876,7 +2876,7 @@ function interval( $since, bool $accurate = false ) {
  */
 function time_element( int $timestamp ): string {
 	/* translators: Time format for cron event times, see https://www.php.net/manual/datetime.format.php */
-	$time_format = _x( 'g:i a', 'cron event time format', 'pmpro-crontrol' );
+	$time_format = _x( 'g:i a', 'cron event time format', 'pmpro-cron-management' );
 
 	$date_local      = wp_date( 'Y-m-d', $timestamp );
 	$timezone_local  = wp_timezone();
@@ -2895,27 +2895,27 @@ function time_element( int $timestamp ): string {
 	if ( $date_local === $today_local ) {
 		$date = sprintf(
 			/* translators: %s: Time */
-			__( 'Today at %s', 'pmpro-crontrol' ),
+			__( 'Today at %s', 'pmpro-cron-management' ),
 			$time_local,
 		);
 	} elseif ( $date_local === $tomorrow_local ) {
 		$date = sprintf(
 			/* translators: %s: Time */
-			__( 'Tomorrow at %s', 'pmpro-crontrol' ),
+			__( 'Tomorrow at %s', 'pmpro-cron-management' ),
 			$time_local,
 		);
 	} elseif ( $date_local === $yesterday_local ) {
 		$date = sprintf(
 			/* translators: %s: Time */
-			__( 'Yesterday at %s', 'pmpro-crontrol' ),
+			__( 'Yesterday at %s', 'pmpro-cron-management' ),
 			$time_local,
 		);
 	} else {
 		$date = sprintf(
 			/* translators: 1: Date, 2: Time */
-			__( '%1$s at %2$s', 'pmpro-crontrol' ),
+			__( '%1$s at %2$s', 'pmpro-cron-management' ),
 			/* translators: Date format for cron event dates, see https://www.php.net/manual/datetime.format.php */
-			(string) wp_date( _x( 'F jS', 'cron event date format', 'pmpro-crontrol' ), $timestamp ),
+			(string) wp_date( _x( 'F jS', 'cron event date format', 'pmpro-cron-management' ), $timestamp ),
 			$time_local,
 		);
 	}
@@ -2970,13 +2970,13 @@ function enqueue_assets( $hook_suffix ) {
 
 	if ( $show_pointers['logs'] ) {
 		$vars['pointers']['logs'] = [
-			'title' => esc_html__( 'Cron event logs', 'pmpro-crontrol' ),
+			'title' => esc_html__( 'Cron event logs', 'pmpro-cron-management' ),
 			'lines' => array(
-				esc_html__( 'Cron events can now be logged each time they run, for free. Logging is off until you turn it on for an event.', 'pmpro-crontrol' ),
+				esc_html__( 'Cron events can now be logged each time they run, for free. Logging is off until you turn it on for an event.', 'pmpro-cron-management' ),
 				sprintf(
 					'<a href="%s">%s</a>',
 					esc_url( admin_url( 'tools.php?page=wp-crontrol-logs' ) ),
-					esc_html__( 'More information on the Cron Logs tab.', 'pmpro-crontrol' ),
+					esc_html__( 'More information on the Cron Logs tab.', 'pmpro-cron-management' ),
 				),
 			),
 		];
@@ -2997,9 +2997,9 @@ function enqueue_assets( $hook_suffix ) {
 		true
 	);
 
-	$vars['confirmDeleteEvent'] = __( 'Are you sure you want to delete this event?', 'pmpro-crontrol' );
-	$vars['confirmDeleteHook'] = __( 'Are you sure you want to delete all events with this hook?', 'pmpro-crontrol' );
-	$vars['dismissFailed'] = __( 'Could not dismiss this. Try again', 'pmpro-crontrol' );
+	$vars['confirmDeleteEvent'] = __( 'Are you sure you want to delete this event?', 'pmpro-cron-management' );
+	$vars['confirmDeleteHook'] = __( 'Are you sure you want to delete all events with this hook?', 'pmpro-cron-management' );
+	$vars['dismissFailed'] = __( 'Could not dismiss this. Try again', 'pmpro-cron-management' );
 
 	if ( ! empty( $tab['add-event'] ) || ! empty( $tab['edit-event'] ) ) {
 		if ( current_user_can_edit_php_cron_events() ) {
@@ -3248,7 +3248,7 @@ function action_url_cron_event( array $args ): void {
 		trigger_error(
 			sprintf(
 				/* translators: %s: Message text. */
-				__( 'WP Crontrol: %s', 'pmpro-crontrol' ),
+				__( 'WP Crontrol: %s', 'pmpro-cron-management' ),
 				$e->getMessage()
 			),
 			E_USER_WARNING
@@ -3354,7 +3354,7 @@ function action_php_cron_event( $args ): void {
 		trigger_error(
 			sprintf(
 				/* translators: %s: Message text. */
-				__( 'WP Crontrol: %s', 'pmpro-crontrol' ),
+				__( 'WP Crontrol: %s', 'pmpro-cron-management' ),
 				$e->getMessage()
 			),
 			E_USER_WARNING

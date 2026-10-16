@@ -61,7 +61,7 @@ function run( $hookname, $sig ) {
 		'not_found',
 		sprintf(
 			/* translators: %s: The name of the cron event. */
-			__( 'The cron event %s could not be found.', 'pmpro-crontrol' ),
+			__( 'The cron event %s could not be found.', 'pmpro-cron-management' ),
 			$hookname
 		)
 	);
@@ -104,7 +104,7 @@ function force_schedule_single_event( $hook, $args = array() ) {
 			'could_not_add',
 			sprintf(
 				/* translators: %s: The name of the cron event. */
-				__( 'Failed to schedule the cron event %s.', 'pmpro-crontrol' ),
+				__( 'Failed to schedule the cron event %s.', 'pmpro-cron-management' ),
 				$hook
 			)
 		);
@@ -133,7 +133,7 @@ function add( $next_run_local, $schedule, $hook, array $args ) {
 	if ( false === $next_run_local ) {
 		return new WP_Error(
 			'invalid_timestamp',
-			__( 'Invalid timestamp provided.', 'pmpro-crontrol' )
+			__( 'Invalid timestamp provided.', 'pmpro-cron-management' )
 		);
 	}
 
@@ -185,7 +185,7 @@ function add( $next_run_local, $schedule, $hook, array $args ) {
 		'has_error',
 		sprintf(
 			/* translators: %s: The error message. */
-			__( 'The cron event was saved but contains an error: %s.', 'pmpro-crontrol' ),
+			__( 'The cron event was saved but contains an error: %s.', 'pmpro-cron-management' ),
 			$error->getMessage(),
 		),
 	) : true;
@@ -237,7 +237,7 @@ function pause( $hook ) {
 			'could_not_pause',
 			sprintf(
 				/* translators: %s: The name of the cron event. */
-				__( 'Failed to pause the cron event %s.', 'pmpro-crontrol' ),
+				__( 'Failed to pause the cron event %s.', 'pmpro-cron-management' ),
 				$hook
 			)
 		);
@@ -268,7 +268,7 @@ function resume( $hook ) {
 			'could_not_resume',
 			sprintf(
 				/* translators: %s: The name of the cron event. */
-				__( 'Failed to resume the cron event %s.', 'pmpro-crontrol' ),
+				__( 'Failed to resume the cron event %s.', 'pmpro-cron-management' ),
 				$hook
 			)
 		);
@@ -368,7 +368,7 @@ function get_single( $hook, $sig, $next_run_utc ) {
 		'not_found',
 		sprintf(
 			/* translators: %s: The name of the cron event. */
-			__( 'The cron event %s could not be found.', 'pmpro-crontrol' ),
+			__( 'The cron event %s could not be found.', 'pmpro-cron-management' ),
 			$hook
 		)
 	);
@@ -697,7 +697,7 @@ function validate_url( string $url ): void {
 		throw new InvalidURLException(
 			sprintf(
 				/* translators: %s: The URL that failed validation. */
-				__( 'The URL "%s" is not allowed', 'pmpro-crontrol' ),
+				__( 'The URL "%s" is not allowed', 'pmpro-cron-management' ),
 				$url,
 			)
 		);

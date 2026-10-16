@@ -24,7 +24,7 @@ final class CrontrolSchedule extends Schedule {
 	 */
 	#[\Override]
 	public function get_persistent_message(): string {
-		return __( 'This custom schedule is in use and cannot be deleted', 'pmpro-crontrol' );
+		return __( 'This custom schedule is in use and cannot be deleted', 'pmpro-cron-management' );
 	}
 
 	/**

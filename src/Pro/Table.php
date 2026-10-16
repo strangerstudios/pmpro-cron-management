@@ -145,14 +145,14 @@ final class Table extends \WP_List_Table {
 			'<a href="%s" class="%s">%s</a>',
 			esc_url( $current_url ),
 			$class,
-			esc_html__( 'All', 'pmpro-crontrol' )
+			esc_html__( 'All', 'pmpro-cron-management' )
 		);
 
 		// Status-specific links
 		$statuses = [
-			EventRun::STATUS_COMPLETED => __( 'Completed', 'pmpro-crontrol' ),
-			EventRun::STATUS_ERRORED => __( 'Errored', 'pmpro-crontrol' ),
-			EventRun::STATUS_RUNNING => __( 'Running', 'pmpro-crontrol' ),
+			EventRun::STATUS_COMPLETED => __( 'Completed', 'pmpro-cron-management' ),
+			EventRun::STATUS_ERRORED => __( 'Errored', 'pmpro-cron-management' ),
+			EventRun::STATUS_RUNNING => __( 'Running', 'pmpro-cron-management' ),
 		];
 
 		foreach ( $statuses as $status => $label ) {
@@ -187,13 +187,13 @@ final class Table extends \WP_List_Table {
 		if ( $total_items >= EventRunModel::COUNT_LIMIT ) {
 			$total_text = sprintf(
 				/* translators: %s: Number of items. */
-				_n( 'More than %s item', 'More than %s items', $total_items, 'pmpro-crontrol' ),
+				_n( 'More than %s item', 'More than %s items', $total_items, 'pmpro-cron-management' ),
 				number_format_i18n( $total_items )
 			);
 		} else {
 			$total_text = sprintf(
 				/* translators: %s: Number of items. */
-				_n( '%s item', '%s items', $total_items, 'pmpro-crontrol' ),
+				_n( '%s item', '%s items', $total_items, 'pmpro-cron-management' ),
 				number_format_i18n( $total_items )
 			);
 		}
@@ -252,7 +252,7 @@ final class Table extends \WP_List_Table {
 				'</a>',
 				esc_url( $current_url ),
 				/* translators: Hidden accessibility text. */
-				esc_html__( 'First page', 'pmpro-crontrol' )
+				esc_html__( 'First page', 'pmpro-cron-management' )
 			);
 		}
 
@@ -271,7 +271,7 @@ final class Table extends \WP_List_Table {
 				'</a>',
 				esc_url( add_query_arg( $args, $current_url ) ),
 				/* translators: Hidden accessibility text. */
-				esc_html__( 'Previous page', 'pmpro-crontrol' )
+				esc_html__( 'Previous page', 'pmpro-cron-management' )
 			);
 		}
 
@@ -283,7 +283,7 @@ final class Table extends \WP_List_Table {
 
 		$page_links[] = sprintf(
 			/* translators: 1: Current page, 2: Total pages. */
-			_x( '%1$s of %2$s', 'paging', 'pmpro-crontrol' ),
+			_x( '%1$s of %2$s', 'paging', 'pmpro-cron-management' ),
 			$pagenum,
 			sprintf(
 				'<span class="total-pages">%s</span>',
@@ -306,7 +306,7 @@ final class Table extends \WP_List_Table {
 				'</a>',
 				esc_url( add_query_arg( $args, $current_url ) ),
 				/* translators: Hidden accessibility text. */
-				esc_html__( 'Next page', 'pmpro-crontrol' )
+				esc_html__( 'Next page', 'pmpro-cron-management' )
 			);
 		}
 
@@ -321,12 +321,12 @@ final class Table extends \WP_List_Table {
 	#[\Override]
 	public function get_columns() {
 		return array(
-			'crontrol_time' => __( 'Started at', 'pmpro-crontrol' ),
-			'crontrol_hook' => __( 'Hook', 'pmpro-crontrol' ),
-			'crontrol_actions' => __( 'Action', 'pmpro-crontrol' ),
-			'crontrol_status' => __( 'Status', 'pmpro-crontrol' ),
-			'crontrol_duration' => __( 'Duration', 'pmpro-crontrol' ),
-			'crontrol_view' => __( 'View', 'pmpro-crontrol' ),
+			'crontrol_time' => __( 'Started at', 'pmpro-cron-management' ),
+			'crontrol_hook' => __( 'Hook', 'pmpro-cron-management' ),
+			'crontrol_actions' => __( 'Action', 'pmpro-cron-management' ),
+			'crontrol_status' => __( 'Status', 'pmpro-cron-management' ),
+			'crontrol_duration' => __( 'Duration', 'pmpro-cron-management' ),
+			'crontrol_view' => __( 'View', 'pmpro-cron-management' ),
 		);
 	}
 
@@ -335,7 +335,7 @@ final class Table extends \WP_List_Table {
 		$time = \Crontrol\time_element( $timestamp );
 		$ago = sprintf(
 			/* translators: %s: Time period, for example "8 minutes" */
-			__( '%s ago', 'pmpro-crontrol' ),
+			__( '%s ago', 'pmpro-cron-management' ),
 			\Crontrol\interval( time() - $timestamp )
 		);
 
@@ -361,7 +361,7 @@ final class Table extends \WP_List_Table {
 		if ( ! empty( $event->args ) ) {
 			$output .= sprintf(
 				'<br><details><summary>%s</summary><pre>%s</pre></details>',
-				esc_html__( 'View arguments', 'pmpro-crontrol' ),
+				esc_html__( 'View arguments', 'pmpro-cron-management' ),
 				esc_html( print_r( $event->args, true ) )
 			);
 		}
@@ -374,11 +374,11 @@ final class Table extends \WP_List_Table {
 			$help = sprintf(
 				'<a href="%s">%s</a>',
 				'https://wp-crontrol.com/help/no-action-cron-events/',
-				esc_html__( 'Help', 'pmpro-crontrol' )
+				esc_html__( 'Help', 'pmpro-cron-management' )
 			);
 			return sprintf(
 				'<span class="status-crontrol-warning"><span class="dashicons dashicons-warning" aria-hidden="true"></span> %1$s</span> (%2$s)',
-				esc_html__( 'None', 'pmpro-crontrol' ),
+				esc_html__( 'None', 'pmpro-cron-management' ),
 				$help
 			);
 		}
@@ -401,15 +401,15 @@ final class Table extends \WP_List_Table {
 		}
 
 		if ( $event->is_completed() ) {
-			return '<div class="crontrol-status-completed"><span class="dashicons dashicons-yes"></span>&nbsp;' . esc_html__( 'Completed', 'pmpro-crontrol' ) . '</div>';
+			return '<div class="crontrol-status-completed"><span class="dashicons dashicons-yes"></span>&nbsp;' . esc_html__( 'Completed', 'pmpro-cron-management' ) . '</div>';
 		}
 
 		if ( $event->is_errored() ) {
-			return '<span class="dashicons dashicons-no"></span>&nbsp;' . esc_html__( 'Errored', 'pmpro-crontrol' )
-				. '<br><a class="crontrol-ask-ai" href="' . esc_url( admin_url( 'tools.php?page=wp-crontrol-ai' ) ) . '">' . esc_html__( 'Ask your AI assistant why', 'pmpro-crontrol' ) . '</a>';
+			return '<span class="dashicons dashicons-no"></span>&nbsp;' . esc_html__( 'Errored', 'pmpro-cron-management' )
+				. '<br><a class="crontrol-ask-ai" href="' . esc_url( admin_url( 'tools.php?page=wp-crontrol-ai' ) ) . '">' . esc_html__( 'Ask your AI assistant why', 'pmpro-cron-management' ) . '</a>';
 		}
 
-		return '<span class="dashicons dashicons-clock crontrol-rotating"></span>&nbsp;' . esc_html__( 'Running', 'pmpro-crontrol' );
+		return '<span class="dashicons dashicons-clock crontrol-rotating"></span>&nbsp;' . esc_html__( 'Running', 'pmpro-cron-management' );
 	}
 
 	protected function column_crontrol_duration( EventRun $event ): string {
@@ -460,7 +460,7 @@ final class Table extends \WP_List_Table {
 		$button = sprintf(
 			'<button type="button" class="button button-small" data-crontrol-view-dialog="%s">%s</button>',
 			esc_attr( $dialog_id ),
-			esc_html__( 'View Details', 'pmpro-crontrol' )
+			esc_html__( 'View Details', 'pmpro-cron-management' )
 		);
 
 		return $button . $this->run_details_dialog( $event, $dialog_id );
@@ -491,23 +491,23 @@ final class Table extends \WP_List_Table {
 				' (%s)',
 				esc_html( sprintf(
 					/* translators: %s: A date and time in UTC */
-					__( '%s UTC', 'pmpro-crontrol' ),
+					__( '%s UTC', 'pmpro-cron-management' ),
 					$event->started_at->format( $datetime_format )
 				) )
 			);
 		}
 
-		$rows[] = array( __( 'Started at', 'pmpro-crontrol' ), $started_at );
-		$rows[] = array( __( 'Hook', 'pmpro-crontrol' ), esc_html( $event->hook ) );
+		$rows[] = array( __( 'Started at', 'pmpro-cron-management' ), $started_at );
+		$rows[] = array( __( 'Hook', 'pmpro-cron-management' ), esc_html( $event->hook ) );
 
 		$args_display = \Crontrol\Event\get_hook_args_display( $event->hook, $event->args );
 
 		if ( null !== $args_display ) {
-			$rows[] = array( __( 'Arguments', 'pmpro-crontrol' ), $args_display );
+			$rows[] = array( __( 'Arguments', 'pmpro-cron-management' ), $args_display );
 		} elseif ( ! empty( $event->args ) ) {
-			$rows[] = array( __( 'Arguments', 'pmpro-crontrol' ), '<pre>' . esc_html( print_r( $event->args, true ) ) . '</pre>' );
+			$rows[] = array( __( 'Arguments', 'pmpro-cron-management' ), '<pre>' . esc_html( print_r( $event->args, true ) ) . '</pre>' );
 		} else {
-			$rows[] = array( __( 'Arguments', 'pmpro-crontrol' ), esc_html__( 'None', 'pmpro-crontrol' ) );
+			$rows[] = array( __( 'Arguments', 'pmpro-cron-management' ), esc_html__( 'None', 'pmpro-cron-management' ) );
 		}
 
 		$actions = array_filter( array_map( 'trim', $event->actions ) );
@@ -515,9 +515,9 @@ final class Table extends \WP_List_Table {
 			$callbacks = array_map( static function ( string $action ): string {
 				return '<code>' . esc_html( $action ) . '</code>';
 			}, $actions );
-			$rows[] = array( __( 'Action', 'pmpro-crontrol' ), implode( '<br>', $callbacks ) );
+			$rows[] = array( __( 'Action', 'pmpro-cron-management' ), implode( '<br>', $callbacks ) );
 		} else {
-			$rows[] = array( __( 'Action', 'pmpro-crontrol' ), esc_html__( 'None', 'pmpro-crontrol' ) );
+			$rows[] = array( __( 'Action', 'pmpro-cron-management' ), esc_html__( 'None', 'pmpro-cron-management' ) );
 		}
 
 		$body = '';
@@ -537,19 +537,19 @@ final class Table extends \WP_List_Table {
 		$metrics = array();
 
 		if ( $event->is_finished() ) {
-			$metrics[] = array( __( 'Duration', 'pmpro-crontrol' ), number_format( $event->duration / 1000, 3 ) . 's' );
+			$metrics[] = array( __( 'Duration', 'pmpro-cron-management' ), number_format( $event->duration / 1000, 3 ) . 's' );
 		}
 
-		$metrics[] = array( __( 'DB queries', 'pmpro-crontrol' ), number_format( $event->db_queries ) );
-		$metrics[] = array( __( 'HTTP API calls', 'pmpro-crontrol' ), number_format( $event->https ) );
-		$metrics[] = array( __( 'Emails sent', 'pmpro-crontrol' ), number_format( $event->emails ) );
+		$metrics[] = array( __( 'DB queries', 'pmpro-cron-management' ), number_format( $event->db_queries ) );
+		$metrics[] = array( __( 'HTTP API calls', 'pmpro-cron-management' ), number_format( $event->https ) );
+		$metrics[] = array( __( 'Emails sent', 'pmpro-cron-management' ), number_format( $event->emails ) );
 
 		if ( $event->mail_failed > 0 ) {
-			$metrics[] = array( __( 'Emails failed', 'pmpro-crontrol' ), number_format( $event->mail_failed ) );
+			$metrics[] = array( __( 'Emails failed', 'pmpro-cron-management' ), number_format( $event->mail_failed ) );
 		}
 
 		if ( $event->memory > 0 ) {
-			$metrics[] = array( __( 'Peak memory', 'pmpro-crontrol' ), size_format( $event->memory ) );
+			$metrics[] = array( __( 'Peak memory', 'pmpro-cron-management' ), size_format( $event->memory ) );
 		}
 
 		$metrics_html = '';
@@ -563,15 +563,15 @@ final class Table extends \WP_List_Table {
 
 		$lists_html = $this->run_details_notes( $event );
 		$lists_html .= $this->run_details_list(
-			__( 'Errors', 'pmpro-crontrol' ),
+			__( 'Errors', 'pmpro-cron-management' ),
 			$event->errors,
-			__( 'None', 'pmpro-crontrol' ),
+			__( 'None', 'pmpro-cron-management' ),
 			'crontrol-run-dialog-list-errors'
 		);
 		$lists_html .= $this->run_details_list(
-			__( 'Log messages', 'pmpro-crontrol' ),
+			__( 'Log messages', 'pmpro-cron-management' ),
 			$event->logs,
-			__( 'None', 'pmpro-crontrol' ),
+			__( 'None', 'pmpro-cron-management' ),
 			'crontrol-run-dialog-list-logs'
 		);
 
@@ -590,8 +590,8 @@ final class Table extends \WP_List_Table {
 				'</form>' .
 			'</dialog>',
 			esc_attr( $dialog_id ),
-			esc_html__( 'Run details', 'pmpro-crontrol' ),
-			esc_attr__( 'Close', 'pmpro-crontrol' ),
+			esc_html__( 'Run details', 'pmpro-cron-management' ),
+			esc_attr__( 'Close', 'pmpro-cron-management' ),
 			$body, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from escaped values above.
 			$metrics_html, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from escaped values above.
 			$lists_html // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from escaped values below.
@@ -607,13 +607,13 @@ final class Table extends \WP_List_Table {
 		$notes = '';
 
 		if ( $event->mail_failed > 0 ) {
-			$notes .= '<p><strong>' . esc_html( _n( 'An email from this run failed to send.', 'Emails from this run failed to send.', $event->mail_failed, 'pmpro-crontrol' ) ) . '</strong></p>';
+			$notes .= '<p><strong>' . esc_html( _n( 'An email from this run failed to send.', 'Emails from this run failed to send.', $event->mail_failed, 'pmpro-cron-management' ) ) . '</strong></p>';
 		}
 
 		if ( $event->is_errored() ) {
 			$notes .= '<p>' . sprintf(
 				/* translators: %s: URL of the Cron AI screen */
-				wp_kses( __( 'Not sure why this failed? <a href="%s">Ask your AI assistant</a> to read this log and the code behind the event.', 'pmpro-crontrol' ), array( 'a' => array( 'href' => array() ) ) ),
+				wp_kses( __( 'Not sure why this failed? <a href="%s">Ask your AI assistant</a> to read this log and the code behind the event.', 'pmpro-cron-management' ), array( 'a' => array( 'href' => array() ) ) ),
 				esc_url( admin_url( 'tools.php?page=wp-crontrol-ai' ) )
 			) . '</p>';
 		}
@@ -737,13 +737,13 @@ final class Table extends \WP_List_Table {
 
 		printf(
 			'<label class="screen-reader-text" for="crontrol-hook-filter">%s</label>',
-			esc_html__( 'Filter by hook', 'pmpro-crontrol' )
+			esc_html__( 'Filter by hook', 'pmpro-cron-management' )
 		);
 
 		// Group the hooks into the WP Crontrol event hooks, custom hooks, and WordPress core hooks.
 		$crontrol_hooks = array(
-			\Crontrol\Event\URLCronEvent::HOOK_NAME => __( 'URL cron event', 'pmpro-crontrol' ),
-			\Crontrol\Event\PHPCronEvent::HOOK_NAME => __( 'PHP cron event', 'pmpro-crontrol' ),
+			\Crontrol\Event\URLCronEvent::HOOK_NAME => __( 'URL cron event', 'pmpro-cron-management' ),
+			\Crontrol\Event\PHPCronEvent::HOOK_NAME => __( 'PHP cron event', 'pmpro-cron-management' ),
 		);
 		$core_hooks = \Crontrol\get_all_core_hooks();
 		$crontrol = array_intersect_key( $crontrol_hooks, array_flip( $hooks ) );
@@ -754,7 +754,7 @@ final class Table extends \WP_List_Table {
 		printf(
 			'<option value=""%s>%s</option>',
 			selected( $current_hook, '', false ),
-			esc_html__( 'All hooks', 'pmpro-crontrol' )
+			esc_html__( 'All hooks', 'pmpro-cron-management' )
 		);
 
 		if ( $custom ) {
@@ -781,7 +781,7 @@ final class Table extends \WP_List_Table {
 
 		echo '</select>';
 
-		submit_button( __( 'Filter', 'pmpro-crontrol' ), '', '', false, array( 'id' => 'crontrol-hook-query-submit' ) );
+		submit_button( __( 'Filter', 'pmpro-cron-management' ), '', '', false, array( 'id' => 'crontrol-hook-query-submit' ) );
 
 		echo '</form>';
 	}
@@ -825,9 +825,9 @@ final class Table extends \WP_List_Table {
 				'<input type="hidden" name="crontrol_hook" value="%s" />',
 				esc_attr( $current_hook )
 			);
-			$label = __( 'Clear all logs for this hook', 'pmpro-crontrol' );
+			$label = __( 'Clear all logs for this hook', 'pmpro-cron-management' );
 		} else {
-			$label = __( 'Clear All Logs', 'pmpro-crontrol' );
+			$label = __( 'Clear All Logs', 'pmpro-cron-management' );
 		}
 
 		printf(
@@ -845,29 +845,29 @@ final class Table extends \WP_List_Table {
 	#[\Override]
 	public function no_items() {
 		if ( isset( $_GET['crontrol_pro_message'] ) && absint( $_GET['crontrol_pro_message'] ) === \Crontrol\Pro\MESSAGE_LOGS_CLEARED ) {
-			echo '<p>' . esc_html__( 'All logs have been cleared successfully.', 'pmpro-crontrol' ) . '</p>';
+			echo '<p>' . esc_html__( 'All logs have been cleared successfully.', 'pmpro-cron-management' ) . '</p>';
 		} elseif ( isset( $_GET['crontrol_hook'] ) ) {
 			echo '<p>';
 			printf(
 				/* translators: %s: The hook name that was filtered for */
-				esc_html__( 'No matching %s cron event logs found.', 'pmpro-crontrol' ),
+				esc_html__( 'No matching %s cron event logs found.', 'pmpro-cron-management' ),
 				'<b>' . esc_html( sanitize_text_field( $_GET['crontrol_hook'] ) ) . '</b>',
 			);
 		} elseif ( isset( $_GET['crontrol_status'] ) ) {
-			echo '<p>' . esc_html__( 'No matching cron event logs found.', 'pmpro-crontrol' ) . '</p>';
+			echo '<p>' . esc_html__( 'No matching cron event logs found.', 'pmpro-cron-management' ) . '</p>';
 		} else {
-			echo '<p>' . esc_html__( 'No cron event logs found yet.', 'pmpro-crontrol' ) . '</p>';
+			echo '<p>' . esc_html__( 'No cron event logs found yet.', 'pmpro-cron-management' ) . '</p>';
 			echo '<p>';
 			printf(
 				/* translators: %s: URL of the Cron Events screen */
-				wp_kses( __( 'Each run of a logged event appears here. Turn logging on for an event with its Enable logging link on the <a href="%s">Cron Events screen</a>, or in the settings below, then use Run now to see a first entry.', 'pmpro-crontrol' ), array( 'a' => array( 'href' => array() ) ) ),
+				wp_kses( __( 'Each run of a logged event appears here. Turn logging on for an event with its Enable logging link on the <a href="%s">Cron Events screen</a>, or in the settings below, then use Run now to see a first entry.', 'pmpro-cron-management' ), array( 'a' => array( 'href' => array() ) ) ),
 				esc_url( admin_url( 'tools.php?page=wp-crontrol' ) )
 			);
 			echo '</p>';
 			echo '<p>';
 			printf(
 				/* translators: %s: URL of the Cron AI screen */
-				wp_kses( __( 'An AI assistant can read these logs for you. <a href="%s">See Cron AI</a>.', 'pmpro-crontrol' ), array( 'a' => array( 'href' => array() ) ) ),
+				wp_kses( __( 'An AI assistant can read these logs for you. <a href="%s">See Cron AI</a>.', 'pmpro-cron-management' ), array( 'a' => array( 'href' => array() ) ) ),
 				esc_url( admin_url( 'tools.php?page=wp-crontrol-ai' ) )
 			);
 			echo '</p>';
@@ -937,14 +937,14 @@ final class Table extends \WP_List_Table {
 			if ( $exceeded_interval ) {
 				$message = sprintf(
 					/* translators: %s: Schedule recurrence interval */
-					__( 'This event ran for longer than its recurrence interval of %s. It may have overlapped or delayed the next event.', 'pmpro-crontrol' ),
+					__( 'This event ran for longer than its recurrence interval of %s. It may have overlapped or delayed the next event.', 'pmpro-cron-management' ),
 					$interval
 				);
 				echo '<span class="status-crontrol-error"><span class="dashicons dashicons-warning" aria-hidden="true"></span></span> <b>' . esc_html( $message ) . '</b>';
 			} else {
 				$message = sprintf(
 					/* translators: %s: Schedule recurrence interval */
-					__( 'This event ran for over 75%% of its recurrence interval of %s. It may risk overlapping or delaying future events.', 'pmpro-crontrol' ),
+					__( 'This event ran for over 75%% of its recurrence interval of %s. It may risk overlapping or delaying future events.', 'pmpro-cron-management' ),
 					$interval
 				);
 				echo '<span class="status-crontrol-warning"><span class="dashicons dashicons-warning" aria-hidden="true"></span></span> <b>' . esc_html( $message ) . '</b>';

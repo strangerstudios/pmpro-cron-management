@@ -255,7 +255,7 @@ abstract class Event {
 	 */
 	public function get_schedule_name(): string {
 		if ( ! $this->is_recurring() ) {
-			return __( 'Non-repeating', 'pmpro-crontrol' );
+			return __( 'Non-repeating', 'pmpro-cron-management' );
 		}
 
 		$schedules = \Crontrol\Schedule\get();
@@ -267,7 +267,7 @@ abstract class Event {
 		throw new UnknownScheduleException(
 			sprintf(
 				/* translators: %s: Schedule name */
-				__( 'Unknown schedule (%s)', 'pmpro-crontrol' ),
+				__( 'Unknown schedule (%s)', 'pmpro-cron-management' ),
 				$this->schedule
 			)
 		);

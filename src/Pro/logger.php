@@ -173,11 +173,11 @@ class Logger {
 			if ( $message ) {
 				$message = sprintf(
 					/* translators: %s: Assertion message */
-					__( 'Assertion passed: %s', 'pmpro-crontrol' ),
+					__( 'Assertion passed: %s', 'pmpro-cron-management' ),
 					$message
 				);
 			} else {
-				$message = __( 'Assertion passed', 'pmpro-crontrol' );
+				$message = __( 'Assertion passed', 'pmpro-cron-management' );
 			}
 		} else {
 			$level = self::ERROR;
@@ -185,11 +185,11 @@ class Logger {
 			if ( $message ) {
 				$message = sprintf(
 					/* translators: %s: Assertion message */
-					__( 'Assertion failed: %s', 'pmpro-crontrol' ),
+					__( 'Assertion failed: %s', 'pmpro-cron-management' ),
 					$message
 				);
 			} else {
-				$message = __( 'Assertion failed', 'pmpro-crontrol' );
+				$message = __( 'Assertion failed', 'pmpro-cron-management' );
 			}
 
 			if ( $value !== null ) {

@@ -364,33 +364,33 @@ function send_failures( array $failures, bool $digest ): bool {
 
 	if ( $digest ) {
 		/* translators: 1: Site name, 2: Number of failed runs */
-		$subject = sprintf( __( '[%1$s] Cron events failed in the last day (%2$s)', 'pmpro-crontrol' ), $site, number_format_i18n( count( $failures ) ) );
+		$subject = sprintf( __( '[%1$s] Cron events failed in the last day (%2$s)', 'pmpro-cron-management' ), $site, number_format_i18n( count( $failures ) ) );
 	} elseif ( 1 === count( $hooks ) ) {
 		/* translators: 1: Site name, 2: Hook name */
-		$subject = sprintf( __( '[%1$s] Cron event failed: %2$s', 'pmpro-crontrol' ), $site, $hooks[0] );
+		$subject = sprintf( __( '[%1$s] Cron event failed: %2$s', 'pmpro-cron-management' ), $site, $hooks[0] );
 	} else {
 		/* translators: 1: Site name, 2: Number of hooks */
-		$subject = sprintf( __( '[%1$s] %2$s cron events failed', 'pmpro-crontrol' ), $site, number_format_i18n( count( $hooks ) ) );
+		$subject = sprintf( __( '[%1$s] %2$s cron events failed', 'pmpro-cron-management' ), $site, number_format_i18n( count( $hooks ) ) );
 	}
 
 	$lines   = array();
 	$lines[] = $digest
-		? __( 'These logged cron events failed on your site in the last day:', 'pmpro-crontrol' )
-		: __( 'A logged cron event failed on your site:', 'pmpro-crontrol' );
+		? __( 'These logged cron events failed on your site in the last day:', 'pmpro-cron-management' )
+		: __( 'A logged cron event failed on your site:', 'pmpro-cron-management' );
 	$lines[] = '';
 
 	foreach ( array_slice( $failures, 0, 20 ) as $failure ) {
 		$lines[] = sprintf(
 			/* translators: 1: Hook name, 2: Date and time */
-			__( '%1$s at %2$s', 'pmpro-crontrol' ),
+			__( '%1$s at %2$s', 'pmpro-cron-management' ),
 			$failure['hook'],
 			wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), (int) $failure['time'] )
 		);
-		$lines[] = ! empty( $failure['fatal'] ) ? __( 'Status: fatal error', 'pmpro-crontrol' ) : __( 'Status: errored', 'pmpro-crontrol' );
+		$lines[] = ! empty( $failure['fatal'] ) ? __( 'Status: fatal error', 'pmpro-cron-management' ) : __( 'Status: errored', 'pmpro-cron-management' );
 
 		if ( '' !== (string) $failure['message'] ) {
 			/* translators: %s: Error message */
-			$lines[] = sprintf( __( 'Error: %s', 'pmpro-crontrol' ), wp_strip_all_tags( (string) $failure['message'] ) );
+			$lines[] = sprintf( __( 'Error: %s', 'pmpro-cron-management' ), wp_strip_all_tags( (string) $failure['message'] ) );
 		}
 
 		$lines[] = add_query_arg(
@@ -406,14 +406,14 @@ function send_failures( array $failures, bool $digest ): bool {
 
 	if ( count( $failures ) > 20 ) {
 		/* translators: %s: Number of failures */
-		$lines[] = sprintf( __( 'And %s more.', 'pmpro-crontrol' ), number_format_i18n( count( $failures ) - 20 ) );
+		$lines[] = sprintf( __( 'And %s more.', 'pmpro-cron-management' ), number_format_i18n( count( $failures ) - 20 ) );
 		$lines[] = '';
 	}
 
 	$lines[] = '--';
 	$lines[] = $digest
-		? __( 'You get this daily summary because cron alerts are turned on in WP Crontrol. Change who gets them, or turn them off:', 'pmpro-crontrol' )
-		: __( 'You get this email because cron alerts are turned on in WP Crontrol. You get at most one email an hour for each event. Change who gets them, or turn them off:', 'pmpro-crontrol' );
+		? __( 'You get this daily summary because cron alerts are turned on in WP Crontrol. Change who gets them, or turn them off:', 'pmpro-cron-management' )
+		: __( 'You get this email because cron alerts are turned on in WP Crontrol. You get at most one email an hour for each event. Change who gets them, or turn them off:', 'pmpro-cron-management' );
 	$lines[] = admin_url( 'tools.php?page=wp-crontrol-alerts' );
 
 	return send( $subject, implode( "\n", $lines ), false );
@@ -456,7 +456,7 @@ function send( string $subject, string $body, bool $test ): bool {
 	$result = array(
 		'time'  => time(),
 		'sent'  => (bool) $sent,
-		'error' => $sent ? '' : ( '' !== $error ? $error : __( 'WordPress could not send the email.', 'pmpro-crontrol' ) ),
+		'error' => $sent ? '' : ( '' !== $error ? $error : __( 'WordPress could not send the email.', 'pmpro-cron-management' ) ),
 		'test'  => $test,
 	);
 
@@ -496,7 +496,7 @@ function handle_actions(): void {
 	}
 
 	if ( ! current_user_can( 'manage_options' ) ) {
-		wp_die( esc_html__( 'You are not allowed to change cron alerts.', 'pmpro-crontrol' ), 403 );
+		wp_die( esc_html__( 'You are not allowed to change cron alerts.', 'pmpro-cron-management' ), 403 );
 	}
 
 	$action = sanitize_key( wp_unslash( $_POST['crontrol_action'] ) );
@@ -520,8 +520,8 @@ function handle_actions(): void {
 	} else {
 		$sent = send(
 			/* translators: %s: Site name */
-			sprintf( __( '[%s] Test cron alert from WP Crontrol', 'pmpro-crontrol' ), wp_specialchars_decode( (string) get_option( 'blogname' ), ENT_QUOTES ) ),
-			__( 'This is a test email from WP Crontrol. If you can read it, cron alerts from this site will reach you.', 'pmpro-crontrol' ) . "\n\n" . admin_url( 'tools.php?page=wp-crontrol-alerts' ),
+			sprintf( __( '[%s] Test cron alert from WP Crontrol', 'pmpro-cron-management' ), wp_specialchars_decode( (string) get_option( 'blogname' ), ENT_QUOTES ) ),
+			__( 'This is a test email from WP Crontrol. If you can read it, cron alerts from this site will reach you.', 'pmpro-cron-management' ) . "\n\n" . admin_url( 'tools.php?page=wp-crontrol-alerts' ),
 			true
 		);
 		$message = $sent ? 'test-sent' : 'test-failed';
@@ -548,13 +548,13 @@ function admin_alerts_page(): void {
 	?>
 	<div class="wrap">
 		<?php \Crontrol\do_tabs(); ?>
-		<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Alerts', 'pmpro-crontrol' ); ?></h1>
+		<h1 class="wp-heading-inline"><?php esc_html_e( 'Cron Alerts', 'pmpro-cron-management' ); ?></h1>
 		<hr class="wp-header-end">
 
 		<?php if ( 'saved' === $message ) : ?>
-			<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Alert settings saved.', 'pmpro-crontrol' ); ?></p></div>
+			<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Alert settings saved.', 'pmpro-cron-management' ); ?></p></div>
 		<?php elseif ( 'test-sent' === $message ) : ?>
-			<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Test email sent. Check the inbox, and the spam folder, of each recipient.', 'pmpro-crontrol' ); ?></p></div>
+			<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Test email sent. Check the inbox, and the spam folder, of each recipient.', 'pmpro-cron-management' ); ?></p></div>
 		<?php endif; ?>
 
 		<?php if ( ! empty( $last ) && empty( $last['sent'] ) ) : ?>
@@ -562,11 +562,11 @@ function admin_alerts_page(): void {
 				<p>
 					<?php
 					echo esc_html( ! empty( $last['test'] )
-						? __( 'The test email failed to send.', 'pmpro-crontrol' )
-					: __( 'The last cron alert failed to send.', 'pmpro-crontrol' ) );
+						? __( 'The test email failed to send.', 'pmpro-cron-management' )
+					: __( 'The last cron alert failed to send.', 'pmpro-cron-management' ) );
 					echo ' ';
 					/* translators: %s: Error message */
-					echo esc_html( sprintf( __( 'WordPress reported: %s', 'pmpro-crontrol' ), (string) ( $last['error'] ?? '' ) ) );
+					echo esc_html( sprintf( __( 'WordPress reported: %s', 'pmpro-cron-management' ), (string) ( $last['error'] ?? '' ) ) );
 					?>
 				</p>
 			</div>
@@ -574,7 +574,7 @@ function admin_alerts_page(): void {
 
 		<div>
 		<div>
-		<p><?php esc_html_e( 'Get an email when a logged cron event errors or hits a fatal error.', 'pmpro-crontrol' ); ?></p>
+		<p><?php esc_html_e( 'Get an email when a logged cron event errors or hits a fatal error.', 'pmpro-cron-management' ); ?></p>
 
 		<?php if ( ! $logged ) : ?>
 			<div class="notice notice-warning inline">
@@ -582,7 +582,7 @@ function admin_alerts_page(): void {
 					<?php
 					printf(
 						/* translators: %s: URL of the Cron Logs screen */
-						wp_kses( __( 'Alerts only cover events that are logged, and logging is off for every event. <a href="%s">Turn on logging</a> for the events you want alerts about.', 'pmpro-crontrol' ), array( 'a' => array( 'href' => array() ) ) ),
+						wp_kses( __( 'Alerts only cover events that are logged, and logging is off for every event. <a href="%s">Turn on logging</a> for the events you want alerts about.', 'pmpro-cron-management' ), array( 'a' => array( 'href' => array() ) ) ),
 						esc_url( admin_url( 'tools.php?page=wp-crontrol-logs' ) )
 					);
 					?>
@@ -593,7 +593,7 @@ function admin_alerts_page(): void {
 				<?php
 				printf(
 					/* translators: %s: Number of logged events */
-					esc_html( _n( 'Alerts cover the %s event hook that has logging turned on.', 'Alerts cover the %s event hooks that have logging turned on.', count( $logged ), 'pmpro-crontrol' ) ),
+					esc_html( _n( 'Alerts cover the %s event hook that has logging turned on.', 'Alerts cover the %s event hooks that have logging turned on.', count( $logged ), 'pmpro-cron-management' ) ),
 					esc_html( number_format_i18n( count( $logged ) ) )
 				);
 				?>
@@ -605,54 +605,54 @@ function admin_alerts_page(): void {
 			<input type="hidden" name="crontrol_action" value="save-alerts" />
 			<table class="form-table" role="presentation">
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Alerts', 'pmpro-crontrol' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Alerts', 'pmpro-cron-management' ); ?></th>
 					<td>
 						<label>
 							<input type="checkbox" name="crontrol_alerts_enabled" value="1" <?php checked( $settings['enabled'] ); ?> />
-							<?php esc_html_e( 'Email me when a logged cron event fails', 'pmpro-crontrol' ); ?>
+							<?php esc_html_e( 'Email me when a logged cron event fails', 'pmpro-cron-management' ); ?>
 						</label>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="crontrol_alerts_recipients"><?php esc_html_e( 'Send to', 'pmpro-crontrol' ); ?></label></th>
+					<th scope="row"><label for="crontrol_alerts_recipients"><?php esc_html_e( 'Send to', 'pmpro-cron-management' ); ?></label></th>
 					<td>
 						<input type="text" class="regular-text" id="crontrol_alerts_recipients" name="crontrol_alerts_recipients" value="<?php echo esc_attr( $settings['recipients'] ); ?>" placeholder="<?php echo esc_attr( (string) get_option( 'admin_email' ) ); ?>" />
-						<p class="description"><?php esc_html_e( 'Email addresses separated by commas, up to ten. Leave empty to use the site’s admin email address.', 'pmpro-crontrol' ); ?></p>
+						<p class="description"><?php esc_html_e( 'Email addresses separated by commas, up to ten. Leave empty to use the site’s admin email address.', 'pmpro-cron-management' ); ?></p>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><?php esc_html_e( 'How often', 'pmpro-crontrol' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'How often', 'pmpro-cron-management' ); ?></th>
 					<td>
 						<fieldset>
 							<label>
 								<input type="radio" name="crontrol_alerts_mode" value="each" <?php checked( 'each', $settings['mode'] ); ?> />
-								<?php esc_html_e( 'As they happen, at most one email an hour for each event', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'As they happen, at most one email an hour for each event', 'pmpro-cron-management' ); ?>
 							</label><br />
 							<label>
 								<input type="radio" name="crontrol_alerts_mode" value="digest" <?php checked( 'digest', $settings['mode'] ); ?> />
-								<?php esc_html_e( 'One summary a day', 'pmpro-crontrol' ); ?>
+								<?php esc_html_e( 'One summary a day', 'pmpro-cron-management' ); ?>
 							</label>
 						</fieldset>
 					</td>
 				</tr>
 			</table>
-			<?php submit_button( __( 'Save Alert Settings', 'pmpro-crontrol' ) ); ?>
+			<?php submit_button( __( 'Save Alert Settings', 'pmpro-cron-management' ) ); ?>
 		</form>
 
-		<h2><?php esc_html_e( 'Check that alerts reach you', 'pmpro-crontrol' ); ?></h2>
+		<h2><?php esc_html_e( 'Check that alerts reach you', 'pmpro-cron-management' ); ?></h2>
 		<p>
 			<?php
 			printf(
 				/* translators: %s: Comma-separated email addresses */
-				esc_html__( 'Send a test email to %s.', 'pmpro-crontrol' ),
-				esc_html( $recipients ? implode( ', ', $recipients ) : __( 'nobody: add an email address above', 'pmpro-crontrol' ) )
+				esc_html__( 'Send a test email to %s.', 'pmpro-cron-management' ),
+				esc_html( $recipients ? implode( ', ', $recipients ) : __( 'nobody: add an email address above', 'pmpro-cron-management' ) )
 			);
 			?>
 		</p>
 		<form method="post">
 			<?php wp_nonce_field( 'crontrol-test-alert' ); ?>
 			<input type="hidden" name="crontrol_action" value="test-alert" />
-			<?php submit_button( __( 'Send Test Email', 'pmpro-crontrol' ), 'secondary', 'submit', false, $recipients ? array() : array( 'disabled' => 'disabled' ) ); ?>
+			<?php submit_button( __( 'Send Test Email', 'pmpro-cron-management' ), 'secondary', 'submit', false, $recipients ? array() : array( 'disabled' => 'disabled' ) ); ?>
 		</form>
 
 		</div>

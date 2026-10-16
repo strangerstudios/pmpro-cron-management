@@ -71,9 +71,9 @@ class Schedule_List_Table extends \WP_List_Table {
 	public function get_columns() {
 		return array(
 			'crontrol_icon'     => '',
-			'crontrol_name'     => esc_html__( 'Internal Name', 'pmpro-crontrol' ),
-			'crontrol_interval' => esc_html__( 'Interval', 'pmpro-crontrol' ),
-			'crontrol_display'  => esc_html__( 'Display Name', 'pmpro-crontrol' ),
+			'crontrol_name'     => esc_html__( 'Internal Name', 'pmpro-cron-management' ),
+			'crontrol_interval' => esc_html__( 'Interval', 'pmpro-cron-management' ),
+			'crontrol_display'  => esc_html__( 'Display Name', 'pmpro-cron-management' ),
 		);
 	}
 
@@ -120,7 +120,7 @@ class Schedule_List_Table extends \WP_List_Table {
 		), admin_url( 'options-general.php' ) );
 		$link = wp_nonce_url( $link, 'crontrol-delete-schedule_' . $schedule->name );
 
-		$links[] = "<span class='delete'><a href='" . esc_url( $link ) . "'>" . esc_html__( 'Delete', 'pmpro-crontrol' ) . '</a></span>';
+		$links[] = "<span class='delete'><a href='" . esc_url( $link ) . "'>" . esc_html__( 'Delete', 'pmpro-cron-management' ) . '</a></span>';
 
 		return $this->row_actions( $links );
 	}
@@ -168,7 +168,7 @@ class Schedule_List_Table extends \WP_List_Table {
 				'<span class="status-crontrol-warning"><br><span class="dashicons dashicons-warning" aria-hidden="true"></span> %s</span>',
 				sprintf(
 					/* translators: 1: The name of the configuration constant, 2: The value of the configuration constant */
-					esc_html__( 'This interval is less than the %1$s constant which is set to %2$s seconds. Events that use it may not run on time.', 'pmpro-crontrol' ),
+					esc_html__( 'This interval is less than the %1$s constant which is set to %2$s seconds. Events that use it may not run on time.', 'pmpro-cron-management' ),
 					'<code>WP_CRON_LOCK_TIMEOUT</code>',
 					intval( WP_CRON_LOCK_TIMEOUT )
 				)
@@ -194,6 +194,6 @@ class Schedule_List_Table extends \WP_List_Table {
 	 */
 	#[\Override]
 	public function no_items() {
-		esc_html_e( 'There are no schedules.', 'pmpro-crontrol' );
+		esc_html_e( 'There are no schedules.', 'pmpro-cron-management' );
 	}
 }
